@@ -31,34 +31,45 @@ function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+    <footer className="bg-[#1a0505] text-gray-300 border-t border-[#760015]/30 relative overflow-hidden">
+      {/* Decorative Top Line */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#760015] via-[#ef7f25] to-[#760015]"></div>
+
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#760015] opacity-5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+
+      <div className="section-container py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+          
           {/* Logo and Tagline */}
           <div className="lg:col-span-1">
-            <img
-              src="/logo.png"
-              alt="Baarez Technology Solutions"
-              className="h-12 w-auto mb-4 brightness-0 invert"
-            />
-            <p className="text-sm text-gray-400 mb-4">
+            <Link to="/" className="inline-block mb-6">
+                {/* Ensure you have a white version or use filter invert */}
+                <img
+                src="/logo.png"
+                alt="Baarez Technology Solutions"
+                className="h-20 w-auto"
+                />
+            </Link>
+            <p className="text-sm text-gray-400 mb-4 font-medium tracking-wide uppercase text-[#ef7f25]">
               Making Thinking Visible
             </p>
-            <p className="text-sm text-gray-400">
-              AI-native enterprise platform for regulated industries.
+            <p className="text-sm text-gray-500 leading-relaxed">
+              AI-native enterprise platform for regulated industries. Transforming governance with speed and precision.
             </p>
           </div>
 
           {/* Solutions */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Solutions</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Solutions</h3>
+            <ul className="space-y-3">
               {solutions.map((solution) => (
                 <li key={solution.path}>
                   <Link
                     to={solution.path}
-                    className="text-sm hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
                   >
+                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {solution.name}
                   </Link>
                 </li>
@@ -68,14 +79,15 @@ function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Services</h3>
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.path}>
                   <Link
                     to={service.path}
-                    className="text-sm hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
                   >
+                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {service.name}
                   </Link>
                 </li>
@@ -85,14 +97,15 @@ function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Company</h3>
+            <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-sm hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
                   >
+                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {item.name}
                   </Link>
                 </li>
@@ -102,14 +115,16 @@ function Footer() {
 
           {/* Global Presence */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Global Presence</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Global Presence</h3>
+            <ul className="space-y-3">
               {locations.map((location) => (
-                <li key={location} className="text-sm flex items-center space-x-2">
-                  <svg className="w-4 h-4 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+                <li key={location} className="text-sm text-gray-400 flex items-center space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-[#760015]/20 flex items-center justify-center text-[#ef7f25]">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                  </div>
                   <span>{location}</span>
                 </li>
               ))}
@@ -118,19 +133,19 @@ function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
+        <div className="pt-8 border-t border-[#760015]/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
+            <p className="text-xs text-gray-500">
               &copy; {currentYear} Baarez Technology Solutions. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <div className="flex space-x-8">
+              <Link to="/privacy" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <Link to="/terms" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/security" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <Link to="/security" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
                 Security
               </Link>
             </div>

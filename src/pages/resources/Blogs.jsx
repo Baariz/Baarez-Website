@@ -1,213 +1,195 @@
-import { Link } from 'react-router-dom'
+import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { blogs } from '../../utils/blogs';
 
-// Sample blog data - in a real app, this would come from an API or CMS
-const blogPosts = [
-  {
-    slug: 'future-of-grc-ai-automation',
-    title: 'The Future of GRC: How AI and Automation are Transforming Governance',
-    excerpt: 'Explore how artificial intelligence and intelligent automation are reshaping enterprise governance, risk, and compliance operations for Fortune 500 companies.',
-    category: 'GRC',
-    author: 'Rajesh Kumar',
-    date: 'December 15, 2024',
-    readTime: '8 min read',
-    image: '📊',
-  },
-  {
-    slug: 'third-party-risk-management-2025',
-    title: 'Third-Party Risk Management in 2025: Key Trends and Best Practices',
-    excerpt: 'As supply chain risks evolve, organizations must adopt modern TPRM platforms with continuous monitoring and predictive intelligence capabilities.',
-    category: 'TPRM',
-    author: 'Sarah Mitchell',
-    date: 'December 10, 2024',
-    readTime: '6 min read',
-    image: '🔍',
-  },
-  {
-    slug: 'internal-audit-digital-transformation',
-    title: 'Modernizing Internal Audit: A Digital Transformation Roadmap',
-    excerpt: 'Learn how leading audit departments are leveraging technology to increase efficiency, improve risk coverage, and deliver greater value to stakeholders.',
-    category: 'Internal Audit',
-    author: 'Michael Chen',
-    date: 'December 5, 2024',
-    readTime: '7 min read',
-    image: '📋',
-  },
-  {
-    slug: 'rpa-enterprise-scale',
-    title: 'Scaling RPA Across the Enterprise: Lessons from 500+ Deployments',
-    excerpt: 'Insights from real-world RaaS implementations on building governance frameworks, managing bot portfolios, and achieving sustainable automation ROI.',
-    category: 'Automation',
-    author: 'David Park',
-    date: 'November 28, 2024',
-    readTime: '10 min read',
-    image: '🤖',
-  },
-  {
-    slug: 'cybersecurity-compliance-integration',
-    title: 'Integrating Cybersecurity and Compliance: A Unified Approach',
-    excerpt: 'Break down silos between security and compliance teams with integrated platforms that streamline vulnerability management and regulatory adherence.',
-    category: 'Security',
-    author: 'Jennifer Lee',
-    date: 'November 20, 2024',
-    readTime: '9 min read',
-    image: '🛡️',
-  },
-  {
-    slug: 'tax-automation-regulatory-challenges',
-    title: 'Navigating Tax Automation in a Complex Regulatory Environment',
-    excerpt: 'How enterprises are using intelligent automation to manage multi-jurisdictional tax compliance while maintaining accuracy and audit readiness.',
-    category: 'Tax & Compliance',
-    author: 'Priya Sharma',
-    date: 'November 15, 2024',
-    readTime: '8 min read',
-    image: '💼',
-  },
-]
 
-const categories = ['All', 'GRC', 'TPRM', 'Internal Audit', 'Automation', 'Security', 'Tax & Compliance']
+// Brand Palette Constants
+const COLORS = {
+  MAROON: "#760015",
+  ORANGE: "#ef7f25",
+  LIGHT_BG: "#fdfbf9", // Very warm off-white (Paper)
+  TEXT_MAIN: "#4a4a4a" // Softer than black, readable
+};
 
-function Blogs() {
+const Blogs = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // 1. Categories
+  const categories = ["All", ...new Set(blogs.map(b => b.category))];
+
+  // 2. Sort & Filter
+  const filteredBlogs = useMemo(() => {
+    let data = [...blogs].sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
+    if (selectedCategory !== "All") {
+      data = data.filter(b => b.category === selectedCategory);
+    }
+    return data;
+  }, [selectedCategory]);
+
+  const featuredPost = filteredBlogs[0]; // First item is featured
+  const gridPosts = filteredBlogs.slice(1); // Rest are grid
+
   return (
-    <div className="pt-20">
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 lg:py-32">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Blog & Insights
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Expert perspectives on enterprise governance, risk, compliance, and intelligent automation from Baarez thought leaders.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white font-sans pt-32 pb-24">
+      
+      {/* --- 1. HEADER & FILTER --- */}
+      <div className="max-w-[1200px] mx-auto px-6 mb-20 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ef7f25] mb-4 block">
+            Thought Leadership
+          </span>
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-12" style={{ color: COLORS.MAROON }}>
+            Baarez Insights.
+          </h1>
+        </motion.div>
 
-      {/* Category Filter */}
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-20 z-40">
-        <div className="section-container">
-          <div className="flex overflow-x-auto space-x-4 pb-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
-                  category === 'All'
-                    ? 'bg-brand-maroon text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+        {/* Filter Pills */}
+        <div className="inline-flex flex-wrap justify-center gap-2 p-2 rounded-full bg-[#fcf9f6] border border-gray-100 shadow-sm">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                selectedCategory === cat
+                  ? "text-white shadow-md transform scale-105"
+                  : "text-gray-500 hover:text-[#760015] hover:bg-white"
+              }`}
+              style={{ backgroundColor: selectedCategory === cat ? COLORS.MAROON : 'transparent' }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Featured Post */}
-      <section className="py-16 bg-white">
-        <div className="section-container">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Featured Article</h2>
-          </div>
-          <Link
-            to={`/resources/blogs/${blogPosts[0].slug}`}
-            className="card overflow-hidden grid lg:grid-cols-2 gap-0 group"
-          >
-            <div className="bg-gradient-to-br from-brand-maroon to-brand-maroon-dark p-16 flex items-center justify-center text-white">
-              <div className="text-center">
-                <div className="text-8xl mb-4">{blogPosts[0].image}</div>
-                <div className="text-sm font-semibold opacity-90">{blogPosts[0].category}</div>
-              </div>
-            </div>
-            <div className="p-8 lg:p-12">
-              <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
-                <span>{blogPosts[0].date}</span>
-                <span>•</span>
-                <span>{blogPosts[0].readTime}</span>
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-brand-maroon transition-colors">
-                {blogPosts[0].title}
-              </h3>
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                {blogPosts[0].excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-gray-700">
-                  <span className="font-semibold">By {blogPosts[0].author}</span>
+      <div className="max-w-[1200px] mx-auto px-6">
+        
+        {/* --- 2. FEATURED POST (Side-by-Side Layout) --- */}
+        <AnimatePresence mode="wait">
+          {featuredPost && (
+            <motion.div 
+              key={featuredPost.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="mb-24"
+            >
+              <Link to={`/blogs/${featuredPost.slug}`} className="group grid lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Image Side */}
+                <div className="relative overflow-hidden rounded-2xl aspect-w-16 aspect-h-10 lg:aspect-none lg:h-[450px]">
+                  <img 
+                    src={featuredPost.image} 
+                    alt={featuredPost.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl"></div>
                 </div>
-                <div className="flex items-center text-brand-maroon font-semibold group-hover:gap-2 transition-all">
-                  <span>Read Article</span>
-                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
 
-      {/* Blog Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="section-container">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Recent Articles</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.slice(1).map((post) => (
-              <Link
-                key={post.slug}
-                to={`/resources/blogs/${post.slug}`}
-                className="card overflow-hidden group"
-              >
-                <div className="bg-gradient-to-br from-brand-maroon to-brand-maroon-dark p-12 flex items-center justify-center text-white">
-                  <div className="text-6xl">{post.image}</div>
-                </div>
-                <div className="p-6">
-                  <div className="inline-block px-3 py-1 bg-brand-maroon/10 text-brand-maroon rounded-full text-sm font-semibold mb-3">
-                    {post.category}
+                {/* Content Side */}
+                <div className="flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="px-3 py-1 bg-[#fff5eb] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                      {featuredPost.category}
+                    </span>
+                    <span className="text-gray-400 text-xs font-medium">
+                      {new Date(featuredPost.publishedDate).toLocaleDateString()}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-maroon transition-colors leading-snug">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
-                    {post.excerpt}
+
+                  <h2 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-6 transition-colors group-hover:text-[#ef7f25]" style={{ color: COLORS.MAROON }}>
+                    {featuredPost.title}
+                  </h2>
+
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-3">
+                    {featuredPost.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100">
-                    <span>{post.date}</span>
-                    <span>{post.readTime}</span>
+
+                  <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest transition-all group-hover:gap-5" style={{ color: COLORS.MAROON }}>
+                    Read Story <span>&rarr;</span>
                   </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 bg-brand-maroon text-white">
-        <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">
-              Never Miss an Insight
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Subscribe to receive the latest articles, platform updates, and industry analysis.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
-              />
-              <button className="bg-white text-brand-maroon hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-all">
-                Subscribe
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* --- 3. THE GRID (Clean, No Borders) --- */}
+        <div className="border-t border-gray-100 pt-16">
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+            <AnimatePresence>
+              {gridPosts.map((post) => (
+                <motion.article
+                  layout
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="group cursor-pointer flex flex-col"
+                >
+                  <Link to={`/blogs/${post.slug}`} className="flex flex-col h-full">
+                    
+                    {/* Image */}
+                    <div className="relative overflow-hidden rounded-xl mb-6 aspect-w-3 aspect-h-2">
+                      <img 
+                        src={post.image} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      {/* Orange line on hover */}
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#ef7f25] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col">
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-wider">
+                          {post.category}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold leading-tight mb-3 transition-colors group-hover:text-[#760015]" style={{ color: "#2d2a2a" }}>
+                        {post.title}
+                      </h3>
+
+                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-auto group-hover:text-[#ef7f25] transition-colors">
+                        Read Now &rarr;
+                      </div>
+                    </div>
+
+                  </Link>
+                </motion.article>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Empty State */}
+          {filteredBlogs.length === 0 && (
+            <div className="py-20 text-center">
+              <p className="text-gray-400 text-lg">No articles found in this category.</p>
+              <button 
+                onClick={() => setSelectedCategory("All")}
+                className="mt-4 text-[#ef7f25] font-bold hover:underline"
+              >
+                Reset Filters
               </button>
             </div>
-          </div>
+          )}
         </div>
-      </section>
-    </div>
-  )
-}
 
-export default Blogs
+      </div>
+    </div>
+  );
+};
+
+export default Blogs;
