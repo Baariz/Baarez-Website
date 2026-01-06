@@ -31,12 +31,14 @@ import Blogs from './pages/resources/Blogs'
 import BlogPost from './pages/resources/BlogPost'
 import HumanResource from './pages/solutions/HumanResource'
 import PartnerOnboard from './pages/PartnerOnBoard'
+import ChatbaseChatbot from './components/ChatbaseChatbot'
 
 function App() {
   return (
     <>
+      <ChatbaseChatbot/>
+
       <ScrollToTop />
-      
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
