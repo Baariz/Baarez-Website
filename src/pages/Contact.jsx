@@ -12,9 +12,9 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Using Environment Variables for Security
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    const serviceId = "service_wxj1uz3";
+    const templateId = "template_1n8jyv4";
+    const publicKey = "usx7JhywGy63cCrKc";
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then((result) => {

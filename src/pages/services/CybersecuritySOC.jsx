@@ -95,7 +95,7 @@ const CybersecuritySOC = () => {
               className="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-gray-200 bg-[#faf9f6]"
             >
               <Icons.Shield className="w-4 h-4 text-[#ef7f25]" />
-              <span className="text-[#ef7f25] font-mono text-[10px] font-bold uppercase tracking-widest">
+              <span className="text-[#ef7f25] font-mono text-[13px] font-bold uppercase tracking-widest">
                 Enterprise Security
               </span>
             </motion.div>

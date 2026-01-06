@@ -52,15 +52,15 @@ function Navbar() {
     {
       title: "Core Platforms",
       items: [
-        { name: 'GRC Platform', path: '/solutions/grc', desc: 'Unified governance, risk & compliance.', icon: Icons.Shield },
-        { name: 'TPRM Platform', path: '/solutions/tprm', desc: 'Third-party risk management lifecycle.', icon: Icons.Shield },
-        { name: 'Internal Audit Platform', path: '/solutions/internal-audit', desc: 'Streamline audit workflows.', icon: Icons.Doc },
+        { name: 'AI GRC Platform', path: '/solutions/grc', desc: 'Unified governance, risk & compliance.', icon: Icons.Shield },
+        { name: 'AI TPRM Platform', path: '/solutions/tprm', desc: 'Third-party risk management lifecycle.', icon: Icons.Shield },
+        { name: 'AI Internal Audit Platform', path: '/solutions/internal-audit', desc: 'Streamline audit workflows.', icon: Icons.Doc },
       ]
     },
     {
       title: "Risk & Compliance Tools",
       items: [
-        { name: 'ScanVista', path: '/solutions/scanvista', desc: 'AI-powered document processing.', icon: Icons.Doc },
+        { name: 'AI OCR ScanVista', path: '/solutions/scanvista', desc: 'AI-powered document processing.', icon: Icons.Doc },
         { name: 'Tax Automation', path: '/solutions/tax-automation', desc: 'Automated tax reporting engine.', icon: Icons.Chart },
       ]
     },

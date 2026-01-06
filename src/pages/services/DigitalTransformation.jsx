@@ -118,7 +118,7 @@ const DigitalTransformation = () => {
               className="inline-flex items-center gap-2 mb-8 border border-[#ef7f25] px-3 py-1 bg-white"
             >
               <span className="w-1.5 h-1.5 bg-[#ef7f25]"></span>
-              <span className="text-[#ef7f25] font-mono text-[10px] font-bold uppercase tracking-widest">
+              <span className="text-[#ef7f25] font-mono text-[13px] font-bold uppercase tracking-widest">
                 AI Transformation Services
               </span>
             </motion.div>

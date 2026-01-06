@@ -112,17 +112,42 @@ const BAAREZ_CONFIG = {
 
 ,
  trust: {
-    label: "Trusted By Regulated Industries",
-    // Replaced with reliable CDN links for visualization. Change 'url' to your actual assets later.
-    logos: [
-      { name: "Oracle", url: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-      { name: "Microsoft", url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-      { name: "IBM", url: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-      { name: "Accenture", url: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
-      { name: "Cisco", url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
-      { name: "SAP", url: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" }
-    ]
-  },
+  label: "Trusted By Regulated Industries",
+  logos: [
+    { 
+      name: "Oracle", 
+      url: "https://i.postimg.cc/RFdd76kq/image.png" 
+    },
+    { 
+      name: "AWS", 
+      url: "https://i.postimg.cc/fykcYH72/image.png" 
+    },
+    { 
+      name: "Google Cloud", 
+      url: "https://i.postimg.cc/B67DZTWB/image.png" 
+    },
+    { 
+      name: "Fujitsu", 
+      url: "https://i.postimg.cc/nVQMQbqH/image.png" 
+    },
+    { 
+      name: "Palo Alto Networks", 
+      url: "https://i.postimg.cc/9frc5Zpj/image.png" 
+    },
+    { 
+      name: "Newgen", 
+      url: "https://i.postimg.cc/mgrsCCKd/image.png" 
+    },
+    { 
+      name: "RSA Security", 
+      url: "https://i.postimg.cc/9Q06rVqy/image.png" 
+    },
+    { 
+      name: "AlgoSec", 
+      url: "https://i.postimg.cc/76ktMybB/image.png" 
+    }
+  ]
+},
     solutions: {
   title: "Baarez Platforms",
   subtitle: "Independent platforms designed to work standalone or together across the enterprise.",
@@ -181,7 +206,7 @@ const BAAREZ_CONFIG = {
         "Enterprise-Ready Data Extraction"
       ],
       link: "/solutions/scanvista",
-      image: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=2070&auto=format&fit=crop"
+      image: "https://i.postimg.cc/05WRxbzP/image.png"
     },
     {
       id: "glimmora",
@@ -259,7 +284,7 @@ services: {
         "ERP Governance & Support"
       ],
       link: "/services/erp-consulting",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+      image: "https://i.postimg.cc/ryB6z7Nv/image.png"
     },
     {
       id: "cybersecurity-soc",
@@ -520,7 +545,7 @@ function Home() {
 
       
 {/* --- BAAREZ FLAGSHIP: ARCHITECTURAL INTELLIGENCE HERO --- */}
-
+{/* --- BAAREZ FLAGSHIP: SPATIAL LAYERED INTELLIGENCE HERO --- */}
 <section className="relative min-h-screen flex items-center bg-[#fcfcfc] overflow-hidden">
   
   {/* LAYER 0: THE MATHEMATICAL ENVIRONMENT */}
@@ -606,35 +631,42 @@ function Home() {
             </div>
           </motion.div>
 
-          {/* Glimmora AI Node - Repositioned Lower (top-[45%]) to avoid obscuring text */}
-          <motion.div 
-            initial={{ y: 50, x: 20, opacity: 0 }}
-            animate={{ y: 0, x: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="absolute top-[65%] -right-4 bg-white p-6 border border-gray-100 shadow-2xl w-60 z-30 hidden md:block"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-[#ef7f25] animate-pulse" />
-              <span className="text-[10px] font-bold text-[#760015] uppercase tracking-widest">Glimmora AI</span>
-            </div>
-            <p className="text-[11px] text-gray-400 font-light leading-relaxed">
-              Specialized hospitality intelligence module for guest-centric operational excellence.
-            </p>
-          </motion.div>
+          {/* Glimmora AI Node - Clickable */}
+          <Link to="/solutions/glimmora">
+            <motion.div 
+              initial={{ y: 50, x: 20, opacity: 0 }}
+              animate={{ y: 0, x: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="absolute top-[65%] -right-4 bg-white p-6 border border-gray-100 shadow-2xl w-60 z-30 hidden md:block hover:border-[#ef7f25] transition-colors cursor-pointer"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#ef7f25] animate-pulse" />
+                <span className="text-[10px] font-bold text-[#760015] uppercase tracking-widest">Glimmora AI</span>
+              </div>
+              <p className="text-[11px] text-gray-400 font-light leading-relaxed">
+                Specialized hospitality intelligence module for guest-centric operational excellence.
+              </p>
+            </motion.div>
+          </Link>
 
-          {/* Capability Nodes */}
-          <div className="absolute bottom-[50%] left-0 space-y-4 z-30">
-            {['Governance', 'Risk', 'Audit'].map((tag, i) => (
-              <motion.div
-                key={tag}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 + (i * 0.1) }}
-                className="bg-white/80 backdrop-blur-md border border-gray-100 px-5 py-2 shadow-lg flex items-center gap-3"
-              >
-                <div className="w-1 h-1 bg-[#ef7f25]" />
-                <span className="text-[9px] font-bold uppercase tracking-widest text-[#760015]">{tag}</span>
-              </motion.div>
+          {/* Capability Nodes - Clickable */}
+          <div className="absolute bottom-[50%] left-[-5%] space-y-4 z-30">
+            {[
+              { label: 'AI GRC Platform', path: '/solutions/grc' },
+              { label: 'AI TPRM Platform', path: '/solutions/tprm' },
+              { label: 'AI Internal Audit', path: '/solutions/internal-audit' }
+            ].map((node, i) => (
+              <Link to={node.path} key={node.label}>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 + (i * 0.1) }}
+                  className="bg-white/80 backdrop-blur-md border border-gray-100 px-5 py-2 mb-4 shadow-lg flex items-center gap-3 hover:border-[#ef7f25] transition-colors cursor-pointer"
+                >
+                  <div className="w-1 h-1 bg-[#ef7f25]" />
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#760015]">{node.label}</span>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -706,7 +738,7 @@ function Home() {
                         <img 
                           src={logo.url} 
                           alt={logo.name} 
-                          className="h-8 md:h-10 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" 
+                          className="h-12 md:h-12 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" 
                         />
                       </div>
 

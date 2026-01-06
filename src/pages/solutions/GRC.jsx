@@ -246,7 +246,7 @@ const GRC = () => {
             <div className="relative z-10 max-w-2xl">
               <div className="inline-flex items-center gap-3 mb-8">
                 <div className="w-12 h-[1px] bg-[#ef7f25]"></div>
-                <span className="text-xs font-bold text-[#760015] uppercase tracking-[0.2em]">Enterprise-Ready GRC</span>
+                <span className="text-xs font-bold text-[#760015] uppercase tracking-[0.2em]">Enterprise-Ready AI GRC</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2d2a2a] mb-8 leading-[1.1]">

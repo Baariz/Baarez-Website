@@ -116,12 +116,12 @@ const InternalAudit = () => {
           {/* Left: Text */}
           <div className="relative z-10">
             <div className="inline-block px-3 py-1 bg-[#ef7f25]/10 text-[#ef7f25] text-xs font-bold uppercase tracking-widest mb-6 rounded-sm">
-              Internal Audit Management
+             AI Internal Audit Management
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">
-              Transform Audit from <br/>
-              <span className="text-[#760015]">Overhead to Insight.</span>
+              Transform Audit from 
+              <span className="text-[#760015]"> Overhead to Insight.</span>
             </h1>
             
             <p className="text-xl text-gray-600 font-light leading-relaxed max-w-lg mb-10">

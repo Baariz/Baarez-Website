@@ -4,10 +4,10 @@ function Footer() {
   const currentYear = new Date().getFullYear()
 
   const solutions = [
-    { name: 'GRC Platform', path: '/solutions/grc' },
-    { name: 'TPRM Platform', path: '/solutions/tprm' },
-    { name: 'Internal Audit', path: '/solutions/internal-audit' },
-    { name: 'ScanVista', path: '/solutions/scanvista' },
+    { name: 'AI GRC Platform', path: '/solutions/grc' },
+    { name: 'AI TPRM Platform', path: '/solutions/tprm' },
+    { name: 'AI Internal Audit', path: '/solutions/internal-audit' },
+    { name: 'AI OCR ScanVista', path: '/solutions/scanvista' },
   ]
 
   const services = [
@@ -25,9 +25,10 @@ function Footer() {
 
   const locations = [
     'India',
-    'Middle East',
-    'USA',
-    'Singapore',
+    'US',
+    'Qatar',
+    'Dubai',
+    'Singapore'
   ]
 
   return (
@@ -145,9 +146,7 @@ function Footer() {
               <Link to="/terms" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/security" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
-                Security
-              </Link>
+           
             </div>
           </div>
         </div>

@@ -32,12 +32,13 @@ import BlogPost from './pages/resources/BlogPost'
 import HumanResource from './pages/solutions/HumanResource'
 import PartnerOnboard from './pages/PartnerOnBoard'
 import ChatbaseChatbot from './components/ChatbaseChatbot'
+import Privacy from './pages/Privacy'
+import TermsOfService from './pages/TermsOfService'
 
 function App() {
   return (
     <>
       <ChatbaseChatbot/>
-
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -67,6 +68,8 @@ function App() {
           {/* Resources */}
           <Route path="resources" element={<Resources />} />
           <Route path="partner-on-board" element={<PartnerOnboard/>} />
+          <Route path="privacy" element={<Privacy/>} />
+          <Route path="terms" element={<TermsOfService/>} />
           
           {/* FIX: Removed 'resources/' prefix so '/blogs/...' URLs work */}
           <Route path="blogs" element={<Blogs />} />

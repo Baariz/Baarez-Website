@@ -256,7 +256,7 @@ const TPRM = () => {
           {/* Left: Explanation */}
           <div className="relative z-10">
             <div className="inline-block px-3 py-1 bg-[#ef7f25]/10 text-[#ef7f25] text-xs font-bold uppercase tracking-widest mb-6 rounded-sm">
-              Third-Party Risk Management
+              AI Third-Party Risk Management
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-[#2d2a2a] leading-tight">

@@ -175,7 +175,7 @@ const ScanVista = () => {
           {/* Left: Text */}
           <div className="relative z-10">
             <div className="inline-block px-3 py-1 bg-[#ef7f25]/10 text-[#ef7f25] text-xs font-bold uppercase tracking-widest mb-6 rounded-sm">
-              ScanVista
+              AI OCR ScanVista
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">

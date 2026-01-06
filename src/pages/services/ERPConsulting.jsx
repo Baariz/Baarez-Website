@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Server, ShieldCheck, BarChart3, Zap, Layers, Database } from 'lucide-react';
 
 /* =========================================
    1. Icons (Enterprise, ERP-Specific)
@@ -89,108 +90,147 @@ const ERPConsulting = () => {
     <div className="min-h-screen bg-white font-sans text-[#2d2a2a] selection:bg-[#ef7f25] selection:text-white overflow-x-hidden">
       
       {/* --- 1. HERO: "The System Synapse" --- */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-6 lg:px-12 max-w-[1800px] mx-auto border-b border-gray-100">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          
-          {/* Left: Strategic Content */}
-          <div className="lg:col-span-6 relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-gray-200 bg-[#faf9f6]"
-            >
-              <span className="text-[#ef7f25] font-mono text-[10px] font-bold uppercase tracking-widest">
-                ERP Consulting Services
-              </span>
-            </motion.div>
+<section className="relative pt-20 pb-24 lg:pt-20 lg:pb-32 px-6 lg:px-12 max-w-[1800px] mx-auto border-b border-gray-100 bg-[#fcfcfc] overflow-hidden">
+  <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    
+    {/* Left: Strategic Content */}
+    <div className="lg:col-span-6 relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-gray-200 bg-white shadow-sm"
+      >
+        <span className="text-[#ef7f25] font-mono text-[13px] font-bold uppercase tracking-widest">
+          ERP Consulting Services
+        </span>
+      </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
-            >
-              Unify Operations. <br/>
-              <span className="text-[#760015]">Accelerate Scale.</span>
-            </motion.h1>
+      <motion.h1 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+      >
+        Unify Operations. <br/>
+        <span className="text-[#760015]">Accelerate Scale.</span>
+      </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-xl text-gray-500 leading-relaxed max-w-lg mb-10 font-light"
-            >
-              From Procurement to Supply Chain, we integrate your core business functions into a single source of truth. Expert ERP implementation across Qatar, UAE, and India.
-            </motion.p>
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="text-xl text-gray-500 leading-relaxed max-w-lg mb-10 font-light"
+      >
+        From Procurement to Supply Chain, we integrate your core business functions into a single source of truth. Expert ERP implementation across Qatar, UAE, and India.
+      </motion.p>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Link 
-                to="/contact" 
-                className="px-10 py-4 bg-[#760015] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#5a0010] transition-colors rounded-none shadow-xl"
-              >
-                Get a Quick Consultation
-              </Link>
-            </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="flex flex-wrap gap-4"
+      >
+        <Link 
+          to="/contact" 
+          className="px-10 py-4 bg-[#760015] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#ef7f25] transition-all duration-500 shadow-xl"
+        >
+          Get a Quick Consultation
+        </Link>
+      </motion.div>
+    </div>
+
+    {/* Right Side: Architectural System Stack (Fixed Visibility) */}
+    <div className="lg:col-span-6 relative h-[600px] flex items-center justify-center">
+      
+      <div className="relative w-full max-w-md h-full flex items-center justify-center" style={{ perspective: '1200px' }}>
+        
+        {/* Top Layer: Business Intelligence (Lifted higher) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 0, rotateX: 25, rotateY: -10 }}
+          animate={{ opacity: 1, y: -160, rotateX: 25, rotateY: -10 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="absolute w-72 h-36 bg-white/40 backdrop-blur-md border border-white/60 shadow-xl z-30 p-6 flex flex-col justify-between"
+        >
+          <div className="flex justify-between items-start">
+            <BarChart3 className="w-5 h-5 text-[#ef7f25]" />
+            <span className="text-[8px] font-bold uppercase tracking-widest text-gray-400">Intelligence Layer</span>
           </div>
+          <div>
+            <div className="h-1 w-10 bg-[#ef7f25] mb-2" />
+            <p className="text-[10px] font-bold text-[#2d2a2a] uppercase">Real-Time Analytics</p>
+          </div>
+        </motion.div>
 
-          {/* Right: "System Synapse" Animation */}
-          <div className="lg:col-span-6 relative h-[500px] flex items-center justify-center">
-            
-            {/* Central Core (ERP) */}
-            <motion.div 
-                className="relative z-20 w-32 h-32 bg-white border-2 border-[#760015] flex flex-col items-center justify-center shadow-lg"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                <Icons.Server className="w-10 h-10 text-[#760015]" />
-                <span className="text-[10px] font-bold mt-2 uppercase tracking-wider">Core ERP</span>
-            </motion.div>
-
-            {/* Orbiting Satellites (Departments) */}
-            {[
-                { label: "Finance", icon: Icons.Money, x: -140, y: -100 },
-                { label: "Supply", icon: Icons.Box, x: 140, y: -100 },
-                { label: "Plan", icon: Icons.Layers, x: -140, y: 100 },
-                { label: "Sales", icon: Icons.Globe, x: 140, y: 100 },
-            ].map((item, i) => (
+        {/* Middle Layer: Operations (Shifted to clear the bottom text) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 0, rotateX: 25, rotateY: -10 }}
+          animate={{ opacity: 1, y: -45, rotateX: 25, rotateY: -10 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="absolute w-80 h-40 bg-white/60 backdrop-blur-md border border-white shadow-2xl z-20 p-6 flex flex-col justify-between"
+        >
+          <div className="flex justify-between items-start">
+            <Zap className="w-5 h-5 text-[#760015]" />
+            <span className="text-[8px] font-bold uppercase tracking-widest text-gray-400">Operational Layer</span>
+          </div>
+          <div className="flex gap-1.5">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
                 <motion.div 
-                    key={i}
-                    className="absolute z-10 w-24 h-24 bg-[#faf9f6] border border-gray-200 flex flex-col items-center justify-center"
-                    initial={{ x: 0, y: 0, opacity: 0 }}
-                    animate={{ x: item.x, y: item.y, opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.2 + (i * 0.1), type: "spring" }}
-                >
-                    <item.icon className="w-6 h-6 text-[#ef7f25] mb-2" />
-                    <span className="text-[10px] text-gray-500 font-medium uppercase">{item.label}</span>
-                    
-                    {/* Connecting Line to Center */}
-                    <svg className="absolute top-1/2 left-1/2 w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none overflow-visible">
-                        <line 
-                            x1="50%" 
-                            y1="50%" 
-                            x2={50 + (item.x * -0.3)} // Invert direction for line
-                            y2={50 + (item.y * -0.3)} 
-                            stroke="#e5e7eb" 
-                            strokeWidth="1" 
-                        />
-                    </svg>
-                </motion.div>
+                  animate={{ x: [-50, 100] }} 
+                  transition={{ repeat: Infinity, duration: 2.5, delay: i * 0.3 }} 
+                  className="w-1/2 h-full bg-[#760015]/20" 
+                />
+              </div>
             ))}
+          </div>
+          <p className="text-[10px] font-bold text-[#2d2a2a] uppercase tracking-wider">Process Automation</p>
+        </motion.div>
 
-            {/* Background Grid */}
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] -z-10 opacity-50"></div>
+        {/* Base Layer: Core ERP Foundation (Now Fully Visible) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, rotateX: 25, rotateY: -10 }}
+          animate={{ opacity: 1, scale: 1, rotateX: 25, rotateY: -10 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative w-96 h-56 bg-[#760015] shadow-[0_50px_100px_-20px_rgba(118,0,21,0.4)] z-10 p-8 flex flex-col justify-between overflow-hidden"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle,white_1px,transparent_1px)] [background-size:15px_15px]" />
+          
+          <div className="relative z-10 flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+              <Database className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h4 className="text-white font-bold text-sm tracking-widest uppercase">Central ERP Foundation</h4>
+              <p className="text-white/40 text-[8px] uppercase tracking-tighter">Unified Enterprise Hub</p>
+            </div>
           </div>
 
-        </div>
-      </section>
+          <div className="relative z-10 flex gap-8 border-t border-white/10 pt-6">
+            <div className="flex flex-col">
+              <span className="text-[8px] text-white/40 uppercase tracking-widest mb-1">System Status</span>
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#ef7f25] animate-pulse" />
+                <span className="text-[10px] font-bold text-white uppercase tracking-wider">Live Sync</span>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[8px] text-white/40 uppercase tracking-widest mb-1">Security</span>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#ef7f25]" />
+                <span className="text-[10px] font-bold text-white uppercase tracking-wider">Encrypted</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
+      </div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:30px_30px] -z-10 opacity-30" />
+    </div>
+
+  </div>
+</section>
       {/* --- 2. CONTEXT: "Regional Authority" --- */}
       <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
@@ -234,12 +274,12 @@ const ERPConsulting = () => {
             Platforms We Support
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {[
               { name: "SAP", color: "text-[#008FD3]" },
               { name: "Oracle", color: "text-[#C74634]" },
               { name: "Microsoft Dynamics", color: "text-[#760015]" }, // Using brand color for MS
-              { name: "Salesforce", color: "text-[#00A1E0]" }
+              
             ].map((brand, i) => (
               <motion.div 
                 key={i}
@@ -257,84 +297,94 @@ const ERPConsulting = () => {
       </section>
 
       {/* --- 4. FUNCTIONAL DOMAINS: "Quadrant Blueprint" --- */}
-      <section className="py-24 bg-white border-y border-gray-100">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <div className="mb-16">
-            <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-xs">
-              Functional Coverage
-            </h2>
-            <h3 className="text-3xl font-bold text-[#2d2a2a]">
-              End-to-End Enterprise Management
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-px bg-gray-200 border border-gray-200">
-            {/* Domain 1: Procurement */}
-            <div className="bg-white p-12 hover:bg-[#fdfbf9] transition-colors group">
-              <div className="flex items-center justify-between mb-6">
-                <h4 className="text-xl font-bold text-[#2d2a2a]">Procurement</h4>
-                <Icons.Briefcase className="w-6 h-6 text-[#ef7f25]" />
-              </div>
-              <ul className="space-y-3">
-                {["Strategic Sourcing", "Contract Management", "Procure-to-Pay", "Supplier Management"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#ef7f25]"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Domain 2: Finance */}
-            <div className="bg-white p-12 hover:bg-[#fdfbf9] transition-colors group">
-              <div className="flex items-center justify-between mb-6">
-                <h4 className="text-xl font-bold text-[#2d2a2a]">Finance</h4>
-                <Icons.Money className="w-6 h-6 text-[#760015]" />
-              </div>
-              <ul className="space-y-3">
-                {["AP / AR / Revenue", "Treasury & Tax", "Costing & FP&A", "Credit Control"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#760015]"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Domain 3: Planning */}
-            <div className="bg-white p-12 hover:bg-[#fdfbf9] transition-colors group">
-              <div className="flex items-center justify-between mb-6">
-                <h4 className="text-xl font-bold text-[#2d2a2a]">Planning</h4>
-                <Icons.Layers className="w-6 h-6 text-[#ef7f25]" />
-              </div>
-              <ul className="space-y-3">
-                {["Supply & Demand", "Integrated Planning", "Profitability Analysis", "Business Modeling"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#ef7f25]"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Domain 4: Supply Chain */}
-            <div className="bg-white p-12 hover:bg-[#fdfbf9] transition-colors group">
-              <div className="flex items-center justify-between mb-6">
-                <h4 className="text-xl font-bold text-[#2d2a2a]">Supply Chain</h4>
-                <Icons.Box className="w-6 h-6 text-[#760015]" />
-              </div>
-              <ul className="space-y-3">
-                {["Logistics Management", "Manufacturing Execution", "Lifecycle Management", "Risk & Compliance"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#760015]"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+  <section className="py-24 bg-[#fcfcfc] border-y border-gray-100">
+  <div className="max-w-[1400px] mx-auto px-6">
+    
+    {/* Section Header: Tighter vertical spacing */}
+    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div className="max-w-xl">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-8 h-[1px] bg-[#ef7f25]" />
+          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.3em] text-[10px]">
+            Functional Coverage
+          </h2>
         </div>
-      </section>
+        <h3 className="text-3xl font-bold text-[#2d2a2a] tracking-tight">
+          End-to-End Enterprise Management
+        </h3>
+      </div>
+    </div>
+
+    {/* Stylish & Clean Grid: Reduced padding and tighter icon placement */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      {/* Domain 1: Procurement */}
+      <div className="bg-white p-8 border border-gray-100 hover:border-[#ef7f25]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div className="flex items-center gap-3 mb-5">
+          <Icons.Briefcase className="w-5 h-5 text-[#ef7f25]" />
+          <h4 className="text-lg font-bold text-[#2d2a2a]">Procurement</h4>
+        </div>
+        <ul className="space-y-3">
+          {["Strategic Sourcing", "Contract Management", "Procure-to-Pay", "Supplier Management"].map((item, i) => (
+            <li key={i} className="flex items-center gap-3 text-xs text-gray-500">
+              <div className="w-1 h-[1px] bg-gray-300 group-hover:bg-[#ef7f25] group-hover:w-2 transition-all"></div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Domain 2: Finance */}
+      <div className="bg-white p-8 border border-gray-100 hover:border-[#760015]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div className="flex items-center gap-3 mb-5">
+          <Icons.Money className="w-5 h-5 text-[#760015]" />
+          <h4 className="text-lg font-bold text-[#2d2a2a]">Finance</h4>
+        </div>
+        <ul className="space-y-3">
+          {["AP / AR / Revenue", "Treasury & Tax", "Costing & FP&A", "Credit Control"].map((item, i) => (
+            <li key={i} className="flex items-center gap-3 text-xs text-gray-500">
+              <div className="w-1 h-[1px] bg-gray-300 group-hover:bg-[#760015] group-hover:w-2 transition-all"></div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Domain 3: Planning */}
+      <div className="bg-white p-8 border border-gray-100 hover:border-[#ef7f25]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div className="flex items-center gap-3 mb-5">
+          <Icons.Layers className="w-5 h-5 text-[#ef7f25]" />
+          <h4 className="text-lg font-bold text-[#2d2a2a]">Planning</h4>
+        </div>
+        <ul className="space-y-3">
+          {["Supply & Demand", "Integrated Planning", "Profitability Analysis", "Business Modeling"].map((item, i) => (
+            <li key={i} className="flex items-center gap-3 text-xs text-gray-500">
+              <div className="w-1 h-[1px] bg-gray-300 group-hover:bg-[#ef7f25] group-hover:w-2 transition-all"></div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Domain 4: Supply Chain */}
+      <div className="bg-white p-8 border border-gray-100 hover:border-[#760015]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div className="flex items-center gap-3 mb-5">
+          <Icons.Box className="w-5 h-5 text-[#760015]" />
+          <h4 className="text-lg font-bold text-[#2d2a2a]">Supply Chain</h4>
+        </div>
+        <ul className="space-y-3">
+          {["Logistics Management", "Manufacturing Execution", "Lifecycle Management", "Risk & Compliance"].map((item, i) => (
+            <li key={i} className="flex items-center gap-3 text-xs text-gray-500">
+              <div className="w-1 h-[1px] bg-gray-300 group-hover:bg-[#760015] group-hover:w-2 transition-all"></div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* --- 5. BENEFITS: "Editorial Strips" --- */}
       <section className="py-24 bg-[#faf9f6]">

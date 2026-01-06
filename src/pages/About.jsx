@@ -9,61 +9,65 @@ const About = () => {
     <div className="bg-[#FCFCFC] font-sans text-[#2d2a2a] selection:bg-[#ef7f25] selection:text-white overflow-x-hidden">
       
       {/* 1. ARCHITECTURAL HERO (Identity Focus) */}
-      <section className="relative pt-44 pb-32 border-b border-gray-100 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.5em]">Identity 01.</span>
-                <div className="h-[1px] w-20 bg-[#ef7f25]"></div>
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-[#760015] leading-[1.1] tracking-tight mb-10">
-                The Intelligence <br /> 
-                Behind the <br /> 
-                <span className="text-gray-300 italic">Enterprise.</span>
-              </h1>
-              <p className="text-gray-500 text-lg font-light leading-relaxed max-w-lg mb-10">
-                Baarez Technology Solutions is not just a consultancy; we are an innovation house. 
-                Since 2017, we have engineered trust through transparency, turning complex 
-                infrastructure into streamlined intelligence.
-              </p>
-              <div className="flex items-center gap-8">
-                <div className="text-center">
-                   <p className="text-2xl font-bold text-[#760015]">2017</p>
-                   <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Inception</p>
-                </div>
-                <div className="w-[1px] h-10 bg-gray-200"></div>
-                <div className="text-center">
-                   <p className="text-2xl font-bold text-[#760015]">Gold</p>
-                   <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Microsoft Partner</p>
-                </div>
-              </div>
-            </motion.div>
+ <section className="relative pt-44 pb-32 border-b border-gray-100 bg-white">
+  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="flex items-center gap-4 mb-8">
+          <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.5em]">Identity 01.</span>
+          <div className="h-[1px] w-20 bg-[#ef7f25]"></div>
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#760015] leading-[1.1] tracking-tight mb-10">
+          The Intelligence <br /> 
+          Behind the <br /> 
+          <span className="text-gray-300 italic">Enterprise.</span>
+        </h1>
+        <p className="text-gray-500 text-lg font-light leading-relaxed max-w-lg mb-10">
+          Baarez Technology Solutions is not just a consultancy; we are an innovation house. 
+          Since 2017, we have engineered trust through transparency, turning complex 
+          infrastructure into streamlined intelligence.
+        </p>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="relative hidden lg:block"
-            >
-              <div className="aspect-[4/3] bg-[#760015] relative p-12 overflow-hidden">
-                 <div className="absolute top-0 right-0 p-8">
-                    <span className="text-white/20 text-9xl font-black">B.</span>
-                 </div>
-                 <div className="relative z-10">
-                    <h2 className="text-white text-3xl font-bold leading-tight mb-6">"We take ownership of each project we engage in."</h2>
-                    <p className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest">Making Thinking Visible</p>
-                 </div>
-              </div>
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 border border-gray-100 -z-10"></div>
-            </motion.div>
+        {/* --- UPDATED MILESTONES --- */}
+        <div className="flex items-center gap-8">
+          <div className="text-left">
+             <p className="text-2xl font-bold text-[#760015]">100+</p>
+             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">AI Deployments</p>
+          </div>
+          <div className="w-[1px] h-10 bg-gray-200"></div>
+          <div className="text-left">
+             <p className="text-2xl font-bold text-[#760015]">98%</p>
+             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Client Trust</p>
           </div>
         </div>
-      </section>
+        {/* ------------------------- */}
+        
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="relative hidden lg:block"
+      >
+        <div className="aspect-[4/3] bg-[#760015] relative p-12 overflow-hidden shadow-2xl">
+           <div className="absolute top-0 right-0 p-8">
+              <span className="text-white/20 text-9xl font-black">B.</span>
+           </div>
+           <div className="relative z-10 h-full flex flex-col justify-center">
+              <h2 className="text-white text-3xl font-bold leading-tight mb-6">"We take ownership of each project we engage in."</h2>
+              <p className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest">Making Thinking Visible</p>
+           </div>
+        </div>
+        <div className="absolute -bottom-10 -left-10 w-64 h-64 border border-gray-100 -z-10"></div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* 2. OUR DNA: THE CORE PILLARS (The Approach) */}
       <section className="py-32 bg-white">
@@ -108,7 +112,7 @@ const About = () => {
                 <p>
                   "The success of Baarez lies deeply in our pillars of customer satisfaction practices; <strong>quality, cost, delivery</strong>. Customers are the heart of everything we do."
                 </p>
-                <p className="text-base">
+                <p >
                   "We have consistently delivered world-beating projects that make our large competitors admire us. By building long-term relationships with customers and partners, we achieve high levels of success in meeting their unique needs."
                 </p>
               </div>
@@ -144,7 +148,7 @@ const About = () => {
                 <p>
                   "I believe that technology, used properly, can drive corporate innovation and growth, and help government departments maximize their resources. We empower our team to deliver the best possible outcomes for each and every one of our partners."
                 </p>
-                <p className="italic bg-[#fff5eb] p-6 border-l-4 border-[#ef7f25]">
+                <p className=" bg-[#fff5eb] p-6 border-l-4 border-[#ef7f25]">
                   "Technology without the support of knowledgeable, trained and professional IT staff, does not maximize the opportunities that technology can deliver."
                 </p>
               </div>
