@@ -3,115 +3,109 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { blogs } from '../../utils/blogs';
 
-
-// Brand Palette Constants
-const COLORS = {
-  MAROON: "#760015",
-  ORANGE: "#ef7f25",
-  LIGHT_BG: "#fdfbf9", // Very warm off-white (Paper)
-  TEXT_MAIN: "#4a4a4a" // Softer than black, readable
-};
-
 const Blogs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  // 1. Categories
   const categories = ["All", ...new Set(blogs.map(b => b.category))];
 
-  // 2. Sort & Filter
-  const filteredBlogs = useMemo(() => {
-    let data = [...blogs].sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
-    if (selectedCategory !== "All") {
-      data = data.filter(b => b.category === selectedCategory);
-    }
-    return data;
+  // 1. Sort & Filter Data
+  const { featuredPost, gridPosts } = useMemo(() => {
+    // Sort by date descending
+    const sorted = [...blogs].sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
+    
+    // Filter by category
+    const filtered = selectedCategory === "All" 
+      ? sorted 
+      : sorted.filter(b => b.category === selectedCategory);
+
+    // Split: First one is Featured, Rest are Grid
+    return {
+      featuredPost: filtered[0] || null,
+      gridPosts: filtered.slice(1)
+    };
   }, [selectedCategory]);
 
-  const featuredPost = filteredBlogs[0]; // First item is featured
-  const gridPosts = filteredBlogs.slice(1); // Rest are grid
-
   return (
-    <div className="min-h-screen bg-white font-sans pt-32 pb-24">
+    <div className="min-h-screen bg-[#fcfcfc] font-sans pt-32 pb-24">
       
-      {/* --- 1. HEADER & FILTER --- */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-20 text-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ef7f25] mb-4 block">
-            Thought Leadership
+      {/* HEADER: Clean Corporate Minimalist */}
+      <div className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="border-l-4 border-[#760015] pl-8 py-2">
+          <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">
+            Intelligence & Strategy
           </span>
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-12" style={{ color: COLORS.MAROON }}>
-            Baarez Insights.
+          <h1 className="text-4xl md:text-6xl font-bold text-[#2d2a2a] tracking-tight">
+            Baarez <span className="text-[#760015]">Insights.</span>
           </h1>
-        </motion.div>
+        </div>
 
-        {/* Filter Pills */}
-        <div className="inline-flex flex-wrap justify-center gap-2 p-2 rounded-full bg-[#fcf9f6] border border-gray-100 shadow-sm">
+        {/* Professional Filter Bar */}
+        <div className="flex flex-wrap gap-8 mt-12 border-b border-gray-100 pb-6">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                selectedCategory === cat
-                  ? "text-white shadow-md transform scale-105"
-                  : "text-gray-500 hover:text-[#760015] hover:bg-white"
+              className={`text-[11px] font-bold uppercase tracking-widest transition-all relative pb-6 -mb-[25px] ${
+                selectedCategory === cat ? "text-[#760015]" : "text-gray-400 hover:text-gray-600"
               }`}
-              style={{ backgroundColor: selectedCategory === cat ? COLORS.MAROON : 'transparent' }}
             >
               {cat}
+              {selectedCategory === cat && (
+                <motion.div layoutId="activeCat" className="absolute bottom-0 left-0 right-0 h-1 bg-[#760015]" />
+              )}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         
-        {/* --- 2. FEATURED POST (Side-by-Side Layout) --- */}
+        {/* --- SECTION 1: FEATURED POST (Big Centered/Split Card) --- */}
         <AnimatePresence mode="wait">
           {featuredPost && (
             <motion.div 
               key={featuredPost.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               className="mb-24"
             >
-              <Link to={`/blogs/${featuredPost.slug}`} className="group grid lg:grid-cols-2 gap-12 items-center">
+              <Link to={`/blogs/${featuredPost.slug}`} className="group grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                {/* Image Side */}
-                <div className="relative overflow-hidden rounded-2xl aspect-w-16 aspect-h-10 lg:aspect-none lg:h-[450px]">
+                {/* Large Featured Image (Spans 7 columns) */}
+                <div className="lg:col-span-7 relative aspect-[16/9] lg:aspect-[3/2] overflow-hidden bg-gray-100 rounded-sm shadow-sm">
+                  <div className="absolute top-6 left-6 z-10 bg-[#ef7f25] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                    Latest Analysis
+                  </div>
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl"></div>
+                  {/* Subtle Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
                 </div>
 
-                {/* Content Side */}
-                <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="px-3 py-1 bg-[#fff5eb] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                {/* Featured Content (Spans 5 columns) */}
+                <div className="lg:col-span-5 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-[#760015] text-[10px] font-bold uppercase tracking-widest border-b border-[#760015] pb-1">
                       {featuredPost.category}
                     </span>
-                    <span className="text-gray-400 text-xs font-medium">
+                    <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">
                       {new Date(featuredPost.publishedDate).toLocaleDateString()}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-6 transition-colors group-hover:text-[#ef7f25]" style={{ color: COLORS.MAROON }}>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-6 text-[#2d2a2a] group-hover:text-[#760015] transition-colors">
                     {featuredPost.title}
                   </h2>
 
-                  <p className="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-3">
+                  <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 border-l-2 border-gray-100 pl-6">
                     {featuredPost.excerpt}
                   </p>
 
-                  <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest transition-all group-hover:gap-5" style={{ color: COLORS.MAROON }}>
-                    Read Story <span>&rarr;</span>
+                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#ef7f25] group-hover:gap-5 transition-all">
+                    Read Full Briefing <span>&rarr;</span>
                   </div>
                 </div>
 
@@ -120,72 +114,68 @@ const Blogs = () => {
           )}
         </AnimatePresence>
 
-        {/* --- 3. THE GRID (Clean, No Borders) --- */}
-        <div className="border-t border-gray-100 pt-16">
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-            <AnimatePresence>
-              {gridPosts.map((post) => (
-                <motion.article
-                  layout
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="group cursor-pointer flex flex-col"
-                >
-                  <Link to={`/blogs/${post.slug}`} className="flex flex-col h-full">
-                    
-                    {/* Image */}
-                    <div className="relative overflow-hidden rounded-xl mb-6 aspect-w-3 aspect-h-2">
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      {/* Orange line on hover */}
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#ef7f25] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-wider">
-                          {post.category}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl font-bold leading-tight mb-3 transition-colors group-hover:text-[#760015]" style={{ color: "#2d2a2a" }}>
-                        {post.title}
-                      </h3>
-
-                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">
-                        {post.excerpt}
-                      </p>
-
-                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-auto group-hover:text-[#ef7f25] transition-colors">
-                        Read Now &rarr;
-                      </div>
-                    </div>
-
-                  </Link>
-                </motion.article>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-          {/* Empty State */}
-          {filteredBlogs.length === 0 && (
-            <div className="py-20 text-center">
-              <p className="text-gray-400 text-lg">No articles found in this category.</p>
-              <button 
-                onClick={() => setSelectedCategory("All")}
-                className="mt-4 text-[#ef7f25] font-bold hover:underline"
+        {/* --- SECTION 2: THE GRID (Remaining Posts) --- */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 border-t border-gray-100 pt-20">
+          <AnimatePresence>
+            {gridPosts.map((post) => (
+              <motion.article
+                layout
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="group flex flex-col h-full"
               >
-                Reset Filters
-              </button>
-            </div>
-          )}
-        </div>
+                <Link to={`/blogs/${post.slug}`} className="flex flex-col h-full">
+                  {/* Fixed Ratio Image Container */}
+                  <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 mb-8 rounded-sm">
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                  </div>
+
+                  {/* Clean Content Wrapper */}
+                  <div className="flex flex-col flex-1">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="text-[#ef7f25] text-[9px] font-bold uppercase tracking-widest">
+                        {post.category}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-gray-300" />
+                      <span className="text-gray-400 text-[9px] font-bold uppercase tracking-widest">
+                        {new Date(post.publishedDate).toLocaleDateString()}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold leading-snug mb-4 text-[#2d2a2a] group-hover:text-[#760015] transition-colors">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#760015] group-hover:text-[#ef7f25] transition-colors">
+                        View Analysis &rarr;
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Empty State */}
+        {!featuredPost && (
+           <div className="py-20 text-center text-gray-400 font-bold uppercase tracking-widest text-xs">
+             No insights found in this category.
+           </div>
+        )}
 
       </div>
     </div>

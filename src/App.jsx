@@ -34,6 +34,7 @@ import PartnerOnboard from './pages/PartnerOnBoard'
 import ChatbaseChatbot from './components/ChatbaseChatbot'
 import Privacy from './pages/Privacy'
 import TermsOfService from './pages/TermsOfService'
+import Services from './pages/Services'
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="solutions" element={<Solutions />} />
+          <Route path="services" element={<Services/>} />
 
           {/* Solutions */}
           <Route path="solutions/grc" element={<GRC />} />

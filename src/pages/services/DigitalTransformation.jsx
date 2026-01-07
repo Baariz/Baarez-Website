@@ -154,12 +154,12 @@ const DigitalTransformation = () => {
               >
                 Schedule Strategy Call
               </Link>
-              <Link 
-                to="#readiness" 
+              <a
+                href="#readiness" 
                 className="px-10 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#760015] hover:text-[#760015] transition-colors rounded-none text-center"
               >
                 View Assessment
-              </Link>
+              </a>
             </motion.div>
           </div>
 

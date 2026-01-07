@@ -262,9 +262,9 @@ const GRC = () => {
                 <Link to="/contact" className="px-8 py-4 bg-[#760015] text-white font-bold text-sm uppercase tracking-wider hover:bg-[#5a0010] transition-all shadow-xl shadow-[#760015]/10 text-center rounded-sm">
                   Book a Demo
                 </Link>
-                <Link to="#features" className="px-8 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] hover:text-[#760015] transition-all text-center rounded-sm">
-                  View Capabilities
-                </Link>
+                <a href="#features" className="px-8 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] hover:text-[#760015] transition-all text-center rounded-sm">
+  View Capabilities
+</a>
               </div>
             </div>
 

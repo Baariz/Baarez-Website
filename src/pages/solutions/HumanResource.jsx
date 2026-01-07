@@ -105,7 +105,7 @@ const HumanResource = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#ef7f25] mb-6 w-fit">
               <span className="w-1.5 h-1.5 bg-[#ef7f25]"></span>
               <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest">
-                Dynamics 365 Business Central
+                Human Resource
               </span>
             </div>
             
@@ -125,12 +125,12 @@ const HumanResource = () => {
               >
                 Schedule Consultation
               </Link>
-              <Link 
-                to="#capabilities" 
+              <a
+                href="#capabilities" 
                 className="px-8 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#760015] hover:text-[#760015] transition-colors rounded-none"
               >
                 HR Capabilities
-              </Link>
+              </a>
             </div>
           </div>
 

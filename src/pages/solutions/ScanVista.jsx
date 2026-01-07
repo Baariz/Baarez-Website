@@ -191,9 +191,9 @@ const ScanVista = () => {
               <Link to="/contact" className="px-8 py-4 bg-[#760015] text-white font-bold text-sm uppercase tracking-wider hover:bg-[#5a0010] transition-colors shadow-xl rounded-sm text-center">
                 Schedule a Consultation
               </Link>
-              <Link to="#features" className="px-8 py-4 bg-white border border-gray-200 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] transition-colors text-center rounded-sm">
+              <a href="#features" className="px-8 py-4 bg-white border border-gray-200 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] transition-colors text-center rounded-sm">
                 See Features
-              </Link>
+              </a>
             </div>
           </div>
 

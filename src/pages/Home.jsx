@@ -544,9 +544,8 @@ function Home() {
     <div className="font-sans text-gray-900 bg-[#fdfbf9] selection:bg-[#ef7f25] selection:text-white overflow-x-hidden">
 
       
-{/* --- BAAREZ FLAGSHIP: ARCHITECTURAL INTELLIGENCE HERO --- */}
 {/* --- BAAREZ FLAGSHIP: SPATIAL LAYERED INTELLIGENCE HERO --- */}
-<section className="relative min-h-screen flex items-center bg-[#fcfcfc] overflow-hidden">
+<section className="relative min-h-screen flex mt-20 lg:mt-0 items-center bg-[#fcfcfc] overflow-hidden py-12 lg:py-0">
   
   {/* LAYER 0: THE MATHEMATICAL ENVIRONMENT */}
   <div className="absolute inset-0 pointer-events-none">
@@ -560,36 +559,32 @@ function Home() {
   <div className="max-w-[1440px] mx-auto px-6 lg:px-20 w-full relative z-10">
     <div className="flex flex-col lg:flex-row items-center gap-0 h-full">
       
-      {/* 1. THE NARRATIVE PANEL (Left) - Reduced Spacing & Adjusted Typography */}
-      <div className="lg:w-[50%] flex flex-col justify-center py-20 lg:pr-12">
+      {/* 1. THE NARRATIVE PANEL (Left) */}
+      <div className="w-full lg:w-[50%] flex flex-col justify-center lg:pr-12 text-center lg:text-left">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "circOut" }}
           className="space-y-6" 
         >
-          {/* Identity Identifier */}
-          
-
-          {/* Headline: Normal Weight & Mixed Case */}
           <div className="space-y-2">
             <h2 className="text-gray-400 text-xs font-bold uppercase tracking-widest">
               AI Transformation Company
             </h2>
-            <h1 className="text-4xl md:text-5xl font-semibold text-[#760015] leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#760015] leading-tight tracking-tight">
               Architecting Intelligent
               <span className="text-[#760015] font-semibold"> Platforms.</span>
             </h1>
           </div>
 
-          {/* Precision Description */}
-          <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-sm font-light border-l-2 border-[#760015] pl-6">
-            Building scalable AI ecosystems designed for high-performance enterprise operations and highly regulated environments.
-          </p>
+          <div className="flex justify-center lg:justify-start">
+            <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-sm font-light border-l-2 border-[#760015] pl-6 text-left">
+              Building scalable AI ecosystems designed for high-performance enterprise operations and highly regulated environments.
+            </p>
+          </div>
 
-          {/* Horizontal Action Bar - Updated Button Text */}
-          <div className="flex flex-row items-center gap-6 pt-2">
-            <Link to="/contact" className="group relative bg-[#760015] text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.15em] shadow-xl overflow-hidden transition-all">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2">
+            <Link to="/contact" className="w-full sm:w-auto text-center group relative bg-[#760015] text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.15em] shadow-xl overflow-hidden transition-all">
               <span className="relative z-10">Book Platform Demo</span>
               <div className="absolute inset-0 bg-[#ef7f25] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </Link>
@@ -602,42 +597,44 @@ function Home() {
       </div>
 
       {/* 2. THE TECH SCULPTURE (Right) */}
-      <div className="lg:w-[55%] relative min-h-[500px] lg:min-h-[700px] flex items-center justify-end">
+      {/* Added 'min-h-[auto]' for mobile so it fits content naturally, kept desktop 'lg:min-h' */}
+      <div className="w-full lg:w-[55%] mt-16 lg:mt-0 relative min-h-[auto] lg:min-h-[700px] flex items-center justify-center lg:justify-end">
         
-        <div className="relative w-full max-w-xl h-full flex items-center justify-center">
+        <div className="relative w-full max-w-sm md:max-w-xl h-full flex flex-col items-center justify-center">
           
           {/* Main Mission Block */}
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative z-20 bg-[#760015] text-white p-12 shadow-[0_60px_100px_-20px_rgba(118,0,21,0.4)] w-full max-w-sm border-t-8 border-[#ef7f25]"
+            className="relative z-20 bg-[#760015] text-white p-8 md:p-12 shadow-[0_60px_100px_-20px_rgba(118,0,21,0.4)] w-full max-w-sm border-t-8 border-[#ef7f25]"
           >
             <p className="text-[#ef7f25] text-[9px] font-bold uppercase tracking-[0.4em] mb-6">Core Framework</p>
-            <h3 className="text-2xl font-bold leading-tight tracking-tight mb-8">
+            <h3 className="text-lg md:text-2xl font-bold leading-tight tracking-tight mb-8">
               Scalable Platforms for High-Performance Ecosystems.
             </h3>
             
             <div className="flex gap-4 pt-6 border-t border-white/10">
                <div className="space-y-1">
-                  <p className="text-[8px] text-white/40 uppercase tracking-widest">System</p>
-                  <p className="text-[10px] font-bold">Active AI</p>
+                 <p className="text-[8px] text-white/40 uppercase tracking-widest">System</p>
+                 <p className="text-[10px] font-bold">Active AI</p>
                </div>
                <div className="w-[1px] h-8 bg-white/10" />
                <div className="space-y-1">
-                  <p className="text-[8px] text-white/40 uppercase tracking-widest">Region</p>
-                  <p className="text-[10px] font-bold">MENA</p>
+                 <p className="text-[8px] text-white/40 uppercase tracking-widest">Region</p>
+                 <p className="text-[10px] font-bold">MENA</p>
                </div>
             </div>
           </motion.div>
 
-          {/* Glimmora AI Node - Clickable */}
-          <Link to="/solutions/glimmora">
+          {/* Glimmora AI Node */}
+          {/* Mobile Changes: Added 'w-full mt-4' to stack nicely. Desktop 'lg:absolute' remains untouched. */}
+          <Link to="/solutions/glimmora" className="w-full md:w-auto mt-4 lg:mt-6 lg:mt-0 z-30">
             <motion.div 
-              initial={{ y: 50, x: 20, opacity: 0 }}
-              animate={{ y: 0, x: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="absolute top-[65%] -right-4 bg-white p-6 border border-gray-100 shadow-2xl w-60 z-30 hidden md:block hover:border-[#ef7f25] transition-colors cursor-pointer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="lg:absolute lg:top-[65%] lg:-right-4 bg-white p-6 border border-gray-100 shadow-2xl w-full lg:w-60 hover:border-[#ef7f25] transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-2 h-2 rounded-full bg-[#ef7f25] animate-pulse" />
@@ -649,8 +646,9 @@ function Home() {
             </motion.div>
           </Link>
 
-          {/* Capability Nodes - Clickable */}
-          <div className="absolute bottom-[50%] left-[-5%] space-y-4 z-30">
+          {/* Capability Nodes */}
+          {/* Mobile Changes: Added 'w-full mt-4' to stack nicely. Desktop 'lg:absolute' remains untouched. */}
+          <div className="flex flex-col gap-4 w-full md:w-auto mt-4 lg:mt-0 lg:absolute lg:bottom-[50%] lg:left-[-5%] z-30">
             {[
               { label: 'AI GRC Platform', path: '/solutions/grc' },
               { label: 'AI TPRM Platform', path: '/solutions/tprm' },
@@ -661,7 +659,7 @@ function Home() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 + (i * 0.1) }}
-                  className="bg-white/80 backdrop-blur-md border border-gray-100 px-5 py-2 mb-4 shadow-lg flex items-center gap-3 hover:border-[#ef7f25] transition-colors cursor-pointer"
+                  className="bg-white/80 backdrop-blur-md border border-gray-100 px-5 py-4 lg:py-2 shadow-lg flex items-center gap-3 hover:border-[#ef7f25] transition-colors cursor-pointer"
                 >
                   <div className="w-1 h-1 bg-[#ef7f25]" />
                   <span className="text-[9px] font-bold uppercase tracking-widest text-[#760015]">{node.label}</span>
@@ -671,7 +669,7 @@ function Home() {
           </div>
 
           {/* BACKGROUND KINETIC ELEMENTS */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+          <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none opacity-40">
              <div className="absolute w-[550px] h-[550px] border border-gray-100 rounded-full animate-[spin_60s_linear_infinite]" />
              <div className="absolute w-[450px] h-[450px] border border-dashed border-gray-200 rounded-full animate-[spin_40s_linear_reverse_infinite]" />
           </div>
@@ -681,9 +679,6 @@ function Home() {
 
     </div>
   </div>
-
-  {/* SIDE BRANDING */}
-  
 </section>
 {/* CSS for the rotating border (add to global CSS) */}
 <style>{`
@@ -753,110 +748,114 @@ function Home() {
           </div>
         </Section>
       </div>
-      {/* --- PLATFORM TABS SECTION --- */}
-     {/* --- PLATFORM TABS SECTION (FIXED HEIGHT) --- */}
-      <div className="py-24 bg-[#fdfbf9] relative">
-        <Section>
-          <div className="mb-16 max-w-3xl">
-            <FadeIn>
-              <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-sm">Our Platform</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-[#2d2a2a] mb-6">{BAAREZ_CONFIG.solutions.title}</h3>
-              <p className="text-xl text-gray-500">{BAAREZ_CONFIG.solutions.subtitle}</p>
-            </FadeIn>
-          </div>
+{/* --- PLATFORM TABS SECTION (RESPONSIVE) --- */}
+<div className="py-16 md:py-24 bg-[#fdfbf9] relative">
+  <Section>
+    <div className="mb-12 md:mb-16 max-w-3xl">
+      <FadeIn>
+        <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-xs md:text-sm">Our Platform</h2>
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2d2a2a] mb-4 md:mb-6">{BAAREZ_CONFIG.solutions.title}</h3>
+        <p className="text-lg md:text-xl text-gray-500">{BAAREZ_CONFIG.solutions.subtitle}</p>
+      </FadeIn>
+    </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Left: Tab Navigation */}
-            <div className="lg:col-span-4 flex flex-col gap-3">
-              {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`group w-full text-left p-5 transition-all duration-300 border-l-4 relative overflow-hidden rounded-r-lg ${
-                    activeTab === tab.id 
-                    ? 'bg-white border-[#760015] shadow-md z-10' 
-                    : 'bg-transparent border-gray-200 hover:bg-white hover:border-[#ef7f25]'
-                  }`}
-                >
-                  <div className="flex items-center gap-4 relative z-10">
-                    <div className={`p-2 rounded-lg transition-colors ${activeTab === tab.id ? 'bg-[#760015] text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-[#ef7f25] group-hover:text-white'}`}>
-                      <tab.icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className={`text-base font-bold transition-colors ${activeTab === tab.id ? 'text-[#760015]' : 'text-gray-500 group-hover:text-gray-900'}`}>
-                        {tab.label}
-                      </h4>
-                    </div>
-                  </div>
-                </button>
-              ))}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      {/* Left: Tab Navigation */}
+      {/* Mobile: Full width vertical list. Desktop: 4 columns wide. */}
+      <div className="w-full lg:col-span-4 flex flex-col gap-3">
+        {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`group w-full text-left p-4 md:p-5 transition-all duration-300 border-l-4 relative overflow-hidden rounded-r-lg ${
+              activeTab === tab.id 
+              ? 'bg-white border-[#760015] shadow-md z-10' 
+              : 'bg-transparent border-gray-200 hover:bg-white hover:border-[#ef7f25]'
+            }`}
+          >
+            <div className="flex items-center gap-4 relative z-10">
+              <div className={`p-2 rounded-lg transition-colors ${activeTab === tab.id ? 'bg-[#760015] text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-[#ef7f25] group-hover:text-white'}`}>
+                <tab.icon className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className={`text-sm md:text-base font-bold transition-colors ${activeTab === tab.id ? 'text-[#760015]' : 'text-gray-500 group-hover:text-gray-900'}`}>
+                  {tab.label}
+                </h4>
+              </div>
             </div>
-
-            {/* Right: Tab Content (Fixed Height Container) */}
-            <div className="lg:col-span-8 h-[500px]"> {/* Fixed height applied here */}
-              <AnimatePresence mode="wait">
-                {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-                  activeTab === tab.id && (
-                    <motion.div
-                      key={tab.id}
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.4 }}
-                      className="bg-white rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 h-full" 
-                    >
-                      <div className="grid md:grid-cols-2 gap-8 items-center h-full">
-                        {/* Text Content Side */}
-                        <div className="flex flex-col justify-center h-full">
-                          <div className="mb-auto">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-[#ef7f25]/10 rounded-full flex items-center justify-center text-[#ef7f25]">
-                                    <tab.icon className="w-5 h-5" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-[#2d2a2a]">{tab.title}</h3>
-                            </div>
-                            <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                              {tab.desc}
-                            </p>
-                            
-                            <div className="space-y-3 mb-8">
-                              {tab.features.map((feat, i) => (
-                                <div key={i} className="flex items-center gap-2.5">
-                                  <Icons.CheckCircle className="w-4 h-4 text-[#760015] shrink-0" />
-                                  <span className="font-medium text-gray-700 text-sm">{feat}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="mt-auto">
-                            <Button to={tab.link} variant="secondary" className="text-xs px-5 py-3 h-auto uppercase tracking-wider font-bold w-full md:w-auto">
-                              Explore {tab.label}
-                            </Button>
-                          </div>
-                        </div>
-
-                        {/* Image Content Side */}
-                        <div className="relative rounded-lg overflow-hidden h-full min-h-[200px] shadow-inner">
-                          <div className="absolute inset-0 bg-[#760015]/10 z-10 mix-blend-multiply"></div>
-                          <img 
-                            src={tab.image} 
-                            alt={tab.label} 
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </motion.div>
-                  )
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-        </Section>
+          </button>
+        ))}
       </div>
 
-{/* --- SERVICES SECTION: "THE EXECUTIVE DOSSIER (Right-Panel, Left-Text, Right-Line)" --- */}
-<div className="py-24 bg-white relative overflow-hidden" id="services">
+      {/* Right: Tab Content */}
+      {/* Mobile: Height auto to fit content. Desktop: Fixed 500px height preserved. */}
+      <div className="w-full lg:col-span-8 h-auto lg:h-[500px]">
+        <AnimatePresence mode="wait">
+          {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
+            activeTab === tab.id && (
+              <motion.div
+                key={tab.id}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                transition={{ duration: 0.4 }}
+                className="bg-white rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 h-full" 
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
+                  
+                  {/* Text Content Side */}
+                  <div className="flex flex-col justify-center h-full order-2 md:order-1">
+                    <div className="mb-auto">
+                      <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 bg-[#ef7f25]/10 rounded-full flex items-center justify-center text-[#ef7f25]">
+                              <tab.icon className="w-5 h-5" />
+                          </div>
+                          <h3 className="text-xl md:text-2xl font-bold text-[#2d2a2a]">{tab.title}</h3>
+                      </div>
+                      <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                        {tab.desc}
+                      </p>
+                      
+                      <div className="space-y-3 mb-8">
+                        {tab.features.map((feat, i) => (
+                          <div key={i} className="flex items-center gap-2.5">
+                            <Icons.CheckCircle className="w-4 h-4 text-[#760015] shrink-0" />
+                            <span className="font-medium text-gray-700 text-sm">{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-auto">
+                      <Button to={tab.link} variant="secondary" className="text-xs px-5 py-3 h-auto uppercase tracking-wider font-bold w-full md:w-auto">
+                        Explore {tab.label}
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Image Content Side */}
+                  {/* Mobile: Fixed height (h-56) to prevent collapse. Desktop: Full height. */}
+                  <div className="relative rounded-lg overflow-hidden w-full h-56 md:h-full min-h-[200px] shadow-inner order-1 md:order-2">
+                    <div className="absolute inset-0 bg-[#760015]/10 z-10 mix-blend-multiply"></div>
+                    <img 
+                      src={tab.image} 
+                      alt={tab.label} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            )
+          ))}
+        </AnimatePresence>
+      </div>
+    </div>
+  </Section>
+</div>
+
+{/* --- SERVICES SECTION: "THE EXECUTIVE DOSSIER" (RESPONSIVE) --- */}
+<div className="py-16 md:py-24 bg-white relative overflow-hidden" id="services">
   <Section>
     
     {/* Section Header */}
@@ -877,10 +876,12 @@ function Home() {
     </div>
 
     {/* THE DOSSIER INTERFACE */}
+    {/* Mobile: h-auto (grows with content). Desktop: Fixed h-[550px] preserved. */}
     <div className="flex flex-col lg:flex-row-reverse h-auto lg:h-[550px] border border-gray-200 rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/50 bg-[#fdfbf9]">
       
       {/* RIGHT PANEL: Navigation */}
-      <div className="lg:w-[350px] flex flex-col bg-white border-l border-gray-200 overflow-y-auto custom-scrollbar">
+      {/* Mobile: w-full. Desktop: Fixed w-[350px]. */}
+      <div className="w-full lg:w-[350px] flex flex-col bg-white border-b lg:border-b-0 lg:border-l border-gray-200 overflow-y-auto custom-scrollbar lg:h-full max-h-[300px] lg:max-h-full">
         {BAAREZ_CONFIG.services.tabs.map((service, index) => {
           const isActive = activeService === index;
           const IconComponent = service.icon || Icons.Default;
@@ -889,20 +890,20 @@ function Home() {
             <button
               key={service.id}
               onClick={() => setActiveService(index)}
-              // 1. Text align LEFT
-              className={`relative p-6 text-left transition-all duration-300 group outline-none ${
+              // Mobile: Compact padding. Desktop: Spacious padding.
+              className={`relative p-4 md:p-6 text-left transition-all duration-300 group outline-none ${
                 isActive ? 'bg-[#fdfbf9]' : 'hover:bg-gray-50'
               }`}
             >
-              {/* 2. Active Marker align RIGHT (right-0) */}
+              {/* Active Marker */}
               {isActive && (
                 <motion.div 
                   layoutId="activeMarker"
-                  className="absolute right-0 top-0 bottom-0 w-1 bg-[#760015]"
+                  // Mobile: Bottom marker. Desktop: Right marker.
+                  className="absolute bottom-0 left-0 right-0 h-1 lg:h-auto lg:top-0 lg:bottom-0 lg:left-auto lg:right-0 lg:w-1 bg-[#760015]"
                 />
               )}
 
-              {/* 3. Flex Container: Content Left, Icon Right */}
               <div className="flex items-center justify-between relative z-10">
                 <div className="flex items-center gap-4">
                   <span className={`text-xs font-mono font-bold transition-colors ${
@@ -926,25 +927,28 @@ function Home() {
         })}
       </div>
 
-      {/* LEFT PANEL: Content Viewport (Unchanged) */}
-      <div className="flex-1 relative overflow-hidden bg-[#fdfbf9]">
+      {/* LEFT PANEL: Content Viewport */}
+      {/* Mobile: Relative height. Desktop: Flex-1 relative. */}
+      <div className="w-full lg:flex-1 relative overflow-hidden bg-[#fdfbf9] min-h-[500px] lg:min-h-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeService}
-            className="absolute inset-0 flex flex-col md:flex-row-reverse"
+            // Mobile: Relative (flows naturally), flex-col-reverse (Image Top).
+            // Desktop: Absolute inset-0 (overlay), flex-row-reverse (Image Left).
+            className="relative lg:absolute inset-0 flex flex-col-reverse lg:flex-row-reverse h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
             
-            {/* Background Number */}
-            <div className="absolute -top-10 -left-10 text-[200px] font-bold text-[#760015]/5 select-none leading-none z-0">
+            {/* Background Number - Adjusted for mobile size */}
+            <div className="absolute top-0 left-0 text-[120px] lg:text-[200px] font-bold text-[#760015]/5 select-none leading-none z-0 pointer-events-none">
               0{activeService + 1}
             </div>
 
             {/* Content Text */}
-            <div className="p-10 md:p-12 lg:w-1/2 flex flex-col justify-center relative z-10">
+            <div className="p-8 md:p-12 w-full lg:w-1/2 flex flex-col justify-center relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -989,7 +993,8 @@ function Home() {
             </div>
 
             {/* Image Area */}
-            <div className="lg:w-1/2 relative h-64 lg:h-full overflow-hidden">
+            {/* Mobile: Fixed height (h-64). Desktop: Full height (h-full). */}
+            <div className="w-full lg:w-1/2 relative h-64 lg:h-full overflow-hidden shrink-0">
               <div className="absolute inset-0 bg-gray-100 lg:rounded-tr-[80px] overflow-hidden border-r border-t border-white shadow-[20px_20px_60px_rgba(0,0,0,0.05)] z-10">
                 <motion.img 
                   src={BAAREZ_CONFIG.services.tabs[activeService].image}
@@ -1010,7 +1015,6 @@ function Home() {
     </div>
   </Section>
 </div>
-
       {/* --- METHODOLOGY (DARK SECTION) --- */}
      {/* --- METHODOLOGY (UNIFIED WORKFLOW STRIP) --- */}
       <div className="py-24 bg-gray-50 border-t border-gray-200 relative overflow-hidden">
@@ -1183,35 +1187,35 @@ function Home() {
         </Section>
       </div>
 
-      {/* --- INTEGRATION NEXUS (ALIGNED ORBIT FIX) --- */}
-<div className="py-32 bg-[#fdfbf9] relative overflow-hidden">
+{/* --- INTEGRATION NEXUS (RESPONSIVE) --- */}
+<div className="py-16 md:py-24 lg:py-32 bg-[#fdfbf9] relative overflow-hidden">
   <Section>
-    <div className="flex flex-col lg:flex-row gap-20 items-center">
+    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
       
       {/* Text Side */}
-      <div className="lg:w-1/2">
+      <div className="w-full lg:w-1/2">
         <FadeIn>
-          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-sm">
+          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-xs md:text-sm">
             Enterprise Connectivity
           </h2>
 
-          <h3 className="text-4xl md:text-5xl font-bold text-[#2d2a2a] mb-6">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2d2a2a] mb-6 leading-tight">
             Built to Fit Your Existing Enterprise Stack
           </h3>
 
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
             Baarez integrates seamlessly with the systems you already trust—enabling unified governance,
             risk intelligence, and compliance workflows without disrupting business operations.
           </p>
 
-          <div className="mt-10 p-6 bg-white border-l-4 border-[#760015] shadow-lg rounded-r-lg">
+          <div className="mt-8 md:mt-10 p-6 bg-white border-l-4 border-[#760015] shadow-lg rounded-r-lg">
             <div className="flex items-center gap-4">
-              <Icons.Cloud className="w-8 h-8 text-[#760015]" />
+              <Icons.Cloud className="w-8 h-8 text-[#760015] shrink-0" />
               <div>
-                <h4 className="font-bold text-gray-900">
+                <h4 className="font-bold text-gray-900 text-sm md:text-base">
                   Enterprise-Ready Integration Model
                 </h4>
-                <p className="text-sm text-gray-500">
+                <p className="text-xs md:text-sm text-gray-500">
                   Connect once. Govern consistently across platforms.
                 </p>
               </div>
@@ -1221,9 +1225,12 @@ function Home() {
       </div>
 
       {/* Visual Side: The Aligned Neural Orbit */}
-      <div className="lg:w-1/2 h-[500px] w-full flex items-center justify-center relative">
+      {/* Adjusted height for mobile to fit scaled content */}
+      <div className="w-full lg:w-1/2 h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center relative overflow-hidden lg:overflow-visible">
+        
         {/* Container for the Orbit System */}
-        <div className="relative w-[450px] h-[450px] flex items-center justify-center">
+        {/* Mobile: Scale down to 0.65 to fit 450px circle in small screens. Tablet: 0.8. Desktop: 1.0 */}
+        <div className="relative w-[450px] h-[450px] flex items-center justify-center scale-[0.65] md:scale-[0.8] lg:scale-100 origin-center transition-transform duration-500">
           
           {/* Central Hub */}
           <div className="absolute z-20 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-[#760015]">

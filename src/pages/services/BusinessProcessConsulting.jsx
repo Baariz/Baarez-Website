@@ -82,7 +82,7 @@ const BusinessProcessConsulting = () => {
     <div className="min-h-screen bg-white font-sans text-[#2d2a2a] selection:bg-[#ef7f25] selection:text-white overflow-x-hidden">
       
       {/* --- 1. HERO: "The Metric Columns" (Updated: Tighter Gap, No Dark Black BG) --- */}
-      <section className="relative pt-10 pb-24 lg:pt-40 px-6 lg:px-12 max-w-[1800px] mx-auto">
+      <section className="relative pt-10 pb-24 mt-20 lg:mt-30 px-6 lg:px-12 max-w-[1800px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           
           {/* Left: Strategic Typography */}
@@ -129,12 +129,12 @@ const BusinessProcessConsulting = () => {
               >
                 Start Transformation
               </Link>
-              <Link 
-                to="#solutions" 
+              <a
+                href="#solutions" 
                 className="px-10 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#760015] hover:text-[#760015] transition-colors rounded-none text-center"
               >
                 Our Framework
-              </Link>
+              </a>
             </motion.div>
           </div>
 

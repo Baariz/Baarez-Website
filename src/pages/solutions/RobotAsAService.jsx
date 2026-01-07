@@ -104,12 +104,12 @@ const RobotAsAService = () => {
               >
                 Get a Quote
               </Link>
-              <Link 
-                to="#how-it-works" 
+              < a
+                href="#how-it-works" 
                 className="px-8 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#760015] hover:text-[#760015] transition-colors rounded-none"
               >
                 How It Works
-              </Link>
+              </a>
             </div>
           </div>
 

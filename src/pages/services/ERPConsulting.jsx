@@ -90,7 +90,7 @@ const ERPConsulting = () => {
     <div className="min-h-screen bg-white font-sans text-[#2d2a2a] selection:bg-[#ef7f25] selection:text-white overflow-x-hidden">
       
       {/* --- 1. HERO: "The System Synapse" --- */}
-<section className="relative pt-20 pb-24 lg:pt-20 lg:pb-32 px-6 lg:px-12 max-w-[1800px] mx-auto border-b border-gray-100 bg-[#fcfcfc] overflow-hidden">
+<section className="relative pt-20 pb-24 mt-20 lg:mt-0 lg:pb-32 px-6 lg:px-12 max-w-[1800px] mx-auto border-b border-gray-100 bg-[#fcfcfc] overflow-hidden">
   <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
     
     {/* Left: Strategic Content */}

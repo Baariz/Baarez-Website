@@ -129,12 +129,12 @@ const Dynamics365 = () => {
               >
                 Schedule Consultation
               </Link>
-              <Link 
-                to="#capabilities" 
+              <a 
+                href="#capabilities" 
                 className="px-8 py-4 bg-white border border-gray-300 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#760015] hover:text-[#760015] transition-colors rounded-none"
               >
                 Explore Modules
-              </Link>
+              </a>
             </div>
           </div>
 

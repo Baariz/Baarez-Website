@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link, NavLink } from 'react-router-dom'
 
 const About = () => {
   const CHAIRMAN_IMAGE = "https://i.postimg.cc/RV4jTwd4/Hamad_Suwaid.webp"; 
@@ -33,7 +34,7 @@ const About = () => {
         </p>
 
         {/* --- UPDATED MILESTONES --- */}
-        <div className="flex items-center gap-8">
+        {/* <div className="flex items-center gap-8">
           <div className="text-left">
              <p className="text-2xl font-bold text-[#760015]">100+</p>
              <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">AI Deployments</p>
@@ -43,7 +44,7 @@ const About = () => {
              <p className="text-2xl font-bold text-[#760015]">98%</p>
              <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Client Trust</p>
           </div>
-        </div>
+        </div> */}
         {/* ------------------------- */}
         
       </motion.div>
@@ -231,10 +232,10 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button className="bg-[#760015] text-white px-12 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-[#ef7f25] transition-all shadow-xl">
-              Connect with our Experts
+             <Link to="/contact">Connect with our Experts</Link> 
             </button>
             <button className="border border-[#760015] text-[#760015] px-12 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gray-50 transition-all">
-              View Our Services
+               <Link to="/services">View Our Services</Link> 
             </button>
           </div>
         </div>

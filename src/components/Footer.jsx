@@ -47,12 +47,12 @@ function Footer() {
             <Link to="/" className="inline-block mb-6">
                 {/* Ensure you have a white version or use filter invert */}
                 <img
-                src="/logo.png"
+                src="/logo-footer.png"
                 alt="Baarez Technology Solutions"
-                className="h-20 w-auto"
+                className="h-23 w-auto"
                 />
             </Link>
-            <p className="text-sm text-gray-400 mb-4 font-medium tracking-wide uppercase text-[#ef7f25]">
+            <p className="text-sm text-[#ef7f25] mb-4 font-medium tracking-wide uppercase text-[#ef7f25]">
               Making Thinking Visible
             </p>
             <p className="text-sm text-gray-500 leading-relaxed">

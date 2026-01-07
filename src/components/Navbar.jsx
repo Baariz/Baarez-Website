@@ -148,7 +148,9 @@ function Navbar() {
                   activeMegaMenu === 'solutions' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
                 }`}
               >
-                <span>Solutions</span>
+                <span><Link 
+                                to="/solutions" 
+                                onClick={() => setActiveMegaMenu(null)}>Solutions</Link></span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'solutions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -221,7 +223,9 @@ function Navbar() {
                   activeMegaMenu === 'services' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
                 }`}
               >
-                <span>Services</span>
+                <span><Link 
+                                to="/services" 
+                                onClick={() => setActiveMegaMenu(null)}>Services</Link></span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>

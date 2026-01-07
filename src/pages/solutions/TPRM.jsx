@@ -272,9 +272,9 @@ const TPRM = () => {
               <Link to="/contact" className="px-8 py-4 bg-[#760015] text-white font-bold text-sm uppercase tracking-wider hover:bg-[#5a0010] transition-colors shadow-xl rounded-sm text-center">
                 Book a Demo
               </Link>
-              <Link to="#how-it-works" className="px-8 py-4 bg-white border border-gray-200 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] transition-colors text-center rounded-sm">
+              <a href="#how-it-works" className="px-8 py-4 bg-white border border-gray-200 text-[#2d2a2a] font-bold text-sm uppercase tracking-wider hover:border-[#760015] transition-colors text-center rounded-sm">
                 How It Works
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -525,64 +525,67 @@ const TPRM = () => {
 
       
 
-      {/* --- 4. USE CASES: "Tailored Ecosystems" --- */}
-      <section className="py-32 bg-white">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-20">
-          <div className="grid lg:grid-cols-2 gap-24 items-start">
-            
-            {/* Left: Context */}
-            <div className="sticky top-32">
-              <h2 className="text-4xl font-bold text-[#2d2a2a] mb-6">Designed for Regulated Industries.</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Baarez isn't a generic tool. It’s pre-configured for the specific vendor pressures of high-compliance sectors.
-              </p>
-              <Link to="/contact" className="text-[#760015] font-bold border-b-2 border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors">
-                See industry-specific demos
-              </Link>
-            </div>
+   {/* --- 4. USE CASES: "Tailored Ecosystems" (RESPONSIVE) --- */}
+<section className="py-16 md:py-24 lg:py-32 bg-white">
+  <div className="max-w-[1600px] mx-auto px-6 md:px-8 lg:px-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+      
+      {/* Left: Context */}
+      {/* Mobile: Static position. Desktop: Sticky top-32. */}
+      <div className="relative lg:sticky lg:top-32">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4 md:mb-6 leading-tight">
+          Designed for Regulated Industries.
+        </h2>
+        <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+          Baarez isn't a generic tool. It’s pre-configured for the specific vendor pressures of high-compliance sectors.
+        </p>
+        <Link to="/contact" className="inline-block text-[#760015] font-bold border-b-2 border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors">
+          See industry-specific demos
+        </Link>
+      </div>
 
-            {/* Right: The List */}
-            <div className="space-y-6">
-              {[
-                {
-                  industry: "Financial Services",
-                  context: "Fintech, Banking, Insurance",
-                  risk: "Concentration Risk & SAMA Compliance",
-                  desc: "Ensure critical vendors meet central bank outsourcing guidelines."
-                },
-                {
-                  industry: "Healthcare",
-                  context: "Hospitals, Pharma",
-                  risk: "Patient Data (PHI) Sovereignty",
-                  desc: "Monitor third parties for HIPAA compliance and data residency violations."
-                },
-                {
-                  industry: "Manufacturing",
-                  context: "Supply Chain, Automotive",
-                  risk: "Operational Continuity",
-                  desc: "Predict upstream supplier failures before they stop your production line."
-                },
-                {
-                  industry: "Government",
-                  context: "Public Sector, Defense",
-                  risk: "National Cybersecurity Standards",
-                  desc: "Enforce strict NCA and NIST security controls across all contractors."
-                }
-              ].map((item, i) => (
-                <div key={i} className="p-8 border border-gray-200 rounded-sm hover:border-l-4 hover:border-l-[#760015] transition-all bg-white hover:shadow-lg">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-[#2d2a2a]">{item.industry}</h3>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">{item.context}</span>
-                  </div>
-                  <div className="text-xs font-bold text-[#ef7f25] uppercase mb-3">{item.risk}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+      {/* Right: The List */}
+      <div className="space-y-4 md:space-y-6">
+        {[
+          {
+            industry: "Financial Services",
+            context: "Fintech, Banking, Insurance",
+            risk: "Concentration Risk & SAMA Compliance",
+            desc: "Ensure critical vendors meet central bank outsourcing guidelines."
+          },
+          {
+            industry: "Healthcare",
+            context: "Hospitals, Pharma",
+            risk: "Patient Data (PHI) Sovereignty",
+            desc: "Monitor third parties for HIPAA compliance and data residency violations."
+          },
+          {
+            industry: "Manufacturing",
+            context: "Supply Chain, Automotive",
+            risk: "Operational Continuity",
+            desc: "Predict upstream supplier failures before they stop your production line."
+          },
+          {
+            industry: "Government",
+            context: "Public Sector, Defense",
+            risk: "National Cybersecurity Standards",
+            desc: "Enforce strict NCA and NIST security controls across all contractors."
+          }
+        ].map((item, i) => (
+          <div key={i} className="p-6 md:p-8 border border-gray-200 rounded-sm hover:border-l-4 hover:border-l-[#760015] transition-all bg-white hover:shadow-lg group">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+              <h3 className="text-lg md:text-xl font-bold text-[#2d2a2a]">{item.industry}</h3>
+              <span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wide">{item.context}</span>
             </div>
-
+            <div className="text-[10px] md:text-xs font-bold text-[#ef7f25] uppercase mb-3">{item.risk}</div>
+            <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* --- 5. OUTCOMES: "The Value" --- */}
       <section className="py-24 bg-[#760015] text-white">

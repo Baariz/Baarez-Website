@@ -144,12 +144,12 @@ const DataAnalyticsAI = () => {
               >
                 Start Transformation
               </Link>
-              <Link 
-                to="#services" 
+              <a
+                href="#services" 
                 className="px-10 py-4 bg-white border border-gray-200 text-[#2d2a2a] font-bold text-xs uppercase tracking-widest hover:border-[#ef7f25] hover:text-[#ef7f25] transition-colors rounded-none"
               >
                 View Services
-              </Link>
+              </a>
             </motion.div>
           </div>
 

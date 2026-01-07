@@ -3,122 +3,114 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { blogs } from '../../utils/blogs';
 
-// Brand Constants
-const COLORS = {
-  MAROON: "#760015",
-  ORANGE: "#ef7f25",
-  TEXT_MAIN: "#2d2a2a",
-  TEXT_LIGHT: "#4a4a4a"
-};
-
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogs.find((b) => b.slug === slug);
   
-  // Reading Progress Bar Logic
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!post) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <h2 className="text-3xl font-bold mb-4" style={{ color: COLORS.MAROON }}>Article Not Found</h2>
-        <Link to="/blogs" className="text-lg font-bold hover:underline" style={{ color: COLORS.ORANGE }}>&larr; Back to Insights</Link>
-      </div>
-    );
-  }
+  if (!post) return <div className="py-40 text-center font-bold text-gray-400">Document Not Found.</div>;
 
   return (
-    <article className="min-h-screen bg-white font-sans text-[#2d2a2a] pt-32 pb-24">
-      
-      {/* --- READING PROGRESS BAR --- */}
+    <article className="min-h-screen bg-white pt-32 pb-24 text-[#2d2a2a] selection:bg-[#ef7f25] selection:text-white font-sans">
+      {/* Subtle Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1.5 z-50 origin-left" 
-        style={{ backgroundColor: COLORS.ORANGE, scaleX }} 
+        className="fixed top-0 left-0 right-0 h-1 z-50 origin-left bg-[#ef7f25]" 
+        style={{ scaleX }} 
       />
 
-      {/* --- 1. BREADCRUMB (Top Navigation) --- */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-8">
-        <Link to="/blogs" className="inline-block text-xs font-bold text-gray-400 hover:text-[#760015] uppercase tracking-widest transition-colors">
-          &larr; Back to Journal
-        </Link>
-      </div>
-
-      {/* --- 2. HERO IMAGE (Wide) --- */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-12">
-        <div className="aspect-w-16 aspect-h-8 w-full overflow-hidden rounded-2xl shadow-sm">
-          <img 
-            src={post.image} 
-            alt={post.title} 
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      {/* --- 3. DOCUMENT BODY (Title + Content Grouped) --- */}
       <div className="max-w-[800px] mx-auto px-6">
-        
-        {/* --- ARTICLE HEADER --- */}
-        <header className="mb-10 pb-10 border-b border-gray-100">
-          
-          {/* Category & Date */}
-          <div className="flex items-center gap-4 mb-6">
-            <span className="px-3 py-1 bg-[#fff5eb] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest rounded-sm">
-              {post.category}
-            </span>
-            <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">
-              {new Date(post.publishedDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-            </span>
-          </div>
+        {/* Clean Navigation */}
+        <Link 
+          to="/blogs" 
+          className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-[#760015] mb-12 transition-colors group"
+        >
+          <span className="group-hover:-translate-x-1 transition-transform">&larr;</span> Back to Archive
+        </Link>
 
-          {/* TITLE */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8" style={{ color: COLORS.MAROON }}>
+        {/* Minimalist Header */}
+        <header className="mb-12">
+          <div className="flex items-center gap-3 mb-6 text-[10px] font-bold uppercase tracking-widest text-[#ef7f25]">
+            <span>{post.category}</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-gray-400">{new Date(post.publishedDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          </div>
+          
+          {/* Title - Reduced Size for "Neat & Clean" look */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 tracking-tight text-[#2d2a2a]">
             {post.title}
           </h1>
 
-          {/* Author Meta */}
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full text-white flex items-center justify-center font-bold text-xl shadow-sm" style={{ backgroundColor: COLORS.MAROON }}>
-              {post.author.charAt(0)}
+          <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+            <div className="w-10 h-10 bg-[#760015] rounded-full flex items-center justify-center text-white text-[10px] font-bold">
+              BZ
             </div>
             <div>
-              <p className="text-sm font-bold text-[#2d2a2a]">{post.author}</p>
-              <p className="text-xs text-gray-500 uppercase tracking-wide">{post.role || "Author"}</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#2d2a2a]">{post.author}</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-widest">{post.role}</p>
             </div>
           </div>
         </header>
 
-        {/* --- MAIN CONTENT --- */}
-        <div className="prose prose-lg max-w-none 
-          prose-headings:font-bold prose-headings:text-[#760015] prose-headings:mt-10 prose-headings:mb-4
-          prose-p:text-[#4a4a4a] prose-p:leading-[1.9] text-lg
-          prose-a:text-[#ef7f25] prose-a:font-bold hover:prose-a:text-[#760015] hover:prose-a:underline
-          prose-blockquote:border-l-4 prose-blockquote:border-[#ef7f25] prose-blockquote:bg-[#fcf9f6] prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:italic prose-blockquote:text-[#760015]
-          prose-strong:text-[#2d2a2a] prose-strong:font-bold
-          prose-li:text-[#4a4a4a] prose-ul:list-disc prose-ul:pl-5
-          whitespace-pre-line">
-          {post.content}
+        {/* Image - Clean Aspect Ratio */}
+        <div className="aspect-[21/9] w-full bg-gray-50 overflow-hidden mb-16 rounded-sm">
+          <img 
+            src={post.image} 
+            alt={post.title} 
+            className="w-full h-full object-cover" 
+          />
         </div>
 
-        {/* --- FOOTER CTA --- */}
-        <div className="mt-20 pt-12 border-t border-gray-100">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 bg-[#fdfbf9] p-8 rounded-2xl border border-gray-100">
+        {/* Content - "Neat" Typography Settings */}
+        <div 
+          className="prose prose-lg max-w-none 
+            /* Headings */
+            prose-headings:text-[#2d2a2a] prose-headings:font-bold prose-headings:tracking-tight prose-headings:mt-12 prose-headings:mb-4 prose-headings:text-2xl
+            
+            /* Paragraphs */
+            prose-p:text-gray-600 prose-p:leading-[1.8] prose-p:mb-6 prose-p:text-[17px]
+            
+            /* Lists */
+            prose-li:text-gray-600 prose-li:mb-2
+            
+            /* Quotes/Callouts */
+            prose-blockquote:border-l-4 prose-blockquote:border-[#ef7f25] prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:text-gray-700
+            
+            /* The 'Subtitle' / Lead Text - Made smaller and cleaner */
+            [&_.lead-text]:text-lg [&_.lead-text]:text-gray-800 [&_.lead-text]:font-medium [&_.lead-text]:leading-relaxed [&_.lead-text]:mb-10
+            
+            /* Insight Boxes - Simplified */
+            [&_.insight-box]:bg-gray-50 [&_.insight-box]:p-6 [&_.insight-box]:rounded-lg [&_.insight-box]:my-10 [&_.insight-box]:border [&_.insight-box]:border-gray-100
+            [&_.insight-box_h3]:text-[#760015] [&_.insight-box_h3]:text-sm [&_.insight-box_h3]:uppercase [&_.insight-box_h3]:tracking-widest [&_.insight-box_h3]:mt-0
+            
+            /* Editorial Callout - Simplified */
+            [&_.editorial-callout]:my-10 [&_.editorial-callout]:pl-6 [&_.editorial-callout]:border-l-2 [&_.editorial-callout]:border-[#760015]
+            [&_.editorial-callout_h3]:text-[#ef7f25] [&_.editorial-callout_h3]:text-xs [&_.editorial-callout_h3]:uppercase [&_.editorial-callout_h3]:tracking-widest [&_.editorial-callout_h3]:mt-0
+            [&_.editorial-callout_p]:text-gray-600 [&_.editorial-callout_p]:italic"
+          dangerouslySetInnerHTML={{ __html: post.content }} 
+        />
+
+        {/* Simple Footer CTA */}
+        <footer className="mt-20 pt-10 border-t border-gray-100">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-50 p-8 rounded-lg">
             <div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: COLORS.MAROON }}>Need more insights?</h3>
-              <p className="text-sm text-gray-500">Discover how Baarez is shaping the future of enterprise.</p>
+              <h4 className="text-xl font-bold mb-1 text-[#2d2a2a]">Need strategic advice?</h4>
+              <p className="text-gray-500 text-sm">Our GRC experts are ready to assist.</p>
             </div>
-            <Link to="/contact" className="px-8 py-3 text-white font-bold text-xs uppercase tracking-widest rounded-full hover:opacity-90 transition-opacity shadow-lg" style={{ backgroundColor: COLORS.MAROON }}>
-              Talk to an Expert
+            <Link 
+              to="/contact" 
+              className="px-8 py-3 bg-[#760015] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#ef7f25] transition-colors rounded-sm"
+            >
+              Contact Us
             </Link>
           </div>
-        </div>
-
+        </footer>
       </div>
-
     </article>
   );
 };

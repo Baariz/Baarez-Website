@@ -137,7 +137,7 @@ const TaxAutomation = () => {
                 Start Filing
               </Link>
               <button className="px-8 py-4 bg-transparent border border-gray-300 text-[#2d2a2a] font-bold text-sm uppercase tracking-widest hover:border-[#ef7f25] hover:text-[#ef7f25] transition-colors rounded-none flex items-center justify-center gap-3">
-                See The Logic <Icons.Arrow className="w-4 h-4"/>
+                <a href="#logic">See The Logic</a> <Icons.Arrow className="w-4 h-4"/>
               </button>
             </motion.div>
           </div>
@@ -146,7 +146,7 @@ const TaxAutomation = () => {
           <div className="relative h-[500px] bg-[#fbf9f8] border border-gray-100 flex items-center justify-center overflow-hidden">
             
             {/* The Abstract Machine Container */}
-            <div className="relative w-full max-w-lg h-full flex flex-col justify-center gap-6 p-8">
+            <div   className="relative w-full max-w-lg h-full flex flex-col justify-center gap-6 p-8">
                
                {/* Three "Tumblers" or "Gateways" */}
                {['Data Ingestion', '9% Computation', 'FTA Filing'].map((stage, i) => {
@@ -216,7 +216,7 @@ const TaxAutomation = () => {
       </section>
 
       {/* --- 2. CONTEXT: "The Horizontal Tape" (Preserved) --- */}
-      <section className="bg-[#760015] text-white py-16 overflow-hidden">
+      <section id='logic' className="bg-[#760015] text-white py-16 overflow-hidden">
         <div className="max-w-[1800px] mx-auto px-8 relative">
           <div className="grid md:grid-cols-4 gap-12 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-white/10">
             <div className="md:px-8">
