@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import ScrollToTop from './components/ScrollToTop'
+import ChatBot from './components/ChatBot'
 
 // Pages
 import Home from './pages/Home'
@@ -31,15 +32,17 @@ import Blogs from './pages/resources/Blogs'
 import BlogPost from './pages/resources/BlogPost'
 import HumanResource from './pages/solutions/HumanResource'
 import PartnerOnboard from './pages/PartnerOnBoard'
-import ChatbaseChatbot from './components/ChatbaseChatbot'
+
 import Privacy from './pages/Privacy'
 import TermsOfService from './pages/TermsOfService'
 import Services from './pages/Services'
+import Glimmora from './pages/solutions/Glimmora'
 
 function App() {
   return (
     <>
-      <ChatbaseChatbot/>
+      
+      <ChatBot/>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -58,6 +61,7 @@ function App() {
           <Route path="solutions/robot-as-a-service" element={<RobotAsAService />} />
           <Route path="solutions/dynamics-365" element={<Dynamics365 />} />
           <Route path="solutions/human-resource" element={<HumanResource/>} />
+          <Route path="solutions/glimmora" element={<Glimmora/>} />
 
           {/* Services */}
           <Route path="services/business-process-consulting" element={<BusinessProcessConsulting />} />
