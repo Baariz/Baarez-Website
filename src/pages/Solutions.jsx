@@ -77,21 +77,21 @@ const solutionCategories = [
     items: [
       {
         id: 'grc',
-        name: 'GRC Platform',
+        name: 'AI GRC Platform',
         desc: 'Unified governance, risk management, and compliance automation.',
         path: '/solutions/grc',
         icon: Icons.Shield
       },
       {
         id: 'tprm',
-        name: 'TPRM Platform',
+        name: 'AI TPRM Platform',
         desc: 'End-to-end third-party risk management and vendor due diligence.',
         path: '/solutions/tprm',
         icon: Icons.Users
       },
       {
         id: 'audit',
-        name: 'Internal Audit Platform',
+        name: 'AI Internal Audit Platform',
         desc: 'Streamline audit workflows, workpapers, and reporting cycles.',
         path: '/solutions/internal-audit',
         icon: Icons.DocSearch
@@ -104,7 +104,7 @@ const solutionCategories = [
     items: [
       {
         id: 'scanvista',
-        name: 'ScanVista',
+        name: 'AI OCR ScanVista',
         desc: 'Intelligent OCR for document digitisation and data extraction.',
         path: '/solutions/scanvista',
         icon: Icons.Scan

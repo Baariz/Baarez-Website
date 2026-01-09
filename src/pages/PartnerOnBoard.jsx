@@ -22,10 +22,10 @@ const PartnerOnboard = () => {
 
     // Using sendForm with the physical ref
     emailjs.sendForm(
-      "service_wxj1uz3",
-      "template_1d02b8s",
+      "service_juodf0k",
+      "template_fjuiudn",
       formRef.current,
-      "usx7JhywGy63cCrKc"
+      "hbSmjgNJuGIGzSLrq"
     )
     .then(() => {
       setStatus({ type: 'success', message: 'Application submitted successfully.' });
