@@ -104,8 +104,10 @@ function Navbar() {
     }
   ]
 
+  // Updated Resources Array
   const resources = [
     { name: 'Blogs', path: '/blogs' },
+    { name: 'White Paper', path: '/grc-whitepaper' },
   ]
 
   const toggleMobileExpand = (menu) => {
@@ -130,7 +132,7 @@ function Navbar() {
             />
           </Link>
 
-          {/* --- DESKTOP NAVIGATION (Updated Order) --- */}
+          {/* --- DESKTOP NAVIGATION --- */}
           <div className="hidden lg:flex items-center space-x-8 h-full">
             
             {/* 1. About */}
@@ -154,9 +156,7 @@ function Navbar() {
                   activeMegaMenu === 'solutions' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
                 }`}
               >
-                <span><Link 
-                                to="/solutions" 
-                                onClick={() => setActiveMegaMenu(null)}>Solutions</Link></span>
+                <span><Link to="/solutions" onClick={() => setActiveMegaMenu(null)}>Solutions</Link></span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'solutions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -229,9 +229,7 @@ function Navbar() {
                   activeMegaMenu === 'services' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
                 }`}
               >
-                <span><Link 
-                                to="/services" 
-                                onClick={() => setActiveMegaMenu(null)}>Services</Link></span>
+                <span><Link to="/services" onClick={() => setActiveMegaMenu(null)}>Services</Link></span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -347,7 +345,7 @@ function Navbar() {
           </button>
         </div>
 
-        {/* --- MOBILE MENU (Updated Order) --- */}
+        {/* --- MOBILE MENU --- */}
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-24 left-0 w-full bg-white border-t border-gray-100 shadow-xl overflow-y-auto max-h-[calc(100vh-6rem)]">
             <div className="px-4 py-6 space-y-4">

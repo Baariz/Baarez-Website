@@ -296,7 +296,7 @@ const ChatBot = () => {
     }
   };
 
-  return (
+ return (
     <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans antialiased">
       <AnimatePresence>
         {isOpen && (
@@ -308,6 +308,7 @@ const ChatBot = () => {
             className="w-[360px] h-[550px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-gray-100 ring-1 ring-black/5"
             style={{ maxHeight: 'calc(100vh - 100px)' }}
           >
+            {/* Header */}
             <div className="p-4 flex justify-between items-center text-white shrink-0 shadow-md" style={{ backgroundColor: BRAND.colors.primary }}>
               <div className="flex items-center gap-3">
                 <div className="relative">
@@ -322,6 +323,7 @@ const ChatBot = () => {
               <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-full transition-colors"><X size={18} className="text-white/90" /></button>
             </div>
 
+            {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-5 space-y-5 scroll-smooth" style={{ backgroundColor: BRAND.colors.bg }}>
               {messages.map((msg) => (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -342,6 +344,7 @@ const ChatBot = () => {
               <div ref={messagesEndRef} />
             </div>
 
+            {/* Input Area */}
             <div className="p-4 bg-white border-t border-gray-100 shrink-0">
               {renderInputArea()}
               <div className="text-center mt-3">
@@ -351,8 +354,51 @@ const ChatBot = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <motion.button layoutId="launcher" onClick={() => setIsOpen(!isOpen)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} animate={{ boxShadow: ["0 0 0 0 rgba(118, 0, 21, 0.7)", "0 0 0 10px rgba(118, 0, 21, 0)", "0 0 0 0 rgba(118, 0, 21, 0)"] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }} className="w-14 h-14 text-white rounded-full flex items-center justify-center transition-all relative" style={{ backgroundColor: BRAND.colors.primary }}>
-        {isOpen ? <X size={26} /> : <MessageSquare size={26} />}
+
+      {/* FIXED LAUNCHER BUTTON */}
+      <motion.button
+        onClick={() => setIsOpen(!isOpen)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        /* Removed layoutId="launcher" to fix blinking */
+        animate={{
+          boxShadow: [
+            "0 0 0 0 rgba(118, 0, 21, 0.7)",
+            "0 0 0 10px rgba(118, 0, 21, 0)",
+            "0 0 0 0 rgba(118, 0, 21, 0)"
+          ]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatDelay: 1
+        }}
+        className="w-14 h-14 text-white rounded-full flex items-center justify-center transition-all relative shadow-lg z-[10000]"
+        style={{ backgroundColor: BRAND.colors.primary }}
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          {isOpen ? (
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <X size={26} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="open"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <MessageSquare size={26} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.button>
     </div>
   );

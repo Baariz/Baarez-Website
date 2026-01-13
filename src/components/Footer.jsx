@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom'
 function Footer() {
   const currentYear = new Date().getFullYear()
 
+  // Helper Component for Links with smooth animation
+  const FooterLink = ({ to, children }) => (
+    <Link 
+      to={to} 
+      className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#ef7f25] transition-all duration-300 ease-out"
+    >
+      {/* Arrow that slides in and fades in */}
+      <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#ef7f25]">
+        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </span>
+      {/* Text that slides slightly right */}
+      <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+        {children}
+      </span>
+    </Link>
+  )
+
   const solutions = [
     { name: 'AI GRC Platform', path: '/solutions/grc' },
     { name: 'AI TPRM Platform', path: '/solutions/tprm' },
@@ -17,139 +36,146 @@ function Footer() {
     { name: 'ERP Consulting', path: '/services/erp-consulting' },
   ]
 
+  const resources = [
+    { name: 'White Paper', path: '/grc-whitepaper' },
+    { name: 'Blogs', path: '/blogs' },
+  ]
+
   const company = [
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Blogs', path: '/resources/blogs' },
+    { name: 'Careers', path: '/careers' },
   ]
 
   const locations = [
-    'India',
-    'US',
-    'Qatar',
-    'Dubai',
-    'Singapore'
+    'India', 'US', 'Qatar', 'Dubai', 'Singapore'
   ]
 
   return (
-    <footer className="bg-[#1a0505] text-gray-300 border-t border-[#760015]/30 relative overflow-hidden">
-      {/* Decorative Top Line */}
+    <footer className="bg-[#1a0505] text-gray-300 border-t border-[#760015]/30 relative overflow-hidden font-sans">
+      
+      {/* --- Decorative Elements --- */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#760015] via-[#ef7f25] to-[#760015]"></div>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#760015] opacity-5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
-      {/* Subtle Background Glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#760015] opacity-5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
-
-      <div className="section-container py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 relative z-10">
+        
+        {/* --- Main Footer Grid --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
-          {/* Logo and Tagline */}
-          <div className="lg:col-span-1">
+          {/* 1. Left Column: Brand Identity */}
+          <div className="lg:col-span-4 flex flex-col items-start">
             <Link to="/" className="inline-block mb-6">
-                {/* Ensure you have a white version or use filter invert */}
                 <img
-                src="/logo-footer.png"
-                alt="Baarez Technology Solutions"
-                className="h-23 w-auto"
+                  src="/logo-footer.png"
+                  alt="Baarez Technology Solutions"
+                  className="h-20 w-auto object-contain"
                 />
             </Link>
-            <p className="text-sm text-[#ef7f25] mb-4 font-medium tracking-wide uppercase text-[#ef7f25]">
+            
+            <p className="text-sm text-[#ef7f25] mb-4 font-bold tracking-widest uppercase">
               Making Thinking Visible
             </p>
-            <p className="text-sm text-gray-500 leading-relaxed">
-              AI-native enterprise platform for regulated industries. Transforming governance with speed and precision.
+            
+            <p className="text-sm text-gray-500 leading-relaxed max-w-sm">
+              AI-native enterprise platform for regulated industries. We bridge the gap between complex governance frameworks and operational reality with speed and precision.
             </p>
+
+            {/* Social Icons */}
+            <div className="mt-8 flex gap-4">
+                <a href="https://in.linkedin.com/company/the-baarez-technology-solutions" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#760015]/20 flex items-center justify-center text-[#ef7f25] hover:bg-[#ef7f25] hover:text-white transition-all duration-300 border border-[#760015]/30">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://x.com/baariztech" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#760015]/20 flex items-center justify-center text-[#ef7f25] hover:bg-[#ef7f25] hover:text-white transition-all duration-300 border border-[#760015]/30">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@baareztechnologysolutions" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#760015]/20 flex items-center justify-center text-[#ef7f25] hover:bg-[#ef7f25] hover:text-white transition-all duration-300 border border-[#760015]/30">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
           </div>
 
-          {/* Solutions */}
-          <div>
-            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Solutions</h3>
-            <ul className="space-y-3">
-              {solutions.map((solution) => (
-                <li key={solution.path}>
-                  <Link
-                    to={solution.path}
-                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {solution.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* 2. Right Column: Link Navigation Grid */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              
+              <div>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#760015]/50 pb-2 inline-block">Solutions</h3>
+                <ul className="space-y-3">
+                  {solutions.map((item) => (
+                    <li key={item.path}>
+                      <FooterLink to={item.path}>{item.name}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.path}>
-                  <Link
-                    to={service.path}
-                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#760015]/50 pb-2 inline-block">Services</h3>
+                <ul className="space-y-3">
+                  {services.map((item) => (
+                    <li key={item.path}>
+                      <FooterLink to={item.path}>{item.name}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Company</h3>
-            <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className="text-sm text-gray-400 hover:text-[#ef7f25] transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-[#ef7f25] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div className="flex flex-col gap-8">
+                <div>
+                    <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#760015]/50 pb-2 inline-block">Resources</h3>
+                    <ul className="space-y-3">
+                    {resources.map((item) => (
+                        <li key={item.path}>
+                          <FooterLink to={item.path}>{item.name}</FooterLink>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 className="text-white font-bold mb-4 text-xs uppercase tracking-widest border-b border-[#760015]/50 pb-2 inline-block">Company</h3>
+                    <ul className="space-y-3">
+                    {company.map((item) => (
+                        <li key={item.path}>
+                          <FooterLink to={item.path}>{item.name}</FooterLink>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
+              </div>
 
-          {/* Global Presence */}
-          <div>
-            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-wider border-b border-[#760015]/30 pb-2 inline-block">Global Presence</h3>
-            <ul className="space-y-3">
-              {locations.map((location) => (
-                <li key={location} className="text-sm text-gray-400 flex items-center space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-[#760015]/20 flex items-center justify-center text-[#ef7f25]">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                  </div>
-                  <span>{location}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+              <div>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#760015]/50 pb-2 inline-block">Global Presence</h3>
+                <ul className="space-y-3">
+                  {locations.map((location) => (
+                    <li key={location} className="text-sm text-gray-400 flex items-center gap-3">
+                       <span className="w-1.5 h-1.5 rounded-full bg-[#ef7f25]"></span>
+                       <span>{location}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#760015]/20">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-xs text-gray-500">
-              &copy; {currentYear} Baarez Technology Solutions. All rights reserved.
-            </p>
-            <div className="flex space-x-8">
-              <Link to="/privacy" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
-                Terms of Service
-              </Link>
-           
             </div>
           </div>
         </div>
+
+        {/* --- Bottom Bar --- */}
+        <div className="pt-8 border-t border-[#760015]/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-gray-600">
+            &copy; {currentYear} Baarez Technology Solutions. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-xs text-gray-500 hover:text-[#ef7f25] transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+
       </div>
     </footer>
   )

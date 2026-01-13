@@ -7,7 +7,7 @@ import { motion, AnimatePresence, useScroll, useTransform, useSpring, useInView 
    Expanded with new icons for the new sections.
    =================================================================== */
 const Icons = {
-  // --- Existing Icons (Preserved) ---
+  // --- Existing Icons ---
   ShieldCheck: ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
   ),
@@ -61,9 +61,6 @@ const Icons = {
   Quote: ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V3H19.017C20.6739 3 22.017 4.34315 22.017 6V15C22.017 16.6569 20.6739 18 19.017 18H16.017V21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 7.55228 5.0166 7V3H10.0166C11.6735 3 13.0166 4.34315 13.0166 6V15C13.0166 16.6569 11.6735 18 10.0166 18H7.0166V21H5.0166Z" /></svg>
   ),
-  TrendingUp: ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-  ),
   Chip: ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
   ),
@@ -71,7 +68,18 @@ const Icons = {
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
   ),
 
-  // --- NEW ICONS (Added to Fix Errors) ---
+  // --- NEW ICONS ADDED (User, Layers, TrendingUp) ---
+  User: ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+  ),
+  Layers: ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+  ),
+  TrendingUp: ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+  ),
+
+  // --- Other Icons you added previously ---
   Settings: ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
   ),
@@ -148,21 +156,24 @@ const BAAREZ_CONFIG = {
     }
   ]
 },
-    solutions: {
+  solutions: {
   title: "Baarez Platforms",
-  subtitle: "Independent platforms designed to work standalone or together across the enterprise.",
+  subtitle: "Independent platforms designed to work standalone or together as a unified ecosystem.",
   tabs: [
     {
       id: "grc",
       label: "GRC Platform",
       icon: Icons.ShieldCheck,
       title: "Enterprise Governance, Centralized",
-      desc: "Baarez GRC provides a structured system to manage governance, risk, and compliance across policies, controls, risks, and regulatory obligations—built for organizations operating in complex regulatory environments.",
+      desc: "A unified operating system for governance, risk, and compliance. We replace fragmented spreadsheets with automated workflows that link policies to controls and regulatory obligations.",
+      target: "Chief Risk & Compliance Officers", // New Field
+      outcome: "40% reduction in audit preparation time", // New Field
       features: [
-        "Policy, Risk & Control Management",
-        "Regulatory Mapping & Compliance Tracking",
-        "Centralized Risk Visibility"
+        "Automated Policy & Control Lifecycle",
+        "Regulatory Change Management",
+        "Real-time Risk Heatmaps"
       ],
+      synergy: "ScanVista feeds Regulatory Data → GRC → Internal Audit", // New Field
       link: "/solutions/grc",
       image: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=2070&auto=format&fit=crop"
     },
@@ -171,12 +182,15 @@ const BAAREZ_CONFIG = {
       label: "Third-Party Risk",
       icon: Icons.Users,
       title: "Control Risk Beyond Your Enterprise",
-      desc: "Baarez TPRM helps enterprises assess, monitor, and manage third-party and vendor risks across the full lifecycle—extending governance beyond internal boundaries.",
+      desc: "Extend your governance perimeter to your supply chain. Assess, monitor, and remediate risks from vendors and third parties in a single, auditable platform.",
+      target: "Vendor Risk Managers & Procurement",
+      outcome: "Cut vendor onboarding time by 50%",
       features: [
-        "Vendor Risk Assessments",
-        "Continuous Risk Monitoring",
-        "Third-Party Compliance Oversight"
+        "Automated Vendor Risk Assessments",
+        "Continuous Performance Monitoring",
+        "Due Diligence & Compliance Tracking"
       ],
+      synergy: "TPRM Risk Data → GRC Risk Register → Reporting",
       link: "/solutions/tprm",
       image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop"
     },
@@ -185,12 +199,15 @@ const BAAREZ_CONFIG = {
       label: "Internal Audit",
       icon: Icons.ClipboardCheck,
       title: "Modernize Audit Execution",
-      desc: "Baarez Internal Audit enables structured audit planning, execution, and reporting—allowing audit teams to operate with consistency, transparency, and traceability.",
+      desc: "Shift from checklist-based auditing to risk-based assurance. Streamline the entire audit lifecycle from planning and fieldwork to reporting and issue tracking.",
+      target: "Chief Audit Executives (CAE)",
+      outcome: "100% traceability of audit findings",
       features: [
-        "Audit Planning & Scheduling",
-        "Issue & Observation Management",
-        "Audit Reporting & Traceability"
+        "Risk-Based Audit Planning",
+        "Automated Workpapers & Evidence",
+        "Issue Remediation Tracking"
       ],
+      synergy: "GRC Controls → Internal Audit Testing → Board Reporting",
       link: "/solutions/internal-audit",
       image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop"
     },
@@ -199,12 +216,15 @@ const BAAREZ_CONFIG = {
       label: "ScanVista",
       icon: Icons.Search,
       title: "Intelligent Document Understanding",
-      desc: "ScanVista converts unstructured documents into structured, usable data through AI-powered document understanding—supporting compliance, operations, and enterprise workflows.",
+      desc: "Turn unstructured documents into decision-ready data. ScanVista uses AI to read, classify, and extract data from complex files (PDFs, images) in English and Arabic.",
+      target: "Operations & Compliance Teams",
+      outcome: "90% accuracy in automated data extraction",
       features: [
-        "Multi-Language OCR (English & Arabic)",
-        "Automated Document Classification",
-        "Enterprise-Ready Data Extraction"
+        "English & Arabic OCR/NLP",
+        "KYC & Contract Analysis",
+        "Automated Metadata Tagging"
       ],
+      synergy: "ScanVista Extraction → GRC Evidence → TPRM Assessments",
       link: "/solutions/scanvista",
       image: "https://i.postimg.cc/05WRxbzP/image.png"
     },
@@ -213,13 +233,15 @@ const BAAREZ_CONFIG = {
       label: "Glimmora",
       icon: Icons.Chip,
       title: "AGI-Native Hospitality Intelligence",
-      desc: "Glimmora is an AGI-native operating platform for hospitality groups, designed to unify operations, pricing intelligence, guest experience optimization, and digital twins into a single intelligent system.",
+      desc: "The operating brain for modern hospitality groups. Glimmora unifies guest data, operations, and pricing intelligence to optimize revenue and experience in real-time.",
+      target: "Hospitality COOs & Revenue Managers",
+      outcome: "15% increase in RevPAR (Revenue Per Available Room)",
       features: [
-        "Predictive Operations & Demand Forecasting",
-        "Pricing & Revenue Intelligence",
-        "Guest Experience Optimization",
-        "Digital Twin–Driven Insights"
+        "Dynamic Pricing Intelligence",
+        "Guest Sentiment Analysis",
+        "Operational Digital Twins"
       ],
+      synergy: "Glimmora Operational Data → Corporate GRC Oversight",
       link: "/solutions/glimmora",
       image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
     }
@@ -414,37 +436,37 @@ services: {
 
 
 
-const SOVEREIGN_SECTION = {
+const ARCHITECTURE_SECTION = {
   badge: {
-    label: "Global Presence",
-    icon: Icons.Globe
+    label: "Deployment & Security",
+    icon: Icons.Server
   },
   headline: {
-    primary: "Global Operations.",
-    highlight: "Local Governance."
+    primary: "Secure by Design.",
+    highlight: "Sovereign by Default."
   },
   description:
-    "Baarez operates across the USA, UAE, Qatar, Singapore, India, and Latvia, supporting enterprises with region-aware governance and data management.",
+    "We respect data gravity. Whether you need strict data residency within national borders or an air-gapped on-premise installation, Baarez adapts to your infrastructure standards.",
   cards: [
     {
-      title: "Regional Deployments",
-      desc: "Active deployments across key global regions.",
-      icon: Icons.Server
+      title: "Sovereign Cloud",
+      desc: "Region-locked data hosting (UAE, KSA, India, EU) ensuring total compliance with local data residency laws.",
+      icon: Icons.Cloud
     },
     {
-      title: "Local Compliance Models",
-      desc: "Configurable controls aligned to regional regulations.",
-      icon: Icons.ShieldCheck
+      title: "On-Premise & Air-Gapped",
+      desc: "Deploy Baarez entirely within your private firewall. Ideal for Defense, Public Sector, and strict Banking environments.",
+      icon: Icons.Database
     },
     {
-      title: "Unified Security Standards",
-      desc: "Consistent security and access controls worldwide.",
+      title: "Zero-Trust Security",
+      desc: "Built on a zero-trust architecture with granular Role-Based Access Control (RBAC) and military-grade encryption.",
       icon: Icons.Lock
     },
     {
-      title: "Regional Support",
-      desc: "Local teams with global delivery coverage.",
-      icon: Icons.Briefcase
+      title: "API-First Integration",
+      desc: "Seamlessly connects with your existing ERP (SAP, Oracle), CRM, and HRMS via secure, bi-directional APIs.",
+      icon: Icons.Settings
     }
   ]
 }
@@ -572,8 +594,8 @@ function Home() {
               AI Transformation Company
             </h2>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#760015] leading-tight tracking-tight">
-              Architecting Intelligent
-              <span className="text-[#760015] font-semibold"> Platforms.</span>
+              AI-native governance and risk platforms for 
+              <span className="text-[#760015] font-semibold"> regulated industries.</span>
             </h1>
           </div>
 
@@ -680,6 +702,56 @@ function Home() {
     </div>
   </div>
 </section>
+
+
+{/* //Sectors section */}
+<section className="w-full bg-slate-50 border-b border-slate-200 py-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      {/* Strategic Positioning Text */}
+      <div className="text-center md:text-left">
+        <h2 className="text-lg font-semibold text-slate-800">
+          Core Risk & Compliance for <span className="text-[#76000E]">Regulated Industries</span>
+        </h2>
+        <p className="text-sm text-slate-500 mt-1">
+          Specialized governance for high-stakes environments.
+        </p>
+      </div>
+
+      {/* Priority Sector Badges */}
+      <div className="flex flex-wrap justify-center md:justify-end gap-3">
+        
+        {/* Badge 1: BFSI */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#ED7C23] transition-colors duration-200">
+          <svg className="mr-2 h-4 w-4 text-[#ED7C23]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          BFSI
+        </span>
+
+        {/* Badge 2: Pharma */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#ED7C23] transition-colors duration-200">
+          <svg className="mr-2 h-4 w-4 text-[#ED7C23]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          Pharma
+        </span>
+
+        {/* Badge 3: Manufacturing */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#ED7C23] transition-colors duration-200">
+          <svg className="mr-2 h-4 w-4 text-[#ED7C23]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          Manufacturing
+        </span>
+
+        {/* Badge 4: Public Sector */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#ED7C23] transition-colors duration-200">
+          <svg className="mr-2 h-4 w-4 text-[#ED7C23]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+          Public Sector
+        </span>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 {/* CSS for the rotating border (add to global CSS) */}
 <style>{`
   .animate-spin-slow {
@@ -748,6 +820,128 @@ function Home() {
           </div>
         </Section>
       </div>
+
+<section className="w-full bg-white py-16 border-b border-slate-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <h2 className="text-[#76000E] font-bold uppercase tracking-widest text-xs mb-3">
+        The Governance Gap
+      </h2>
+      <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
+        Stop managing risk in silos.
+      </h3>
+      <p className="mt-4 text-slate-500">
+        Regulated industries cannot afford disconnected data. We bridge the gap between manual fragmentation and automated control.
+      </p>
+    </div>
+
+    {/* Problem-Solution Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      {/* Card 1: GRC */}
+      <div className="group relative bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#ED7C23] hover:shadow-md transition-all duration-300">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="p-2 bg-red-50 rounded-lg text-[#76000E]">
+            {/* Warning Icon */}
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          </div>
+          <h4 className="font-semibold text-slate-700 text-sm leading-tight">
+            Fragmented spreadsheets & risk silos
+          </h4>
+        </div>
+        
+        <div className="my-4 border-t border-slate-200 w-full group-hover:border-[#ED7C23]/30 transition-colors"></div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-[#ED7C23] uppercase tracking-wide">
+            Solved by GRC
+          </span>
+          <a href="/solutions/grc" className="p-1.5 rounded-full bg-white text-slate-400 hover:text-[#ED7C23] hover:bg-orange-50 transition-colors shadow-sm ring-1 ring-slate-200 group-hover:ring-[#ED7C23]">
+            {/* Arrow Right */}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Card 2: TPRM */}
+      <div className="group relative bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#ED7C23] hover:shadow-md transition-all duration-300">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="p-2 bg-red-50 rounded-lg text-[#76000E]">
+            {/* Users/Vendor Icon */}
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          </div>
+          <h4 className="font-semibold text-slate-700 text-sm leading-tight">
+            Manual vendor assessments
+          </h4>
+        </div>
+        
+        <div className="my-4 border-t border-slate-200 w-full group-hover:border-[#ED7C23]/30 transition-colors"></div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-[#ED7C23] uppercase tracking-wide">
+            Solved by TPRM
+          </span>
+          <a href="/solutions/tprm" className="p-1.5 rounded-full bg-white text-slate-400 hover:text-[#ED7C23] hover:bg-orange-50 transition-colors shadow-sm ring-1 ring-slate-200 group-hover:ring-[#ED7C23]">
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Card 3: Internal Audit */}
+      <div className="group relative bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#ED7C23] hover:shadow-md transition-all duration-300">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="p-2 bg-red-50 rounded-lg text-[#76000E]">
+            {/* File/Audit Icon */}
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          </div>
+          <h4 className="font-semibold text-slate-700 text-sm leading-tight">
+            Reactive, disconnected audit trails
+          </h4>
+        </div>
+        
+        <div className="my-4 border-t border-slate-200 w-full group-hover:border-[#ED7C23]/30 transition-colors"></div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-[#ED7C23] uppercase tracking-wide">
+            Solved by Audit
+          </span>
+          <a href="/solutions/internal-audit" className="p-1.5 rounded-full bg-white text-slate-400 hover:text-[#ED7C23] hover:bg-orange-50 transition-colors shadow-sm ring-1 ring-slate-200 group-hover:ring-[#ED7C23]">
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Card 4: ScanVista (Data) */}
+      <div className="group relative bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#ED7C23] hover:shadow-md transition-all duration-300">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="p-2 bg-red-50 rounded-lg text-[#76000E]">
+            {/* Search/Doc Icon */}
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <h4 className="font-semibold text-slate-700 text-sm leading-tight">
+            Unstructured data slowing compliance
+          </h4>
+        </div>
+        
+        <div className="my-4 border-t border-slate-200 w-full group-hover:border-[#ED7C23]/30 transition-colors"></div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-[#ED7C23] uppercase tracking-wide">
+            Solved by ScanVista
+          </span>
+          <a href="/solutions/scanvista" className="p-1.5 rounded-full bg-white text-slate-400 hover:text-[#ED7C23] hover:bg-orange-50 transition-colors shadow-sm ring-1 ring-slate-200 group-hover:ring-[#ED7C23]">
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 {/* --- PLATFORM TABS SECTION (RESPONSIVE) --- */}
 <div className="py-16 md:py-24 bg-[#fdfbf9] relative">
   <Section>
@@ -759,96 +953,124 @@ function Home() {
       </FadeIn>
     </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    {/* MAIN UNIFIED CARD LAYOUT */}
+    {/* This wrapper creates the single "box" look */}
+    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
       
-      {/* Left: Tab Navigation */}
-      {/* Mobile: Full width vertical list. Desktop: 4 columns wide. */}
-      <div className="w-full lg:col-span-4 flex flex-col gap-3">
-        {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`group w-full text-left p-4 md:p-5 transition-all duration-300 border-l-4 relative overflow-hidden rounded-r-lg ${
-              activeTab === tab.id 
-              ? 'bg-white border-[#760015] shadow-md z-10' 
-              : 'bg-transparent border-gray-200 hover:bg-white hover:border-[#ef7f25]'
-            }`}
-          >
-            <div className="flex items-center gap-4 relative z-10">
-              <div className={`p-2 rounded-lg transition-colors ${activeTab === tab.id ? 'bg-[#760015] text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-[#ef7f25] group-hover:text-white'}`}>
-                <tab.icon className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className={`text-sm md:text-base font-bold transition-colors ${activeTab === tab.id ? 'text-[#760015]' : 'text-gray-500 group-hover:text-gray-900'}`}>
-                  {tab.label}
-                </h4>
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
-
-      {/* Right: Tab Content */}
-      {/* Mobile: Height auto to fit content. Desktop: Fixed 500px height preserved. */}
-      <div className="w-full lg:col-span-8 h-auto lg:h-[500px]">
-        <AnimatePresence mode="wait">
+      {/* Grid with NO GAP, separated by lines (divide-gray-200) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+        
+        {/* --- LEFT: SIDEBAR NAVIGATION --- */}
+        <div className="w-full lg:col-span-4 bg-gray-50 flex flex-col h-full">
           {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-            activeTab === tab.id && (
-              <motion.div
-                key={tab.id}
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 h-full" 
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
-                  
-                  {/* Text Content Side */}
-                  <div className="flex flex-col justify-center h-full order-2 md:order-1">
-                    <div className="mb-auto">
-                      <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 bg-[#ef7f25]/10 rounded-full flex items-center justify-center text-[#ef7f25]">
-                              <tab.icon className="w-5 h-5" />
-                          </div>
-                          <h3 className="text-xl md:text-2xl font-bold text-[#2d2a2a]">{tab.title}</h3>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                        {tab.desc}
-                      </p>
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`group w-full text-left p-5 lg:p-6 transition-all duration-200 border-l-[6px] relative outline-none focus:outline-none ${
+                activeTab === tab.id 
+                ? 'bg-white border-[#760015] z-10' // Active: White bg to blend with right side, Deep Red border
+                : 'bg-transparent border-transparent hover:bg-gray-100 hover:border-gray-300' // Inactive: Transparent/Gray
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`p-2.5 rounded-lg transition-colors shrink-0 ${
+                  activeTab === tab.id 
+                  ? 'bg-[#760015] text-white' 
+                  : 'bg-white border border-gray-200 text-gray-400 group-hover:border-[#ef7f25] group-hover:text-[#ef7f25]'
+                }`}>
+                  <tab.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className={`text-sm md:text-base font-bold transition-colors ${
+                    activeTab === tab.id ? 'text-[#760015]' : 'text-gray-500 group-hover:text-gray-900'
+                  }`}>
+                    {tab.label}
+                  </h4>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* --- RIGHT: TAB CONTENT AREA --- */}
+        <div className="w-full lg:col-span-8 bg-white lg:min-h-[600px] relative"> 
+          <AnimatePresence mode="wait">
+            {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
+              activeTab === tab.id && (
+                <motion.div
+                  key={tab.id}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full flex flex-col p-6 md:p-8 lg:p-10" // Padding is now inside this container
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center flex-1">
+                    
+                    {/* Text Content Side */}
+                    <div className="flex flex-col h-full order-2 md:order-1">
                       
-                      <div className="space-y-3 mb-8">
+                      {/* Header Area */}
+                      <div className="mb-6">
+                        <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-gray-100 rounded-full w-fit">
+                          <Icons.User className="w-3 h-3 text-gray-500" />
+                          <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">For {tab.target}</span>
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a] mb-4">{tab.title}</h3>
+                        
+                        <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                          {tab.desc}
+                        </p>
+                      </div>
+
+                      {/* Features List */}
+                      <div className="space-y-4 mb-8">
                         {tab.features.map((feat, i) => (
-                          <div key={i} className="flex items-center gap-2.5">
-                            <Icons.CheckCircle className="w-4 h-4 text-[#760015] shrink-0" />
-                            <span className="font-medium text-gray-700 text-sm">{feat}</span>
+                          <div key={i} className="flex items-start gap-3">
+                            <Icons.CheckCircle className="w-5 h-5 text-[#760015] shrink-0 mt-0.5" />
+                            <span className="font-medium text-gray-700 text-sm md:text-base">{feat}</span>
                           </div>
                         ))}
+                        
+                        {/* Outcome Metric */}
+                        <div className="flex items-start gap-3 pt-3 border-t border-dashed border-gray-200 mt-2">
+                            <Icons.TrendingUp className="w-5 h-5 text-[#ef7f25] shrink-0 mt-0.5" />
+                            <span className="font-bold text-[#ef7f25] text-sm md:text-base">{tab.outcome}</span>
+                        </div>
+                      </div>
+
+                      {/* Ecosystem Flow */}
+                      <div className="mt-auto">
+                        <div className="mb-8 p-4 bg-[#fdfbf9] border border-[#ef7f25]/20 rounded-lg">
+                          <p className="text-[10px] font-bold text-gray-400 uppercase mb-2">Ecosystem Synergy</p>
+                          <div className="flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-700">
+                            <Icons.Layers className="w-4 h-4 text-[#760015] shrink-0" />
+                            <span>{tab.synergy}</span>
+                          </div>
+                        </div>
+
+                        <Button to={tab.link} variant="secondary" className="text-sm px-8 py-4 w-full md:w-auto uppercase tracking-wider font-bold">
+                          Explore {tab.label}
+                        </Button>
                       </div>
                     </div>
 
-                    <div className="mt-auto">
-                      <Button to={tab.link} variant="secondary" className="text-xs px-5 py-3 h-auto uppercase tracking-wider font-bold w-full md:w-auto">
-                        Explore {tab.label}
-                      </Button>
+                    {/* Image Content Side */}
+                    <div className="relative rounded-xl overflow-hidden w-full h-64 md:h-full min-h-[300px] shadow-inner order-1 md:order-2 border border-gray-100">
+                      <div className="absolute inset-0 bg-[#760015]/10 z-10 mix-blend-multiply"></div>
+                      <img 
+                        src={tab.image} 
+                        alt={tab.label} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
-
-                  {/* Image Content Side */}
-                  {/* Mobile: Fixed height (h-56) to prevent collapse. Desktop: Full height. */}
-                  <div className="relative rounded-lg overflow-hidden w-full h-56 md:h-full min-h-[200px] shadow-inner order-1 md:order-2">
-                    <div className="absolute inset-0 bg-[#760015]/10 z-10 mix-blend-multiply"></div>
-                    <img 
-                      src={tab.image} 
-                      alt={tab.label} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            )
-          ))}
-        </AnimatePresence>
+                </motion.div>
+              )
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   </Section>
@@ -1077,20 +1299,14 @@ function Home() {
       </div>
 
       {/* --- SOVEREIGN COMPLIANCE --- */}
-     {/* --- DATA SOVEREIGNTY & COMPLIANCE (PANORAMIC LAYOUT) --- */}
+
 <div className="py-24 bg-[#760015] text-white relative overflow-hidden">
   
-  {/* Background Texture */}
-  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-
-  {/* Abstract Map Background */}
-  <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
-      alt="Global Presence Map"
-      className="w-[90%] h-auto invert brightness-0"
-    />
-  </div>
+  {/* Background: Technical Circuit/Node Pattern */}
+  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30"></div>
+  
+  {/* Abstract Accent Glow */}
+  <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#ef7f25] opacity-10 rounded-full blur-[150px] pointer-events-none translate-y-1/2 translate-x-1/3"></div>
 
   <Section>
     <div className="relative z-10 flex flex-col items-center">
@@ -1099,37 +1315,46 @@ function Home() {
       <div className="text-center max-w-4xl mb-16">
         <FadeIn>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 mb-6">
-            <SOVEREIGN_SECTION.badge.icon className="w-4 h-4 text-[#ef7f25]" />
+            <ARCHITECTURE_SECTION.badge.icon className="w-4 h-4 text-[#ef7f25]" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#ef7f25]">
-              {SOVEREIGN_SECTION.badge.label}
+              {ARCHITECTURE_SECTION.badge.label}
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            {SOVEREIGN_SECTION.headline.primary}{" "}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            {ARCHITECTURE_SECTION.headline.primary}{" "}
+            <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-              {SOVEREIGN_SECTION.headline.highlight}
+              {ARCHITECTURE_SECTION.headline.highlight}
             </span>
           </h2>
 
           <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-            {SOVEREIGN_SECTION.description}
+            {ARCHITECTURE_SECTION.description}
           </p>
         </FadeIn>
       </div>
 
-      {/* Cards */}
+      {/* Cards Grid */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {SOVEREIGN_SECTION.cards.map((card, i) => {
+        {ARCHITECTURE_SECTION.cards.map((card, i) => {
           const IconComponent = card.icon
           return (
             <FadeIn key={i} delay={0.2 + i * 0.1} className="h-full">
-              <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-300 group">
-                <div className="w-12 h-12 bg-[#ef7f25]/20 rounded-lg flex items-center justify-center text-[#ef7f25] mb-6 group-hover:bg-[#ef7f25] group-hover:text-white transition-all">
-                  <IconComponent className="w-6 h-6" />
+              <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-[#ef7f25]/50 transition-all duration-300 group flex flex-col relative overflow-hidden">
+                
+                {/* Hover Glow Effect */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#ef7f25]/20 blur-2xl rounded-full translate-x-12 -translate-y-12 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500"></div>
+
+                <div className="w-14 h-14 bg-[#ef7f25]/10 rounded-xl flex items-center justify-center text-[#ef7f25] mb-6 group-hover:bg-[#ef7f25] group-hover:text-white transition-all border border-[#ef7f25]/20 group-hover:border-[#ef7f25]">
+                  <IconComponent className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{card.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#ef7f25] transition-colors">
+                    {card.title}
+                </h3>
+                
+                <p className="text-white/60 text-sm leading-relaxed flex-grow">
                   {card.desc}
                 </p>
               </div>
@@ -1151,10 +1376,7 @@ function Home() {
               <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-sm">Industries</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-[#2d2a2a]">{BAAREZ_CONFIG.industries.title}</h3>
             </div>
-            <Link to="/about" className="group flex items-center gap-2 text-[#760015] font-bold mt-6 md:mt-0">
-               View All Case Studies 
-               <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1367,7 +1589,80 @@ function Home() {
 </div>
 
     
+<section className="w-full bg-slate-50 border-t border-slate-200 py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="text-center mb-12">
+      <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] text-xs mb-3">
+        Tailored Pathways
+      </h2>
+      <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a]">
+        Explore Baarez based on your priorities
+      </h3>
+    </div>
 
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      {/* 1. Executive / Strategic Focus -> Linked to GRC (Core Governance) */}
+      <a href="/solutions/grc" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#760015] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#760015] to-[#ef7f25] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#760015] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#760015] group-hover:text-white transition-colors duration-300">
+          {/* Chart/Insight Icon */}
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+        </div>
+        
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Strategic Oversight</h4>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Drive decision-making with centralized governance. View risk heatmaps, compliance ROI, and executive dashboards.
+        </p>
+        
+        <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+          View Governance Impact <Icons.ArrowRight className="w-4 h-4" />
+        </span>
+      </a>
+
+      {/* 2. Practitioner / Workflow Focus -> Linked to Internal Audit (Workflow heavy) */}
+      <a href="/solutions/internal-audit" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#ef7f25] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ef7f25] to-[#fdba74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#ef7f25] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ef7f25] group-hover:text-white transition-colors duration-300">
+          {/* Workflow/List Icon */}
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+        </div>
+
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Operational Efficiency</h4>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Streamline daily controls. Automate assessments, audit trails, and reporting workflows to reduce manual effort.
+        </p>
+        
+        <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+          Explore Workflows <Icons.ArrowRight className="w-4 h-4" />
+        </span>
+      </a>
+
+      {/* 3. Technical / IT Focus -> Linked to ScanVista (Tech/AI heavy) */}
+      <a href="/solutions/scanvista" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2d2a2a] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2d2a2a] to-[#555] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#2d2a2a] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2d2a2a] group-hover:text-white transition-colors duration-300">
+          {/* Tech/Chip Icon */}
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+        </div>
+
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Technical Integration</h4>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Assess enterprise compatibility. Review API capabilities, AI models, and secure deployment specifications.
+        </p>
+        
+        <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+          View Technical Specs <Icons.ArrowRight className="w-4 h-4" />
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 
 

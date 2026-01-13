@@ -43,7 +43,7 @@ const Glimmora = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-500 font-light leading-relaxed max-w-lg mb-10 border-l-4 border-[#ef7f25] pl-6"
             >
-              The AGI-native operating system designed to optimize revenue, operations, and guest experiences across complex hospitality portfolios.
+              The AI-driven operating system designed to optimize revenue, operations, and guest experiences using predictive modeling and real-time data fusion.
             </motion.p>
 
             <motion.div 
@@ -63,13 +63,13 @@ const Glimmora = () => {
 
           {/* Right: "Floating Command Center" Visual */}
           <div className="relative h-[600px] w-full hidden lg:flex items-center justify-center">
-             
+              
              {/* 1. Main Dashboard Card (Back Layer) */}
              <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="absolute w-[500px] h-[320px] bg-white rounded-xl shadow-[0_40px_80px_-20px_rgba(118,0,21,0.15)] border border-gray-100 p-6 z-10"
+               initial={{ opacity: 0, y: 40 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1, delay: 0.2 }}
+               className="absolute w-[500px] h-[320px] bg-white rounded-xl shadow-[0_40px_80px_-20px_rgba(118,0,21,0.15)] border border-gray-100 p-6 z-10"
              >
                 {/* Mock UI Header */}
                 <div className="flex items-center justify-between mb-6 border-b border-gray-50 pb-4">
@@ -94,20 +94,20 @@ const Glimmora = () => {
 
              {/* 2. Floating "Prediction" Card (Top Right) */}
              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-20 right-10 w-48 bg-white p-5 rounded-lg shadow-2xl border-l-4 border-[#760015] z-20"
+               animate={{ y: [0, -15, 0] }}
+               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+               className="absolute top-20 right-10 w-48 bg-white p-5 rounded-lg shadow-2xl border-l-4 border-[#760015] z-20"
              >
                 <div className="text-xs text-gray-400 font-bold uppercase mb-2">Occupancy Forecast</div>
                 <div className="text-3xl font-bold text-[#760015]">98.4%</div>
-                <div className="text-[10px] text-green-600 mt-1 font-bold">▲ 12% vs Last Year</div>
+                <div className="text-[10px] text-green-600 mt-1 font-bold">▲ ML Confidence: High</div>
              </motion.div>
 
              {/* 3. Floating "Revenue" Card (Bottom Left) */}
              <motion.div 
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-32 left-0 w-56 bg-white p-5 rounded-lg shadow-2xl border-l-4 border-[#ef7f25] z-20"
+               animate={{ y: [0, 15, 0] }}
+               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+               className="absolute bottom-32 left-0 w-56 bg-white p-5 rounded-lg shadow-2xl border-l-4 border-[#ef7f25] z-20"
              >
                 <div className="text-xs text-gray-400 font-bold uppercase mb-2">Dynamic Pricing</div>
                 <div className="flex items-end gap-2">
@@ -138,7 +138,7 @@ const Glimmora = () => {
         <p className="text-lg text-gray-500 leading-relaxed font-light">
           Modern hospitality is burdened by fragmented data and retroactive reporting. 
           Glimmora unifies these disparate streams into a single decision-making engine, 
-          enabling operators to anticipate market shifts and operational needs before they occur.
+          enabling operators to anticipate market shifts using Machine Learning algorithms.
         </p>
       </section>
 
@@ -154,19 +154,19 @@ const Glimmora = () => {
             {[
               {
                 title: "Predictive Operations",
-                desc: "Align staffing, inventory, and maintenance with real-time demand forecasts. Reduce operational waste while ensuring property readiness."
+                desc: "Uses ML-based forecasting to align staffing and inventory with real-time demand. Reduce operational waste while ensuring property readiness."
               },
               {
                 title: "Revenue Intelligence",
-                desc: "Move beyond static yield management. Optimize pricing strategies dynamically based on total guest value, market signals, and velocity."
+                desc: "Move beyond static yield. Optimize pricing strategies dynamically using algorithmic modeling based on total guest value and velocity."
               },
               {
                 title: "Guest Optimization",
-                desc: "Anticipate guest needs before arrival. Personalize interactions at scale across the entire property portfolio to drive loyalty."
+                desc: "Anticipate guest needs before arrival. Utilizes predictive analytics to personalize interactions at scale across the entire property portfolio."
               },
               {
                 title: "Digital Twins",
-                desc: "Simulate decisions before execution. Run 'what-if' scenarios for renovations, pricing shifts, or operational changes without risk."
+                desc: "Simulate decisions before execution. Run 'what-if' scenarios for renovations or operational changes using data-driven simulation models."
               }
             ].map((cap, i) => (
               <div key={i} className="group border-t border-[#ef7f25]/30 pt-8 hover:border-[#ef7f25] transition-colors duration-500">
@@ -227,9 +227,9 @@ const Glimmora = () => {
           <div className="inline-block px-4 py-1 border border-[#ef7f25] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest mb-8">
             The Baarez Advantage
           </div>
-          <h2 className="text-4xl font-bold text-[#760015] mb-8">Native Intelligence. Built for Complexity.</h2>
+          <h2 className="text-4xl font-bold text-[#760015] mb-8">Intelligent Architecture. Built for Complexity.</h2>
           <p className="max-w-2xl mx-auto text-gray-500 leading-relaxed mb-12">
-            Unlike legacy hospitality systems retrofitted with AI features, Glimmora is built AI-first. 
+            Unlike legacy hospitality systems retrofitted with AI features, Glimmora is built on a modern data infrastructure. 
             It is engineered to handle the complexity, security, and scale required by modern enterprise 
             hospitality groups.
           </p>
