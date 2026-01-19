@@ -19,18 +19,18 @@ const About = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="flex items-center gap-4 mb-8">
-          <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.5em]">Identity 01.</span>
+          <span className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.5em]">Identity 01.</span>
           <div className="h-[1px] w-20 bg-[#ef7f25]"></div>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-[#760015] leading-[1.1] tracking-tight mb-10">
-          The Intelligence <br /> 
-          Behind the <br /> 
+        <h1 className="text-3xl md:text-4xl font-bold text-[#760015] leading-[1.1] tracking-tight mb-10">
+          The Intelligence <br />
+          Behind the <br />
           <span className="text-gray-300 italic">Enterprise.</span>
         </h1>
-        <p className="text-gray-500 text-lg font-light leading-relaxed max-w-lg mb-10">
-          Baarez Technology Solutions is not just a consultancy; we are an innovation house. 
-          Since 2017, we have engineered trust through transparency, turning complex 
-          infrastructure into streamlined intelligence.
+        <p className="text-gray-500 text-sm font-light leading-relaxed max-w-lg mb-10">
+          Baarez Technology Solutions is not just a consultancy; we are an innovation house.
+          Since 2017, we have specialized in delivering AI-native governance, risk, and compliance solutions
+          for regulated industries across MENA, building trust through transparency and technical excellence.
         </p>
 
         {/* --- UPDATED MILESTONES --- */}
@@ -60,7 +60,7 @@ const About = () => {
               <span className="text-white/20 text-9xl font-black">B.</span>
            </div>
            <div className="relative z-10 h-full flex flex-col justify-center">
-              <h2 className="text-white text-3xl font-bold leading-tight mb-6">"We take ownership of each project we engage in."</h2>
+              <h2 className="text-white text-xl font-bold leading-tight mb-6">"We take ownership of each project we engage in."</h2>
               <p className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest">Making Thinking Visible</p>
            </div>
         </div>
@@ -74,14 +74,14 @@ const About = () => {
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="mb-24 max-w-2xl">
-            <h2 className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.3em] mb-4">The Baarez Way</h2>
-            <h3 className="text-3xl font-bold text-[#760015]">Precision in execution, consistency in results.</h3>
+            <h2 className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.3em] mb-4">The Baarez Way</h2>
+            <h3 className="text-xl font-bold text-[#760015]">Precision in execution, consistency in results.</h3>
           </div>
           <div className="grid md:grid-cols-3 gap-0 border border-gray-100">
             {[
-              { title: "Strategic Persistence", desc: "Driven by 'Technology Freaks' who believe in relentless technical procurement and remarkable endeavors." },
-              { title: "Transparency", desc: "Openness and honesty at every stage. We build solutions based on trust and dedicated determination." },
-              { title: "Excellence", desc: "A constant aim for 100% client satisfaction, ensuring every project leaves a lasting legacy." }
+              { title: "Strategic Persistence", desc: "Weekly steering forums and dedicated technical procurement ensure relentless progress on every engagement. We persist through complexity until objectives are met." },
+              { title: "Transparency", desc: "Openness and honesty at every stage. Full visibility into project status, risks, and decisions. We build solutions based on trust and dedicated determination." },
+              { title: "Excellence", desc: "A constant aim for 100% client satisfaction through rigorous quality controls and continuous improvement, ensuring every project leaves a lasting legacy." }
             ].map((pillar, i) => (
               <div key={i} className="p-12 border-r border-gray-100 last:border-r-0 hover:bg-[#fafafa] transition-colors group">
                 <span className="text-[#ef7f25] text-xs font-mono block mb-8">0{i+1} ———</span>
@@ -107,16 +107,36 @@ const About = () => {
               </div>
             </div>
             <div className="w-full lg:w-7/12">
-              <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.5em] mb-6 block">Leadership / CEO</span>
+              <span className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.5em] mb-6 block">Leadership / CEO</span>
               <h3 className="text-3xl md:text-4xl font-bold text-[#760015] mb-8">Mr. Santosh Kharje</h3>
-              <div className="space-y-8 text-gray-600 leading-relaxed font-light text-lg">
+              <div className="space-y-6 text-gray-600 leading-relaxed text-sm">
                 <p>
                   "The success of Baarez lies deeply in our pillars of customer satisfaction practices; <strong>quality, cost, delivery</strong>. Customers are the heart of everything we do."
                 </p>
-                <p >
+                <p>
                   "We have consistently delivered world-beating projects that make our large competitors admire us. By building long-term relationships with customers and partners, we achieve high levels of success in meeting their unique needs."
                 </p>
               </div>
+
+              {/* Profile Highlights */}
+              <div className="mt-8 p-6 bg-[#fafafa] border-l-4 border-[#760015] rounded">
+                <h4 className="text-xs font-bold text-[#760015] uppercase tracking-widest mb-4">Profile Highlights</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Over 20 years of experience in enterprise technology and digital transformation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Deep expertise in AI-native governance solutions for BFSI and public sector</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Led successful delivery of 100+ complex infrastructure projects across MENA</span>
+                  </li>
+                </ul>
+              </div>
+
               <div className="mt-12 flex items-center gap-6">
                  <div className="w-16 h-[1px] bg-[#760015]"></div>
                  <p className="text-xs font-bold text-[#760015] uppercase tracking-widest">CEO & Co-Founder</p>
@@ -140,7 +160,7 @@ const About = () => {
               </div>
             </div>
             <div className="w-full lg:w-7/12">
-              <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.5em] mb-6 block">Leadership / Chairman</span>
+              <span className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.5em] mb-6 block">Leadership / Chairman</span>
               <h3 className="text-3xl md:text-4xl font-bold text-[#760015] mb-8">Mr. Hamad Suwaid</h3>
               <div className="space-y-6 text-gray-600 leading-relaxed text-sm">
                 <p>
@@ -153,6 +173,26 @@ const About = () => {
                   "Technology without the support of knowledgeable, trained and professional IT staff, does not maximize the opportunities that technology can deliver."
                 </p>
               </div>
+
+              {/* Profile Highlights */}
+              <div className="mt-8 p-6 bg-[#fafafa] border-l-4 border-[#ef7f25] rounded">
+                <h4 className="text-xs font-bold text-[#760015] uppercase tracking-widest mb-4">Profile Highlights</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Champion of Qatar National Vision 2030 and knowledge economy initiatives</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Extensive experience in public sector digital transformation across GCC</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#ef7f25] mt-1">•</span>
+                    <span>Strategic advisor on technology adoption and workforce development</span>
+                  </li>
+                </ul>
+              </div>
+
               <div className="mt-12 flex items-center gap-6">
                  <div className="w-16 h-[1px] bg-[#760015]"></div>
                  <p className="text-xs font-bold text-[#760015] uppercase tracking-widest">Chairman & Co-Founder</p>
@@ -167,8 +207,8 @@ const About = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ef7f25] translate-x-3/4 opacity-10 rounded-full blur-[120px]"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.4em] mb-4">Our Ethical Framework</h2>
-            <h3 className="text-3xl font-bold text-white">The Principles of Ownership</h3>
+            <h2 className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.4em] mb-4">Our Ethical Framework</h2>
+            <h3 className="text-xl font-bold text-white">The Principles of Ownership</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/10 border border-white/10">
             {[
@@ -179,7 +219,7 @@ const About = () => {
               { t: "Ownership", d: "Be empowered. Be decisive." }
             ].map((v, i) => (
               <div key={i} className="bg-[#760015] p-10 hover:bg-[#8a0019] transition-all group">
-                <h4 className="text-[#ef7f25] font-bold text-lg mb-4 group-hover:scale-110 transition-transform origin-left">{v.t}</h4>
+                <h4 className="text-[#ef7f25] font-bold text-xl mb-4 group-hover:scale-110 transition-transform origin-left">{v.t}</h4>
                 <p className="text-white/60 text-xs leading-relaxed">{v.d}</p>
               </div>
             ))}
@@ -192,7 +232,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-[#760015] mb-10 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#760015] mb-10 leading-tight">
                 Driving Excellence Across <br />Sector Boundaries.
               </h2>
               <div className="space-y-12">
@@ -200,22 +240,32 @@ const About = () => {
                   <span className="text-3xl font-black text-[#ef7f25] opacity-20">01</span>
                   <div>
                     <h5 className="font-bold text-[#760015] text-xl mb-2">Public Sector</h5>
-                    <p className="text-gray-500 text-sm leading-relaxed">Helping government departments maximize their resources and drive efficiency, effectiveness, and customer service through local innovation.</p>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-3">Helping government departments maximize their resources and drive efficiency, effectiveness, and customer service through local innovation.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Link to="/solutions/grc" className="text-xs text-[#760015] underline hover:text-[#ef7f25]">GRC for Government</Link>
+                      <span className="text-gray-300">•</span>
+                      <Link to="/solutions/internal-audit" className="text-xs text-[#760015] underline hover:text-[#ef7f25]">Public Sector Audit</Link>
+                    </div>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <span className="text-3xl font-black text-[#ef7f25] opacity-20">02</span>
                   <div>
                     <h5 className="font-bold text-[#760015] text-xl mb-2">Private Sector</h5>
-                    <p className="text-gray-500 text-sm leading-relaxed">Acting as the preferred technology partner for distinguished private organizations to drive corporate growth and national sustainability.</p>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-3">Acting as the preferred technology partner for distinguished private organizations in BFSI, healthcare, and energy sectors to drive corporate growth and regulatory excellence.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Link to="/solutions/grc" className="text-xs text-[#760015] underline hover:text-[#ef7f25]">Banking GRC</Link>
+                      <span className="text-gray-300">•</span>
+                      <Link to="/solutions/tprm" className="text-xs text-[#760015] underline hover:text-[#ef7f25]">Vendor Risk Management</Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="bg-[#fafafa] p-16 border border-gray-100 relative">
                <div className="mb-10">
-                  <h4 className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest mb-4">Corporate Vision</h4>
-                  <p className="text-[#760015] text-2xl font-bold italic leading-relaxed">"To become the preferred technology partner for distinguished private and public sector organizations."</p>
+                  <h4 className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-4">Corporate Vision</h4>
+                  <p className="text-[#760015] text-xl font-bold italic leading-relaxed">"To become the preferred technology partner for distinguished private and public sector organizations."</p>
                </div>
                <div className="w-20 h-[2px] bg-[#ef7f25]"></div>
             </div>
@@ -226,16 +276,16 @@ const About = () => {
       {/* 7. FINAL CALL TO ACTION */}
       <section className="py-32 bg-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#760015] mb-8">Looking forward for longer & stronger business relation.</h2>
-          <p className="text-gray-500 text-lg font-light mb-12 italic">
+          <h2 className="text-xl font-bold text-[#760015] mb-8">Looking forward for longer & stronger business relation.</h2>
+          <p className="text-gray-500 text-sm font-light mb-12 italic">
             "Once again thank you for visiting the website and taking your time to read our thoughts."
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-[#760015] text-white px-12 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-[#ef7f25] transition-all shadow-xl">
-             <Link to="/contact">Connect with our Experts</Link> 
+            <button className="bg-[#760015] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#ef7f25] transition-all shadow-xl">
+             <Link to="/contact">Connect with our Experts</Link>
             </button>
-            <button className="border border-[#760015] text-[#760015] px-12 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gray-50 transition-all">
-               <Link to="/services">View Our Services</Link> 
+            <button className="border border-[#760015] text-[#760015] px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gray-50 transition-all">
+               <Link to="/services">View Our Services</Link>
             </button>
           </div>
         </div>

@@ -63,61 +63,67 @@ const Icons = {
 const services = [
   {
     category: "Consulting & Transformation",
-    description: "Strategic roadmapping to align technology with your business goals.",
+    description: "Strategic roadmapping to align technology with regulatory requirements and business goals in BFSI, public sector, healthcare, and energy.",
     items: [
       {
         id: 'bpc',
         title: "Business Process Consulting",
-        desc: "Optimize operational workflows to reduce waste and improve efficiency.",
+        desc: "Optimize operational workflows to reduce waste and improve efficiency while maintaining compliance with industry regulations. Works with GRC Platform for process governance.",
         path: "/services/business-process-consulting",
-        icon: Icons.Briefcase
+        icon: Icons.Briefcase,
+        platform: "GRC Platform"
       },
       {
         id: 'dt',
         title: "Digital Transformation",
-        desc: "Modernize legacy systems and adopt digital-first business models.",
+        desc: "Modernize legacy systems and adopt digital-first business models tailored for regulated environments. Accelerates GRC, TPRM, and Audit platform rollouts.",
         path: "/services/digital-transformation",
-        icon: Icons.Refresh
+        icon: Icons.Refresh,
+        platform: "All Platforms"
       }
     ]
   },
   {
     category: "Technology & AI",
-    description: "Harnessing the power of data to drive intelligent decision making.",
+    description: "Harnessing the power of data and AI to drive intelligent decision-making in compliance, risk assessment, and operational excellence.",
     items: [
       {
         id: 'data-ai',
         title: "Data Analytics & AI",
-        desc: "Turn raw data into actionable insights with predictive modeling and BI.",
+        desc: "Turn raw data into actionable insights with predictive modeling and BI. Powers AI-driven risk assessment and compliance monitoring across GRC and TPRM platforms.",
         path: "/services/data-analytics-ai",
-        icon: Icons.Brain
+        icon: Icons.Brain,
+        platform: "AI GRC & TPRM"
       }
     ]
   },
   {
     category: "Cloud, Security & ERP",
-    description: "Building the resilient infrastructure that powers the modern enterprise.",
+    description: "Building the resilient, secure infrastructure that powers modern regulated enterprises across MENA and beyond.",
     items: [
       {
         id: 'erp',
         title: "ERP Consulting",
-        desc: "Expert advisory for ERP selection, implementation, and optimization.",
+        desc: "Expert advisory for ERP selection, implementation, and optimization. Integrates with GRC for financial controls and compliance tracking.",
         path: "/services/erp-consulting",
-        icon: Icons.ServerCog
+        icon: Icons.ServerCog,
+        platform: "GRC Integration"
       },
       {
         id: 'cyber',
         title: "Cybersecurity & SOC",
-        desc: "24/7 threat monitoring, vulnerability management, and incident response.",
+        desc: "24/7 threat monitoring, vulnerability management, and incident response. Feeds security incidents and risks directly into GRC platform for unified oversight.",
         path: "/services/cybersecurity-soc",
-        icon: Icons.ShieldCheck
+        icon: Icons.ShieldCheck,
+        platform: "GRC Platform"
       },
       {
         id: 'cloud',
         title: "Cloud & Automation",
-        desc: "Seamless cloud migration strategies and DevOps automation pipelines.",
+        desc: "Seamless cloud migration strategies and DevOps automation pipelines. Sovereign cloud deployment options for data residency compliance.",
         path: "/services/cloud-automation",
-        icon: Icons.CloudLightning
+        icon: Icons.CloudLightning,
+        platform: "Cloud Deployment"
       }
     ]
   }
@@ -127,7 +133,7 @@ const services = [
    3. Service Card Component
    ========================================= */
 const ServiceCard = ({ item }) => (
-  <Link 
+  <Link
     to={item.path}
     className="group relative bg-white p-8 border border-gray-100 rounded-xl hover:border-[#760015]/30 hover:shadow-[0_10px_40px_-10px_rgba(118,0,21,0.1)] transition-all duration-300 flex flex-col h-full"
   >
@@ -142,10 +148,18 @@ const ServiceCard = ({ item }) => (
     <h3 className="text-xl font-bold text-[#2d2a2a] mb-3 group-hover:text-[#760015] transition-colors">
       {item.title}
     </h3>
-    
-    <p className="text-gray-500 text-sm leading-relaxed mb-6 font-light flex-grow">
+
+    <p className="text-gray-500 text-sm leading-relaxed mb-4 font-light flex-grow">
       {item.desc}
     </p>
+
+    {item.platform && (
+      <div className="mb-4 mt-2">
+        <span className="inline-block px-3 py-1 bg-[#ef7f25]/10 text-[#ef7f25] text-xs font-bold uppercase tracking-wider rounded-full">
+          Works with {item.platform}
+        </span>
+      </div>
+    )}
 
     <div className="mt-auto">
       <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-widest border-b border-transparent group-hover:border-[#ef7f25] transition-all">
@@ -178,15 +192,15 @@ const Services = () => {
                 <span className="text-[#ef7f25] font-bold uppercase tracking-widest text-xs">Our Expertise</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-[#760015] mb-8 leading-tight tracking-tight">
+              <h1 className="text-3xl md:text-4xl font-bold text-[#760015] mb-8 leading-tight tracking-tight">
                 Strategic Consulting. <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2d2a2a] to-[#760015]">
                   Intelligent Execution.
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-500 font-light leading-relaxed border-l-4 border-gray-100 pl-6">
-                We move beyond implementation to provide true transformation. From strategic roadmapping to 24/7 security operations, we are the architects of your digital future.
+              <p className="text-sm text-gray-500 font-light leading-relaxed border-l-4 border-gray-100 pl-6">
+                We move beyond implementation to provide true transformation for regulated industries. From strategic roadmapping for BFSI and public sector to 24/7 security operations for healthcare and energy, we are the architects of your digital future in highly regulated environments.
               </p>
             </div>
 
@@ -196,7 +210,7 @@ const Services = () => {
                 {/* Center Hub */}
                 <div className="relative z-20 w-32 h-32 bg-white rounded-full shadow-[0_0_40px_rgba(118,0,21,0.1)] border border-gray-100 flex flex-col items-center justify-center">
                     <span className="text-[#760015] font-bold tracking-tight text-xl">baarez</span>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Core</span>
+                    <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Core</span>
                 </div>
 
                 {/* Orbit Rings */}
@@ -262,10 +276,10 @@ const Services = () => {
                     <span className="text-6xl font-bold text-gray-100 absolute -top-10 -left-6 -z-10">
                       0{idx + 1}
                     </span>
-                    <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">
+                    <h2 className="text-xl font-bold text-[#2d2a2a] mb-4">
                       {section.category}
                     </h2>
-                    <p className="text-gray-500 text-lg font-light leading-relaxed mb-8">
+                    <p className="text-gray-500 text-sm font-light leading-relaxed mb-8">
                       {section.description}
                     </p>
                     <div className="w-12 h-[2px] bg-[#ef7f25]"></div>
@@ -290,7 +304,7 @@ const Services = () => {
       {/* --- 3. THE ENGAGEMENT MODEL (Process Visual) --- */}
       <section className="py-24 bg-[#760015] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-          <h2 className="text-[#ef7f25] font-bold uppercase tracking-widest text-xs mb-4">How We Work</h2>
+          <h2 className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-4">How We Work</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-16">The Baarez Engagement Model</h3>
 
           <div className="grid md:grid-cols-4 gap-8 text-left relative">
@@ -323,7 +337,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
             Need a custom roadmap?
           </h2>
-          <p className="text-gray-500 text-lg mb-10 font-light max-w-2xl mx-auto">
+          <p className="text-gray-500 text-sm mb-10 font-light max-w-2xl mx-auto">
             Our consultants are ready to audit your current stack and propose a digital transformation strategy tailored to your industry.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

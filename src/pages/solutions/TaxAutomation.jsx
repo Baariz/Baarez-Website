@@ -112,7 +112,7 @@ const TaxAutomation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-semibold text-[#2d2a2a] leading-[1.1] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-semibold text-[#2d2a2a] leading-[1.1] tracking-tight mb-8"
             >
               Confidence in <br/>
               Every <span className="text-[#760015]">Calculation.</span>
@@ -178,7 +178,7 @@ const TaxAutomation = () => {
                         }}
                       >
                         <div className="flex flex-col">
-                           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Step 0{i+1}</span>
+                           <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Step 0{i+1}</span>
                            <span className="text-sm font-bold text-[#2d2a2a]">{stage}</span>
                         </div>
                         
@@ -249,13 +249,13 @@ const TaxAutomation = () => {
               <div className="mb-6">
                 <span className="text-[#ef7f25] font-mono text-xl font-bold">0{feature.id}</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-[#2d2a2a] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
                 {feature.title}
               </h2>
               <h3 className="text-xl font-bold text-[#760015] mb-8 uppercase tracking-widest text-sm">
                 {feature.subtitle}
               </h3>
-              <p className="text-xl text-gray-500 leading-relaxed max-w-lg mb-12">
+              <p className="text-sm text-gray-500 leading-relaxed max-w-lg mb-12">
                 {feature.desc}
               </p>
               
@@ -328,7 +328,7 @@ const TaxAutomation = () => {
                 <div className="w-12 h-12 border border-gray-200 group-hover:border-white/20 flex items-center justify-center mb-8 text-[#760015] group-hover:text-white transition-colors">
                   <span className="font-mono text-lg">0{i+1}</span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4">{card.title}</h4>
+                <h4 className="text-xl font-bold mb-4">{card.title}</h4>
                 <p className="text-gray-500 group-hover:text-white/80 leading-relaxed transition-colors">
                   {card.desc}
                 </p>
@@ -341,11 +341,11 @@ const TaxAutomation = () => {
       {/* --- 5. CTA: "The Editorial Finish" (Preserved) --- */}
       <section className="py-32 bg-white px-8 lg:px-24 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-6xl md:text-8xl font-bold text-[#2d2a2a] tracking-tighter mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] tracking-tighter mb-12">
             Be <span className="text-[#760015]">Audit</span> Ready.
           </h2>
           <div className="flex flex-col items-center gap-8">
-            <p className="text-xl text-gray-500">
+            <p className="text-sm text-gray-500">
               The filing window is open. Ensure your compliance today.
             </p>
             <Link 

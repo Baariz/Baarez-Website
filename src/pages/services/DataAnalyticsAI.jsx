@@ -117,7 +117,7 @@ const DataAnalyticsAI = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
             >
               Data is <br/>
               <span className="text-[#760015]">Potential Energy.</span>
@@ -204,7 +204,7 @@ const DataAnalyticsAI = () => {
               <h3 className="text-3xl font-bold text-[#2d2a2a] mb-6 leading-tight">
                 Post-Pandemic Reality: <br/> Speed is Survival.
               </h3>
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Cloud, Big Data, and AI are not separate tools; they are the nervous system of modern enterprise. Organizations relying on reactive reporting are operating in the past.
               </p>
               <div className="flex gap-4">
@@ -265,7 +265,7 @@ const DataAnalyticsAI = () => {
                   0{i+1}
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-[#2d2a2a] mb-2">{item.title}</h4>
+                  <h4 className="text-xl font-bold text-[#2d2a2a] mb-2">{item.title}</h4>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -343,7 +343,7 @@ const DataAnalyticsAI = () => {
                     <service.icon className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">{service.subtitle}</span>
-                  <h4 className="text-2xl font-bold text-[#2d2a2a] mb-4">{service.title}</h4>
+                  <h4 className="text-xl font-bold text-[#2d2a2a] mb-4">{service.title}</h4>
                   <p className="text-gray-600 leading-relaxed mb-8">{service.desc}</p>
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -406,7 +406,7 @@ const DataAnalyticsAI = () => {
       {/* --- 6. FAQ: "Clean Lines" --- */}
       <section className="py-24 bg-[#faf9f6]">
         <div className="max-w-[800px] mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#2d2a2a] mb-12 text-center">Common Questions</h2>
+          <h2 className="text-xl font-bold text-[#2d2a2a] mb-12 text-center">Common Questions</h2>
           <div className="space-y-px bg-gray-200 border border-gray-200">
             {[
               { q: "Do you handle on-premise legacy data?", a: "Yes. We specialize in hybrid cloud architectures. We build secure gateways to ingest data from legacy mainframe or on-prem systems into modern analytics platforms." },
@@ -448,7 +448,7 @@ const DataAnalyticsAI = () => {
           <h2 className="text-4xl font-bold mb-6">
             Stop Guessing. Start Knowing.
           </h2>
-          <p className="text-lg text-white/80 mb-10">
+          <p className="text-sm text-white/80 mb-10">
             Schedule a discovery workshop with our Data & AI architects. We'll assess your maturity and build a roadmap for growth.
           </p>
           <Link 

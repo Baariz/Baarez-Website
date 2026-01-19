@@ -16,13 +16,13 @@ const TermsOfService = () => {
             animate={{ opacity: 1, y: 0 }} 
             className="text-center"
           >
-            <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">Legal Framework</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#760015] mb-6 tracking-tight">Terms & Conditions</h1>
+            <span className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.4em] mb-4 block">Legal Framework</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#760015] mb-6 tracking-tight">Terms & Conditions</h1>
             <p className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
               Welcome to Baarez Technology Solutions. By accessing and using our services, you agree to comply with the 
               following terms and conditions designed to ensure a secure and transparent partnership.
             </p>
-            <div className="mt-8 text-gray-400 text-[10px] uppercase tracking-widest font-bold">
+            <div className="mt-8 text-gray-400 text-xs uppercase tracking-widest font-bold">
               Effective Date: {lastUpdated}
             </div>
           </motion.div>

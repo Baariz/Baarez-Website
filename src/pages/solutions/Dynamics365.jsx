@@ -108,17 +108,17 @@ const Dynamics365 = () => {
           <div className="lg:col-span-7 p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 bg-white flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#ef7f25] mb-6 w-fit">
               <span className="w-1.5 h-1.5 bg-[#ef7f25]"></span>
-              <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest">
+              <span className="text-[#ef7f25] text-xs font-bold uppercase tracking-widest">
                 Microsoft Solutions Partner
               </span>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
               Connect Operations. <br/>
               Accelerate <span className="text-[#760015]">Growth.</span>
             </h1>
             
-            <p className="text-lg text-gray-500 max-w-lg leading-relaxed mb-8">
+            <p className="text-sm text-gray-500 max-w-lg leading-relaxed mb-8">
               Microsoft Dynamics 365 Business Central is the all-in-one business management solution designed to break down silos and streamline your finance, sales, service, and operations.
             </p>
 
@@ -150,8 +150,8 @@ const Dynamics365 = () => {
             
             {/* Overlay Card */}
             <div className="absolute bottom-0 left-0 bg-white p-6 border-t border-r border-gray-200">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Deployment</p>
-              <p className="text-lg font-bold text-[#2d2a2a]">Cloud or On-Premise</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Deployment</p>
+              <p className="text-sm font-bold text-[#2d2a2a]">Cloud or On-Premise</p>
             </div>
           </div>
 
@@ -169,13 +169,13 @@ const Dynamics365 = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
                 What is <span className="text-[#ef7f25]">Business Central?</span>
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-4">
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Formerly known as Microsoft Dynamics NAV, Business Central is a comprehensive ERP solution that connects your teams and processes. It provides a single source of truth for your business data, enabling faster decisions and smarter workflows.
               </p>
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Whether you are outgrowing basic accounting software or replacing legacy ERPs, Business Central scales with you.
               </p>
             </motion.div>
@@ -235,7 +235,7 @@ const Dynamics365 = () => {
                 <div className="w-8 h-8 bg-white border border-gray-200 group-hover:border-[#ef7f25] transition-colors mb-4 flex items-center justify-center text-[#760015] font-bold text-xs rounded-none">
                   0{i+1}
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -283,7 +283,7 @@ const Dynamics365 = () => {
                 <div className="w-10 h-10 mb-4 text-gray-400 group-hover:text-[#760015] transition-colors">
                   <card.icon className="w-full h-full" />
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -302,10 +302,10 @@ const Dynamics365 = () => {
             variants={fadeInUp}
             className="order-2 lg:order-1"
           >
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
               Work Where You <br/> Already Work.
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Business Central is embedded within the Microsoft 365 tools your team uses every day. There is no need to switch apps to approve an invoice or check inventory.
             </p>
             <ul className="space-y-4">
@@ -389,7 +389,7 @@ const Dynamics365 = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Modernize Your Operations?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Speak with our ERP consultants to map out your migration to Business Central.
           </p>
           <Link 

@@ -127,7 +127,7 @@ const DigitalTransformation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
             >
               Future-Proof <br/>
               Via <span className="text-[#760015]">Intelligence.</span>
@@ -235,13 +235,13 @@ const DigitalTransformation = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
                 Applied AI. <br/> Not Just Theory.
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
                 AI transformation isn't about deploying a chatbot. It's about fundamentally rethinking how your organization operates. We focus on building "Intelligent Digital Experiences"—systems that learn, adapt, and predict.
               </p>
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Our approach prioritizes security, compliance, and scalability, ensuring your AI initiatives deliver long-term value, not just short-term proof of concepts.
               </p>
             </motion.div>
@@ -288,7 +288,7 @@ const DigitalTransformation = () => {
                 <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#760015] mb-6 group-hover:border-[#ef7f25] transition-colors">
                   <step.icon className="w-6 h-6" />
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{step.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{step.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
                 {i !== 3 && (
                   <div className="hidden md:block absolute top-6 left-16 w-[calc(100%-3rem)] h-[1px] bg-gray-100"></div>
@@ -329,7 +329,7 @@ const DigitalTransformation = () => {
                   <span className="font-mono text-xs text-gray-300">0{i+1}</span>
                   <div className="h-[1px] flex-1 bg-gray-100"></div>
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{card.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{card.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -445,10 +445,10 @@ const DigitalTransformation = () => {
           <div className="inline-block p-4 border border-gray-200 bg-white mb-8">
             <Icons.ShieldCheck className="w-8 h-8 text-[#760015]" />
           </div>
-          <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
             Innovation Without Risk.
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
             We prioritize **Responsible AI**. Our frameworks ensure your models are explainable, unbiased, and compliant with global regulations (GDPR, HIPAA, EU AI Act). We build guardrails, not just algorithms.
           </p>
         </div>
@@ -460,7 +460,7 @@ const DigitalTransformation = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Build the Future?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Let's discuss how AI can solve your specific business challenges.
           </p>
           <Link 

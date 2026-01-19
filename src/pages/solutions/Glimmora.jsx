@@ -32,7 +32,7 @@ const Glimmora = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-6xl md:text-8xl font-bold text-[#760015] leading-[0.9] tracking-tighter mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#760015] leading-[0.9] tracking-tighter mb-8"
             >
               Glimmora.
             </motion.h1>
@@ -77,7 +77,7 @@ const Glimmora = () => {
                       <div className="w-3 h-3 rounded-full bg-gray-200"></div>
                       <div className="w-3 h-3 rounded-full bg-gray-200"></div>
                    </div>
-                   <div className="text-[10px] uppercase font-bold text-[#ef7f25] tracking-widest">Portfolio Overview</div>
+                   <div className="text-xs uppercase font-bold text-[#ef7f25] tracking-widest">Portfolio Overview</div>
                 </div>
                 {/* Mock Data Lines */}
                 <div className="space-y-4">
@@ -100,7 +100,7 @@ const Glimmora = () => {
              >
                 <div className="text-xs text-gray-400 font-bold uppercase mb-2">Occupancy Forecast</div>
                 <div className="text-3xl font-bold text-[#760015]">98.4%</div>
-                <div className="text-[10px] text-green-600 mt-1 font-bold">▲ ML Confidence: High</div>
+                <div className="text-xs text-green-600 mt-1 font-bold">▲ ML Confidence: High</div>
              </motion.div>
 
              {/* 3. Floating "Revenue" Card (Bottom Left) */}
@@ -111,7 +111,7 @@ const Glimmora = () => {
              >
                 <div className="text-xs text-gray-400 font-bold uppercase mb-2">Dynamic Pricing</div>
                 <div className="flex items-end gap-2">
-                   <div className="text-2xl font-bold text-[#2d2a2a]">$420</div>
+                   <div className="text-xl font-bold text-[#2d2a2a]">$420</div>
                    <div className="text-xs text-[#ef7f25] font-bold mb-1">Optimized</div>
                 </div>
                 <div className="w-full h-1 bg-gray-100 mt-3 rounded-full overflow-hidden">
@@ -135,7 +135,7 @@ const Glimmora = () => {
         <h3 className="text-3xl md:text-5xl font-bold text-[#2d2a2a] mb-8 leading-tight">
           Moving from Reactive Management to <br/> Predictive Intelligence.
         </h3>
-        <p className="text-lg text-gray-500 leading-relaxed font-light">
+        <p className="text-sm text-gray-500 leading-relaxed font-light">
           Modern hospitality is burdened by fragmented data and retroactive reporting. 
           Glimmora unifies these disparate streams into a single decision-making engine, 
           enabling operators to anticipate market shifts using Machine Learning algorithms.
@@ -185,8 +185,8 @@ const Glimmora = () => {
       <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto bg-[#fafafa]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-[#760015] font-bold text-3xl mb-6">Unified Consistency at Scale.</h2>
-            <p className="text-gray-500 text-lg leading-relaxed mb-8">
+            <h2 className="text-[#760015] font-bold text-3xl md:text-4xl mb-6">Unified Consistency at Scale.</h2>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
               For multi-property groups, the challenge is not just excellence, but consistent excellence. 
               Glimmora provides a centralized nervous system, ensuring strategic alignment from headquarters 
               down to individual property operations.
@@ -224,7 +224,7 @@ const Glimmora = () => {
       {/* 6. BAAREZ ADVANTAGE */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <div className="inline-block px-4 py-1 border border-[#ef7f25] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest mb-8">
+          <div className="inline-block px-4 py-1 border border-[#ef7f25] text-[#ef7f25] text-xs font-bold uppercase tracking-widest mb-8">
             The Baarez Advantage
           </div>
           <h2 className="text-4xl font-bold text-[#760015] mb-8">Intelligent Architecture. Built for Complexity.</h2>
@@ -239,8 +239,8 @@ const Glimmora = () => {
       {/* 7. FINAL CTA */}
       <section className="py-20 bg-[#fdfdfd] border-t border-gray-200 text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl text-[#2d2a2a] font-bold mb-6">Ready to transform your operations?</h2>
-          <p className="text-gray-500 mb-10 font-light text-lg">
+          <h2 className="text-3xl md:text-4xl text-[#2d2a2a] font-bold mb-6">Ready to transform your operations?</h2>
+          <p className="text-gray-500 mb-10 font-light text-sm">
             Discover how Glimmora can function as the central operating system for your portfolio.
           </p>
           <button className="px-12 py-5 bg-[#760015] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#ef7f25] transition-all shadow-xl rounded-sm">

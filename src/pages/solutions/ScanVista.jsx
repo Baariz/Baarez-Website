@@ -132,7 +132,7 @@ const ScanVisual = () => (
             <Icons.CheckCircle className="w-4 h-4 text-green-600" />
           </div>
           <div>
-            <div className="text-[10px] text-gray-400 uppercase tracking-wider">Invoice ID</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Invoice ID</div>
             <div className="text-sm font-bold text-[#2d2a2a]">#INV-8821</div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const ScanVisual = () => (
             <Icons.CheckCircle className="w-4 h-4 text-green-600" />
           </div>
           <div>
-            <div className="text-[10px] text-gray-400 uppercase tracking-wider">Total Amount</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Total Amount</div>
             <div className="text-sm font-bold text-[#2d2a2a]">$4,250.00</div>
           </div>
         </div>
@@ -178,12 +178,12 @@ const ScanVista = () => {
               AI OCR ScanVista
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">
               Stop typing data. <br/>
               <span className="text-[#760015]">Start using it.</span>
             </h1>
             
-            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-lg mb-10">
+            <p className="text-sm text-gray-600 font-light leading-relaxed max-w-lg mb-10">
               AI-powered OCR that transforms physical documents into structured, searchable digital data—automatically.
             </p>
 
@@ -214,7 +214,7 @@ const ScanVista = () => {
               <div className="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center shadow-sm mb-6 text-gray-400">
                 <Icons.FileText className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#2d2a2a] mb-2">1. Input</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-2">1. Input</h3>
               <p className="text-sm text-gray-500">Unstructured PDFs, Images, Scans.</p>
               {/* Connector */}
               <div className="hidden lg:block absolute top-1/2 -right-6 w-12 h-[2px] bg-gray-200"></div>
@@ -236,7 +236,7 @@ const ScanVista = () => {
               <div className="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center shadow-sm mb-6 text-green-600">
                 <Icons.Layers className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#2d2a2a] mb-2">3. Output</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-2">3. Output</h3>
               <p className="text-sm text-gray-500">Structured JSON, ERP Entry, Analytics.</p>
             </div>
 
@@ -248,8 +248,8 @@ const ScanVista = () => {
       <section className="py-24 px-8 lg:px-20 bg-[#f9fafb]">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">The Manual Bottleneck</h2>
-            <p className="text-gray-500 text-lg">Where human speed limits business growth.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">The Manual Bottleneck</h2>
+            <p className="text-gray-500 text-sm">Where human speed limits business growth.</p>
           </div>
 
           <div className="bg-white p-12 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
@@ -304,7 +304,7 @@ const ScanVista = () => {
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#ef7f25] shadow-sm mb-6">
                   <Icons.Lightning className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#2d2a2a] mb-3">Swift Extraction</h3>
+                <h3 className="text-xl font-bold text-[#2d2a2a] mb-3">Swift Extraction</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Process thousands of pages in minutes. Our engine identifies key-value pairs (Invoice #, Date, Total) instantly, regardless of layout.
                 </p>
@@ -337,14 +337,14 @@ const ScanVista = () => {
             {/* Feature 3 */}
             <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-[#760015] transition-colors">
               <Icons.Layers className="w-8 h-8 text-[#760015] mb-4" />
-              <h3 className="text-lg font-bold text-[#2d2a2a] mb-2">Smart Formatting</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-2">Smart Formatting</h3>
               <p className="text-sm text-gray-600">Converts unstructured scans into clean JSON, XML, or CSV ready for ERP import.</p>
             </div>
 
             {/* Feature 4 */}
             <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-[#760015] transition-colors">
               <Icons.ShieldCheck className="w-8 h-8 text-[#760015] mb-4" />
-              <h3 className="text-lg font-bold text-[#2d2a2a] mb-2">Secure & Private</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-2">Secure & Private</h3>
               <p className="text-sm text-gray-600">Enterprise-grade encryption for all processed documents. SOC2 Compliant.</p>
             </div>
 
@@ -356,7 +356,7 @@ const ScanVista = () => {
       <section className="py-24 bg-[#fdfbf9] border-y border-gray-100">
         <div className="max-w-[1200px] mx-auto px-8 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2d2a2a]">Applications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">Applications</h2>
           </div>
 
           {/* Tabs Navigation */}
@@ -392,7 +392,7 @@ const ScanVista = () => {
                   className="grid md:grid-cols-2 gap-12 items-center w-full"
                 >
                   <div>
-                    <h3 className="text-2xl font-bold text-[#2d2a2a] mb-4">Invoice Processing</h3>
+                    <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">Invoice Processing</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
                       Finance teams use ScanVista to automate Accounts Payable. Drop in a PDF invoice, and get back vendor name, invoice date, line items, and tax amounts instantly.
                     </p>
@@ -416,7 +416,7 @@ const ScanVista = () => {
                   className="grid md:grid-cols-2 gap-12 items-center w-full"
                 >
                   <div>
-                    <h3 className="text-2xl font-bold text-[#2d2a2a] mb-4">Digital Archiving</h3>
+                    <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">Digital Archiving</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
                       Legal and HR teams digitize legacy paper files (contracts, employee records) into a searchable, secure digital archive.
                     </p>
@@ -440,7 +440,7 @@ const ScanVista = () => {
                   className="grid md:grid-cols-2 gap-12 items-center w-full"
                 >
                   <div>
-                    <h3 className="text-2xl font-bold text-[#2d2a2a] mb-4">Forms Processing</h3>
+                    <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">Forms Processing</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
                       Operations teams auto-fill databases from customer applications, surveys, and handwritten intake forms.
                     </p>
@@ -492,7 +492,7 @@ const ScanVista = () => {
           
           <div className="relative z-10">
             <h2 className="text-4xl font-bold text-[#2d2a2a] mb-6">Eliminate the paper backlog.</h2>
-            <p className="text-lg text-gray-500 mb-10">
+            <p className="text-sm text-gray-500 mb-10">
               See how ScanVista can digitize your operations with speed and accuracy.
             </p>
             <Link 

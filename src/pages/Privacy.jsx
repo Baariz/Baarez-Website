@@ -14,13 +14,13 @@ const Privacy = () => {
             animate={{ opacity: 1, y: 0 }} 
             className="text-center"
           >
-            <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">Legal Documentation</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#760015] mb-6">Privacy Policy</h1>
+            <span className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.4em] mb-4 block">Legal Documentation</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#760015] mb-6">Privacy Policy</h1>
             <p className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
               Baâriz Technology Solutions is committed to protecting your privacy. This policy explains how we collect, 
               use, and safeguard your personal information across our services and subdomains.
             </p>
-            <div className="mt-8 text-gray-400 text-[10px] uppercase tracking-widest font-bold">
+            <div className="mt-8 text-gray-400 text-xs uppercase tracking-widest font-bold">
               Last Updated: {lastUpdated}
             </div>
           </motion.div>
@@ -42,7 +42,7 @@ const Privacy = () => {
 
             {/* 2. Definitions */}
             <div>
-              <h3 className="text-[#760015] font-bold text-lg mb-6 border-b border-gray-50 pb-2">Definitions and Key Terms</h3>
+              <h3 className="text-xl text-[#760015] font-bold mb-6 border-b border-gray-50 pb-2">Definitions and Key Terms</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { term: "Cookie", desc: "Small data used to identify your browser, provide analytics, and remember preferences." },

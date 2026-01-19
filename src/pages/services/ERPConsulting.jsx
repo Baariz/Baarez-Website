@@ -110,7 +110,7 @@ const ERPConsulting = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+        className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
       >
         Unify Operations. <br/>
         <span className="text-[#760015]">Accelerate Scale.</span>
@@ -154,11 +154,11 @@ const ERPConsulting = () => {
         >
           <div className="flex justify-between items-start">
             <BarChart3 className="w-5 h-5 text-[#ef7f25]" />
-            <span className="text-[8px] font-bold uppercase tracking-widest text-gray-400">Intelligence Layer</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Intelligence Layer</span>
           </div>
           <div>
             <div className="h-1 w-10 bg-[#ef7f25] mb-2" />
-            <p className="text-[10px] font-bold text-[#2d2a2a] uppercase">Real-Time Analytics</p>
+            <p className="text-xs font-bold text-[#2d2a2a] uppercase">Real-Time Analytics</p>
           </div>
         </motion.div>
 
@@ -171,7 +171,7 @@ const ERPConsulting = () => {
         >
           <div className="flex justify-between items-start">
             <Zap className="w-5 h-5 text-[#760015]" />
-            <span className="text-[8px] font-bold uppercase tracking-widest text-gray-400">Operational Layer</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Operational Layer</span>
           </div>
           <div className="flex gap-1.5">
             {[1, 2, 3].map(i => (
@@ -184,7 +184,7 @@ const ERPConsulting = () => {
               </div>
             ))}
           </div>
-          <p className="text-[10px] font-bold text-[#2d2a2a] uppercase tracking-wider">Process Automation</p>
+          <p className="text-xs font-bold text-[#2d2a2a] uppercase tracking-wider">Process Automation</p>
         </motion.div>
 
         {/* Base Layer: Core ERP Foundation (Now Fully Visible) */}
@@ -202,23 +202,23 @@ const ERPConsulting = () => {
             </div>
             <div>
               <h4 className="text-white font-bold text-sm tracking-widest uppercase">Central ERP Foundation</h4>
-              <p className="text-white/40 text-[8px] uppercase tracking-tighter">Unified Enterprise Hub</p>
+              <p className="text-white/40 text-xs uppercase tracking-tighter">Unified Enterprise Hub</p>
             </div>
           </div>
 
           <div className="relative z-10 flex gap-8 border-t border-white/10 pt-6">
             <div className="flex flex-col">
-              <span className="text-[8px] text-white/40 uppercase tracking-widest mb-1">System Status</span>
+              <span className="text-xs text-white/40 uppercase tracking-widest mb-1">System Status</span>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#ef7f25] animate-pulse" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-wider">Live Sync</span>
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Live Sync</span>
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-[8px] text-white/40 uppercase tracking-widest mb-1">Security</span>
+              <span className="text-xs text-white/40 uppercase tracking-widest mb-1">Security</span>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#ef7f25]" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-wider">Encrypted</span>
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Encrypted</span>
               </div>
             </div>
           </div>
@@ -242,10 +242,10 @@ const ERPConsulting = () => {
             <h3 className="text-3xl font-bold text-[#2d2a2a] mb-6">
               Global Standards. <br/> Regional Expertise.
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Modern organizations cannot afford data silos. ERP provides real-time visibility and control across your entire enterprise.
             </p>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               We provide tailor-made ERP consulting for SMEs and Enterprises across **Qatar, UAE, and India**, ensuring your system aligns with local compliance and global best practices.
             </p>
           </div>
@@ -305,7 +305,7 @@ const ERPConsulting = () => {
       <div className="max-w-xl">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-8 h-[1px] bg-[#ef7f25]" />
-          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.3em] text-[10px]">
+          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.3em] text-xs">
             Functional Coverage
           </h2>
         </div>
@@ -322,7 +322,7 @@ const ERPConsulting = () => {
       <div className="bg-white p-8 border border-gray-100 hover:border-[#ef7f25]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
         <div className="flex items-center gap-3 mb-5">
           <Icons.Briefcase className="w-5 h-5 text-[#ef7f25]" />
-          <h4 className="text-lg font-bold text-[#2d2a2a]">Procurement</h4>
+          <h4 className="text-xl font-bold text-[#2d2a2a]">Procurement</h4>
         </div>
         <ul className="space-y-3">
           {["Strategic Sourcing", "Contract Management", "Procure-to-Pay", "Supplier Management"].map((item, i) => (
@@ -338,7 +338,7 @@ const ERPConsulting = () => {
       <div className="bg-white p-8 border border-gray-100 hover:border-[#760015]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
         <div className="flex items-center gap-3 mb-5">
           <Icons.Money className="w-5 h-5 text-[#760015]" />
-          <h4 className="text-lg font-bold text-[#2d2a2a]">Finance</h4>
+          <h4 className="text-xl font-bold text-[#2d2a2a]">Finance</h4>
         </div>
         <ul className="space-y-3">
           {["AP / AR / Revenue", "Treasury & Tax", "Costing & FP&A", "Credit Control"].map((item, i) => (
@@ -354,7 +354,7 @@ const ERPConsulting = () => {
       <div className="bg-white p-8 border border-gray-100 hover:border-[#ef7f25]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
         <div className="flex items-center gap-3 mb-5">
           <Icons.Layers className="w-5 h-5 text-[#ef7f25]" />
-          <h4 className="text-lg font-bold text-[#2d2a2a]">Planning</h4>
+          <h4 className="text-xl font-bold text-[#2d2a2a]">Planning</h4>
         </div>
         <ul className="space-y-3">
           {["Supply & Demand", "Integrated Planning", "Profitability Analysis", "Business Modeling"].map((item, i) => (
@@ -370,7 +370,7 @@ const ERPConsulting = () => {
       <div className="bg-white p-8 border border-gray-100 hover:border-[#760015]/30 transition-all duration-300 group shadow-sm hover:shadow-md">
         <div className="flex items-center gap-3 mb-5">
           <Icons.Box className="w-5 h-5 text-[#760015]" />
-          <h4 className="text-lg font-bold text-[#2d2a2a]">Supply Chain</h4>
+          <h4 className="text-xl font-bold text-[#2d2a2a]">Supply Chain</h4>
         </div>
         <ul className="space-y-3">
           {["Logistics Management", "Manufacturing Execution", "Lifecycle Management", "Risk & Compliance"].map((item, i) => (
@@ -390,7 +390,7 @@ const ERPConsulting = () => {
       <section className="py-24 bg-[#faf9f6]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-[#2d2a2a]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">
               Business Value Delivered
             </h2>
           </div>
@@ -452,7 +452,7 @@ const ERPConsulting = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Optimize Your ERP?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Speak with our ERP consultants to plan your roadmap.
           </p>
           <Link 

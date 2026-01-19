@@ -203,7 +203,7 @@ const SolutionCard = ({ item }) => {
               <item.icon className="w-10 h-10" />
           </div>
           {item.badge && (
-              <span className={`text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full border ${getBadgeStyles(item.badge)}`}>
+              <span className={`text-xs uppercase tracking-wider font-bold px-2.5 py-1 rounded-full border ${getBadgeStyles(item.badge)}`}>
                   {item.badge}
               </span>
           )}
@@ -261,11 +261,11 @@ const Solutions = () => {
                         <span className="w-8 h-[2px] bg-[#ef7f25]"></span>
                         Enterprise Catalog
                     </h4>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2d2a2a] mb-6 leading-[1.1]">
+                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#2d2a2a] mb-6 leading-[1.1]">
                         AI-Native Governance for <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#760015] to-[#ef7f25]">Regulated Industries</span>
                     </h1>
-                    <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg">
+                    <p className="text-sm text-gray-500 mb-8 leading-relaxed max-w-lg">
                         From GRC to TPRM and Internal Audit on one unified stack. Secure outcomes like reduced audit cycles, faster vendor onboarding, and automated compliance.
                     </p>
                     
@@ -303,9 +303,9 @@ const Solutions = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                         </div>
                         <div className="p-4 grid grid-cols-3 gap-4">
-                            <div><div className="text-[10px] text-gray-400 uppercase tracking-wider">Risk Score</div><div className="text-xl font-bold text-[#760015]">Low</div></div>
-                            <div><div className="text-[10px] text-gray-400 uppercase tracking-wider">Compliance</div><div className="text-xl font-bold text-green-600">98%</div></div>
-                            <div><div className="text-[10px] text-gray-400 uppercase tracking-wider">Audits</div><div className="text-xl font-bold text-[#ef7f25]">Active</div></div>
+                            <div><div className="text-xs text-gray-400 uppercase tracking-wider">Risk Score</div><div className="text-xl font-bold text-[#760015]">Low</div></div>
+                            <div><div className="text-xs text-gray-400 uppercase tracking-wider">Compliance</div><div className="text-xl font-bold text-green-600">98%</div></div>
+                            <div><div className="text-xs text-gray-400 uppercase tracking-wider">Audits</div><div className="text-xl font-bold text-[#ef7f25]">Active</div></div>
                         </div>
                     </div>
                 </div>
@@ -362,11 +362,11 @@ const Solutions = () => {
             <div key={idx}>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-[#2d2a2a] mb-2 flex items-center gap-2">
+                    <h2 className="text-xl font-bold text-[#2d2a2a] mb-2 flex items-center gap-2">
                         <span className="w-2 h-8 bg-[#ef7f25] rounded-sm block"></span>
                         {category.title}
                     </h2>
-                    <p className="text-gray-500 text-base max-w-2xl ml-4">{category.description}</p>
+                    <p className="text-gray-500 text-sm max-w-2xl ml-4">{category.description}</p>
                   </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -383,8 +383,8 @@ const Solutions = () => {
       <section className="py-20 bg-white border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-[#ef7f25] font-bold uppercase tracking-widest text-xs mb-3">Quick View</h2>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a]">Compare Platforms at a Glance</h3>
+            <h2 className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-3">Quick View</h2>
+            <h3 className="text-xl font-bold text-[#2d2a2a]">Compare Platforms at a Glance</h3>
           </div>
           <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
             <table className="w-full text-left border-collapse">
@@ -414,15 +414,15 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-4">
                 <div>
-                    <h2 className="text-[#ef7f25] font-bold uppercase tracking-widest text-xs mb-3">Proven Outcomes</h2>
-                    <h3 className="text-2xl font-bold text-[#2d2a2a]">See Baarez in Action</h3>
+                    <h2 className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-3">Proven Outcomes</h2>
+                    <h3 className="text-xl font-bold text-[#2d2a2a]">See Baarez in Action</h3>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {caseStudies.map((study) => (
                     <Link key={study.id} to={study.link} className="group bg-white p-6 rounded-lg border border-gray-200 hover:border-[#760015] hover:shadow-lg transition-all duration-300 flex flex-col">
                         <div className="mb-4"><span className="inline-block px-3 py-1 bg-gray-100 text-[#760015] text-xs font-bold uppercase tracking-wide rounded-full">{study.industry}</span></div>
-                        <h4 className="text-lg font-bold text-[#2d2a2a] mb-2 leading-tight group-hover:text-[#760015] transition-colors">{study.outcome}</h4>
+                        <h4 className="text-xl font-bold text-[#2d2a2a] mb-2 leading-tight group-hover:text-[#760015] transition-colors">{study.outcome}</h4>
                         <p className="text-gray-500 text-sm mb-6 flex-grow">{study.desc}</p>
                         <div className="flex items-center text-sm font-bold text-[#ef7f25] mt-auto"><span className="mr-2">Explore Solution</span><Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></div>
                     </Link>
@@ -440,7 +440,7 @@ const Solutions = () => {
                 <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#760015]/5 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="relative z-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">Find the right fit for your enterprise.</h2>
-                    <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto font-light">Unsure which platform aligns with your compliance needs? Our solution architects can provide a tailored roadmap.</p>
+                    <p className="text-sm text-gray-500 mb-8 max-w-2xl mx-auto font-light">Unsure which platform aligns with your compliance needs? Our solution architects can provide a tailored roadmap.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white bg-[#760015] rounded hover:bg-[#5a0010] transition-colors shadow-lg shadow-[#760015]/20">Talk to an Expert</Link>
                         <Link to="/about" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-[#760015] bg-white border border-[#760015]/20 rounded hover:bg-gray-50 transition-colors">About Baarez</Link>

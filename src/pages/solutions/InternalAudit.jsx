@@ -119,12 +119,12 @@ const InternalAudit = () => {
              AI Internal Audit Management
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">
-              Transform Audit from 
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-[#2d2a2a] leading-tight">
+              Transform Audit from
               <span className="text-[#760015]"> Overhead to Insight.</span>
             </h1>
-            
-            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-lg mb-10">
+
+            <p className="text-sm text-gray-600 font-light leading-relaxed max-w-lg mb-10">
               Move beyond spreadsheets. Baarez provides an AI-powered platform to plan, execute, and report on audits with precision and speed.
             </p>
 
@@ -149,8 +149,8 @@ const InternalAudit = () => {
       <section className="py-24 px-8 lg:px-20 bg-[#f9fafb]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">Why Modern Internal Audit Needs Change</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">Why Modern Internal Audit Needs Change</h2>
+            <p className="text-gray-500 text-sm max-w-2xl mx-auto">
               Traditional audit methods are disconnected, manual, and reactive. They can't keep pace with today's risk velocity.
             </p>
           </div>
@@ -236,7 +236,7 @@ const InternalAudit = () => {
                   <div className="text-gray-400 group-hover:text-[#ef7f25] transition-colors">
                     <feature.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#2d2a2a]">{feature.title}</h3>
+                  <h3 className="text-xl font-bold text-[#2d2a2a]">{feature.title}</h3>
                 </div>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   {feature.desc}
@@ -251,7 +251,7 @@ const InternalAudit = () => {
       <section className="py-24 bg-[#fdfbf9] border-y border-gray-100">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-20">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">Supporting the Full Audit Lifecycle</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">Supporting the Full Audit Lifecycle</h2>
             <p className="text-gray-500">From initial risk assessment to final board reporting.</p>
           </div>
 
@@ -285,7 +285,7 @@ const InternalAudit = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             
             <div className="bg-gray-50 p-10 rounded-xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-[#2d2a2a] mb-6">Who is this for?</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-6">Who is this for?</h3>
               <ul className="space-y-4">
                 {[
                   "Chief Audit Executives (CAE)",
@@ -302,7 +302,7 @@ const InternalAudit = () => {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-8">Business Impact</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-8">Business Impact</h2>
               <div className="space-y-8">
                 {[
                   { label: "Faster Audit Cycles", val: "40%", desc: "Reduction in administrative time via automation." },
@@ -312,7 +312,7 @@ const InternalAudit = () => {
                   <div key={i} className="flex gap-6 items-start">
                     <div className="text-4xl font-light text-[#760015] w-24 text-right">{stat.val}</div>
                     <div>
-                      <h4 className="font-bold text-[#2d2a2a] text-lg">{stat.label}</h4>
+                      <h4 className="font-bold text-[#2d2a2a] text-xl">{stat.label}</h4>
                       <p className="text-sm text-gray-500">{stat.desc}</p>
                     </div>
                   </div>
@@ -367,11 +367,11 @@ const InternalAudit = () => {
           </div>
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-bold text-[#2d2a2a] mb-6 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6 leading-tight">
           Ready to modernize your <br/> Internal Audit function?
         </h2>
         
-        <p className="text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+        <p className="text-sm text-gray-500 mb-10 max-w-xl leading-relaxed">
           Stop relying on outdated methods. See how Baarez can help you deliver deeper insights and greater assurance to your stakeholders.
         </p>
         

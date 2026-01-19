@@ -104,7 +104,7 @@ const CybersecuritySOC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
             >
               Resilience by <br/>
               <span className="text-[#760015]">Design.</span>
@@ -209,10 +209,10 @@ const CybersecuritySOC = () => {
               <h3 className="text-3xl font-bold text-[#2d2a2a] mb-6">
                 Fragmentation Creates Risk. <br/> Unity Creates Resilience.
               </h3>
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Security isn't a list of tools; it's a unified posture. Managing data, applications, and identities in silos leaves gaps that attackers exploit.
               </p>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Baarez brings these layers together under a single, AI-enabled governance framework, ensuring visibility and compliance across your entire digital estate.
               </p>
             </div>
@@ -393,7 +393,7 @@ const CybersecuritySOC = () => {
           <h2 className="text-4xl font-bold mb-6">
             Secure Your Future.
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Don't wait for a breach to rethink your strategy. Speak to a Baarez Cybersecurity Specialist today.
           </p>
           <Link 

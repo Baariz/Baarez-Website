@@ -39,6 +39,7 @@ import Services from './pages/Services'
 import Glimmora from './pages/solutions/Glimmora'
 import WhitePaper from './pages/WhitePaper'
 
+
 function App() {
   return (
     <>
@@ -51,6 +52,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="solutions" element={<Solutions />} />
+          <Route path="platforms" element={<Solutions />} /> {/* Redirect platforms to solutions */}
           <Route path="services" element={<Services/>} />
 
           {/* Solutions */}

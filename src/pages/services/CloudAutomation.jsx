@@ -103,7 +103,7 @@ const CloudAutomation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
             >
               Scale Fast. <br/>
               <span className="text-[#760015]">Automate Everything.</span>
@@ -156,14 +156,14 @@ const CloudAutomation = () => {
               {/* Central Core (Server) */}
               <div className="relative z-10 w-32 h-32 bg-white border-2 border-[#760015]   rounded-full flex flex-col items-center justify-center shadow-2xl">
                 <Icons.Server className="w-10 h-10 text-[#760015] mb-2" />
-                <span className="text-[10px] font-bold uppercase tracking-wider">Infra</span>
+                <span className="text-xs font-bold uppercase tracking-wider">Infra</span>
               </div>
 
               {/* Floating Nodes */}
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
-                  className="absolute bg-white border border-gray-200 px-3 py-1 text-[10px] font-bold text-gray-500 uppercase tracking-widest shadow-sm"
+                  className="absolute bg-white border border-gray-200 px-3 py-1 text-xs font-bold text-gray-500 uppercase tracking-widest shadow-sm"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, delay: i, repeat: Infinity, ease: "easeInOut" }}
                   style={{
@@ -194,10 +194,10 @@ const CloudAutomation = () => {
               <h3 className="text-3xl font-bold text-[#2d2a2a] mb-6">
                 Cloud is not a Place. <br/> It's an Operating Model.
               </h3>
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Migrating to the cloud is just step one. To realize the true value of cloud—agility, speed, and cost savings—you need **Automation**.
               </p>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Manual server management is slow and error-prone. Baarez helps you embrace Infrastructure as Code (IaC) and automated pipelines to deploy faster and fail less.
               </p>
             </div>
@@ -254,7 +254,7 @@ const CloudAutomation = () => {
                 <div className="mb-6 text-gray-400 group-hover:text-[#760015] transition-colors">
                   <card.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{card.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{card.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -296,7 +296,7 @@ const CloudAutomation = () => {
             
             <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center">
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold text-[#2d2a2a] mb-4">Security by Design</h3>
+                <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">Security by Design</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                   Automation isn't just about speed; it's about consistency. We bake security policies into your infrastructure code, ensuring every environment you spin up is compliant from day one.
                 </p>
@@ -336,7 +336,7 @@ const CloudAutomation = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Modernize?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Speak with our Cloud Architects to assess your infrastructure and build an automation roadmap.
           </p>
           <Link 

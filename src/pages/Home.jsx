@@ -107,12 +107,13 @@ const BAAREZ_CONFIG = {
     secondary: "#ef7f25",
   },
  hero: {
-  tagline: "Baarez Technology Solutions",
-  headline: "AI Transformation Company",
+  tagline: "AI-Native Governance for Regulated Enterprises",
+  headline: "Unify GRC, TPRM, and Audit on One AI-Native Platform",
   subheadline:
-    "Baarez builds AI-driven systems that bring clarity, control, and continuity to enterprise governance, risk, and compliance.",
+    "Baarez unifies GRC, third-party risk, and internal audit on a single AI-native platform built for banks, public sector agencies, and healthcare providers in high-regulation markets.",
+  roles: ["CRO", "CISO", "CCO", "Internal Audit Heads"],
   ctaPrimary: "Request Platform Demo",
-  ctaSecondary: "Explore AI Platforms",
+  ctaSecondary: "Explore AI GRC Platform",
   image:
     "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
 }
@@ -120,7 +121,7 @@ const BAAREZ_CONFIG = {
 
 ,
  trust: {
-  label: "Trusted By Regulated Industries",
+  label: "Technology Ecosystem",
   logos: [
     { 
       name: "Oracle", 
@@ -371,21 +372,25 @@ services: {
   cards: [
     {
       title: "Banking & Financial Services",
+      regulations: "Basel III, AML, central bank guidelines (SAMA, CBI), IFRS 9/17",
       icon: Icons.Briefcase,
       image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Healthcare & Life Sciences",
+      regulations: "HIPAA, FDA 21 CFR Part 11, GDPR, data privacy & interoperability standards",
       icon: Icons.ShieldCheck,
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Government & Public Sector",
+      regulations: "National data localization, NIST, GDPR, public procurement & audit standards",
       icon: Icons.Server,
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Energy & Utilities",
+      regulations: "NERC CIP, HSE incident tracking, operational resilience, ISO 55000",
       icon: Icons.Lightning,
       image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop"
     }
@@ -591,27 +596,37 @@ function Home() {
         >
           <div className="space-y-2">
             <h2 className="text-gray-400 text-xs font-bold uppercase tracking-widest">
-              AI Transformation Company
+              {BAAREZ_CONFIG.hero.tagline}
             </h2>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#760015] leading-tight tracking-tight">
-              AI-native governance and risk platforms for 
-              <span className="text-[#760015] font-semibold"> regulated industries.</span>
+            <h1 className="text-3xl md:text-4xl font-semibold text-[#760015] leading-tight tracking-tight">
+              {BAAREZ_CONFIG.hero.headline}
             </h1>
           </div>
 
           <div className="flex justify-center lg:justify-start">
-            <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-sm font-light border-l-2 border-[#760015] pl-6 text-left">
-              Building scalable AI ecosystems designed for high-performance enterprise operations and highly regulated environments.
+            <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-light border-l-2 border-[#760015] pl-6 text-left">
+              {BAAREZ_CONFIG.hero.subheadline}
             </p>
           </div>
 
+          {/* Roles Badge */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
+            <span className="text-xs text-gray-400 font-medium">For:</span>
+            <br />
+            {BAAREZ_CONFIG.hero.roles.map((role, i) => (
+              <span key={i} className="inline-block px-3 py-1 bg-[#760015]/5 text-[#760015] text-xs font-bold rounded-full">
+                {role}
+              </span>
+            ))}
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2">
-            <Link to="/contact" className="w-full sm:w-auto text-center group relative bg-[#760015] text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.15em] shadow-xl overflow-hidden transition-all">
-              <span className="relative z-10">Book Platform Demo</span>
+            <Link to="/contact" className="w-full sm:w-auto text-center group relative bg-[#760015] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] shadow-xl overflow-hidden transition-all">
+              <span className="relative z-10">{BAAREZ_CONFIG.hero.ctaPrimary}</span>
               <div className="absolute inset-0 bg-[#ef7f25] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </Link>
-            <Link to="/solutions" className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#760015] hover:text-[#ef7f25] transition-colors">
-              Explore AI Platforms
+            <Link to="/solutions/grc" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-[0.15em] text-[#760015] hover:text-[#ef7f25] transition-colors">
+              {BAAREZ_CONFIG.hero.ctaSecondary}
               <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>
           </div>
@@ -631,20 +646,20 @@ function Home() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="relative z-20 bg-[#760015] text-white p-8 md:p-12 shadow-[0_60px_100px_-20px_rgba(118,0,21,0.4)] w-full max-w-sm border-t-8 border-[#ef7f25]"
           >
-            <p className="text-[#ef7f25] text-[9px] font-bold uppercase tracking-[0.4em] mb-6">Core Framework</p>
-            <h3 className="text-lg md:text-2xl font-bold leading-tight tracking-tight mb-8">
+            <p className="text-[#ef7f25] text-xs font-bold uppercase tracking-[0.4em] mb-6">Core Framework</p>
+            <h3 className="text-xl font-bold leading-tight tracking-tight mb-8">
               Scalable Platforms for High-Performance Ecosystems.
             </h3>
             
             <div className="flex gap-4 pt-6 border-t border-white/10">
                <div className="space-y-1">
-                 <p className="text-[8px] text-white/40 uppercase tracking-widest">System</p>
-                 <p className="text-[10px] font-bold">Active AI</p>
+                 <p className="text-xs text-white/40 uppercase tracking-widest">System</p>
+                 <p className="text-xs font-bold">Active AI</p>
                </div>
                <div className="w-[1px] h-8 bg-white/10" />
                <div className="space-y-1">
-                 <p className="text-[8px] text-white/40 uppercase tracking-widest">Region</p>
-                 <p className="text-[10px] font-bold">MENA</p>
+                 <p className="text-xs text-white/40 uppercase tracking-widest">Region</p>
+                 <p className="text-xs font-bold">MENA</p>
                </div>
             </div>
           </motion.div>
@@ -660,9 +675,9 @@ function Home() {
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-2 h-2 rounded-full bg-[#ef7f25] animate-pulse" />
-                <span className="text-[10px] font-bold text-[#760015] uppercase tracking-widest">Glimmora AI</span>
+                <span className="text-xs font-bold text-[#760015] uppercase tracking-widest">Glimmora AI</span>
               </div>
-              <p className="text-[11px] text-gray-400 font-light leading-relaxed">
+              <p className="text-xs text-gray-400 font-light leading-relaxed">
                 Specialized hospitality intelligence module for guest-centric operational excellence.
               </p>
             </motion.div>
@@ -670,7 +685,7 @@ function Home() {
 
           {/* Capability Nodes */}
           {/* Mobile Changes: Added 'w-full mt-4' to stack nicely. Desktop 'lg:absolute' remains untouched. */}
-          <div className="flex flex-col gap-4 w-full md:w-auto mt-4 lg:mt-0 lg:absolute lg:bottom-[50%] lg:left-[-5%] z-30">
+          <div className="flex flex-col gap-4 w-full md:w-auto mt-4 lg:mt-0 lg:absolute lg:bottom-[50%] lg:left-[-10%] z-30">
             {[
               { label: 'AI GRC Platform', path: '/solutions/grc' },
               { label: 'AI TPRM Platform', path: '/solutions/tprm' },
@@ -684,7 +699,7 @@ function Home() {
                   className="bg-white/80 backdrop-blur-md border border-gray-100 px-5 py-4 lg:py-2 shadow-lg flex items-center gap-3 hover:border-[#ef7f25] transition-colors cursor-pointer"
                 >
                   <div className="w-1 h-1 bg-[#ef7f25]" />
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#760015]">{node.label}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#760015]">{node.label}</span>
                 </motion.div>
               </Link>
             ))}
@@ -711,7 +726,7 @@ function Home() {
       
       {/* Strategic Positioning Text */}
       <div className="text-center md:text-left">
-        <h2 className="text-lg font-semibold text-slate-800">
+        <h2 className="text-xl font-semibold text-slate-800">
           Core Risk & Compliance for <span className="text-[#76000E]">Regulated Industries</span>
         </h2>
         <p className="text-sm text-slate-500 mt-1">
@@ -829,10 +844,10 @@ function Home() {
       <h2 className="text-[#76000E] font-bold uppercase tracking-widest text-xs mb-3">
         The Governance Gap
       </h2>
-      <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
+      <h3 className="text-3xl md:text-4xl font-bold text-slate-900">
         Stop managing risk in silos.
       </h3>
-      <p className="mt-4 text-slate-500">
+      <p className="mt-4 text-sm text-slate-500">
         Regulated industries cannot afford disconnected data. We bridge the gap between manual fragmentation and automated control.
       </p>
     </div>
@@ -947,9 +962,9 @@ function Home() {
   <Section>
     <div className="mb-12 md:mb-16 max-w-3xl">
       <FadeIn>
-        <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-xs md:text-sm">Our Platform</h2>
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2d2a2a] mb-4 md:mb-6">{BAAREZ_CONFIG.solutions.title}</h3>
-        <p className="text-lg md:text-xl text-gray-500">{BAAREZ_CONFIG.solutions.subtitle}</p>
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-4">Our Platform</h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4 md:mb-6">{BAAREZ_CONFIG.solutions.title}</h3>
+        <p className="text-sm text-gray-500">{BAAREZ_CONFIG.solutions.subtitle}</p>
       </FadeIn>
     </div>
 
@@ -981,7 +996,7 @@ function Home() {
                   <tab.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-sm md:text-base font-bold transition-colors ${
+                  <h4 className={`text-sm font-bold transition-colors ${
                     activeTab === tab.id ? 'text-[#760015]' : 'text-gray-500 group-hover:text-gray-900'
                   }`}>
                     {tab.label}
@@ -1017,9 +1032,9 @@ function Home() {
                           <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">For {tab.target}</span>
                         </div>
 
-                        <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a] mb-4">{tab.title}</h3>
-                        
-                        <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                        <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">{tab.title}</h3>
+
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {tab.desc}
                         </p>
                       </div>
@@ -1029,22 +1044,22 @@ function Home() {
                         {tab.features.map((feat, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <Icons.CheckCircle className="w-5 h-5 text-[#760015] shrink-0 mt-0.5" />
-                            <span className="font-medium text-gray-700 text-sm md:text-base">{feat}</span>
+                            <span className="text-sm font-medium text-gray-700">{feat}</span>
                           </div>
                         ))}
                         
                         {/* Outcome Metric */}
                         <div className="flex items-start gap-3 pt-3 border-t border-dashed border-gray-200 mt-2">
                             <Icons.TrendingUp className="w-5 h-5 text-[#ef7f25] shrink-0 mt-0.5" />
-                            <span className="font-bold text-[#ef7f25] text-sm md:text-base">{tab.outcome}</span>
+                            <span className="text-sm font-bold text-[#ef7f25]">{tab.outcome}</span>
                         </div>
                       </div>
 
                       {/* Ecosystem Flow */}
                       <div className="mt-auto">
                         <div className="mb-8 p-4 bg-[#fdfbf9] border border-[#ef7f25]/20 rounded-lg">
-                          <p className="text-[10px] font-bold text-gray-400 uppercase mb-2">Ecosystem Synergy</p>
-                          <div className="flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-700">
+                          <p className="text-xs font-bold text-gray-400 uppercase mb-2">Ecosystem Synergy</p>
+                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-700">
                             <Icons.Layers className="w-4 h-4 text-[#760015] shrink-0" />
                             <span>{tab.synergy}</span>
                           </div>
@@ -1083,7 +1098,7 @@ function Home() {
     {/* Section Header */}
     <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
       <div>
-        <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-2 text-xs">
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-2">
           {BAAREZ_CONFIG.services.title}
         </h2>
         <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">
@@ -1092,7 +1107,7 @@ function Home() {
       </div>
       <div className="hidden md:block h-[1px] bg-gray-200 flex-1 mx-8 mb-2"></div>
       <div className="text-right">
-        <span className="text-[#760015] font-mono font-bold text-lg">06</span>
+        <span className="text-xl text-[#760015] font-mono font-bold">06</span>
         <span className="text-gray-400 text-xs uppercase tracking-wider ml-2">Core Modules</span>
       </div>
     </div>
@@ -1183,10 +1198,10 @@ function Home() {
                     })()}
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a] mb-4 leading-tight">
+                <h3 className="text-xl font-bold text-[#2d2a2a] mb-4 leading-tight">
                   {BAAREZ_CONFIG.services.tabs[activeService].title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                <p className="text-sm text-gray-600 leading-relaxed mb-8">
                   {BAAREZ_CONFIG.services.tabs[activeService].desc}
                 </p>
 
@@ -1207,7 +1222,7 @@ function Home() {
 
                 <Link 
                   to={BAAREZ_CONFIG.services.tabs[activeService].link}
-                  className="inline-flex items-center gap-2 text-[#760015] font-bold uppercase tracking-widest text-xs border-b border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs text-[#760015] font-bold uppercase tracking-widest border-b border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors"
                 >
                   Explore Capabilities
                 </Link>
@@ -1246,11 +1261,11 @@ function Home() {
             {/* Header - Centered & Minimal */}
             <div className="text-center mb-16">
                <FadeIn>
-                  <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-3 text-xs">Our Process</h2>
+                  <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-3">Our Process</h2>
                   <h3 className="text-3xl md:text-4xl font-bold text-[#760015] mb-4">
                     {BAAREZ_CONFIG.methodology.title}
                   </h3>
-                  <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                  <p className="text-sm text-gray-500 max-w-2xl mx-auto">
                     {BAAREZ_CONFIG.methodology.subtitle}
                   </p>
                </FadeIn>
@@ -1279,7 +1294,7 @@ function Home() {
 
                           {/* Content Part */}
                           <div>
-                             <h4 className="text-lg font-bold text-[#2d2a2a] mb-3 group-hover:text-[#760015] transition-colors">
+                             <h4 className="text-xl font-bold text-[#2d2a2a] mb-3 group-hover:text-[#760015] transition-colors">
                                 {step.title}
                              </h4>
                              <p className="text-sm text-gray-500 leading-relaxed">
@@ -1321,7 +1336,7 @@ function Home() {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
             {ARCHITECTURE_SECTION.headline.primary}{" "}
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
@@ -1329,7 +1344,7 @@ function Home() {
             </span>
           </h2>
 
-          <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm text-white/70 leading-relaxed max-w-2xl mx-auto">
             {ARCHITECTURE_SECTION.description}
           </p>
         </FadeIn>
@@ -1373,8 +1388,8 @@ function Home() {
         <Section>
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div>
-              <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-sm">Industries</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-[#2d2a2a]">{BAAREZ_CONFIG.industries.title}</h3>
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-4">Industries</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">{BAAREZ_CONFIG.industries.title}</h3>
             </div>
             
           </div>
@@ -1396,11 +1411,13 @@ function Home() {
                     <div className="w-14 h-14 bg-[#ef7f25] text-white flex items-center justify-center mb-6 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
                       <card.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{card.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
                     <div className="h-0.5 w-0 bg-white group-hover:w-full transition-all duration-700"></div>
-                    <p className="text-white/80 text-sm mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                      Explore specialized solutions for {card.title} sectors.
-                    </p>
+                    {card.regulations && (
+                      <p className="text-white/80 text-xs mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed">
+                        <span className="font-bold text-white">Key Regulations: </span>{card.regulations}
+                      </p>
+                    )}
                   </div>
                 </div>
               </FadeIn>
@@ -1417,15 +1434,15 @@ function Home() {
       {/* Text Side */}
       <div className="w-full lg:w-1/2">
         <FadeIn>
-          <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] mb-4 text-xs md:text-sm">
+          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-4">
             Enterprise Connectivity
           </h2>
 
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2d2a2a] mb-6 leading-tight">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6 leading-tight">
             Built to Fit Your Existing Enterprise Stack
           </h3>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-sm text-gray-600 mb-8 leading-relaxed">
             Baarez integrates seamlessly with the systems you already trust—enabling unified governance,
             risk intelligence, and compliance workflows without disrupting business operations.
           </p>
@@ -1434,10 +1451,10 @@ function Home() {
             <div className="flex items-center gap-4">
               <Icons.Cloud className="w-8 h-8 text-[#760015] shrink-0" />
               <div>
-                <h4 className="font-bold text-gray-900 text-sm md:text-base">
+                <h4 className="text-sm font-bold text-gray-900">
                   Enterprise-Ready Integration Model
                 </h4>
-                <p className="text-xs md:text-sm text-gray-500">
+                <p className="text-xs text-gray-500">
                   Connect once. Govern consistently across platforms.
                 </p>
               </div>
@@ -1547,7 +1564,7 @@ function Home() {
               Measurable Enterprise Impact
             </h2>
 
-            <p className="text-gray-500 text-base leading-relaxed">
+            <p className="text-sm text-gray-500 leading-relaxed">
               Organizations partner with Baarez to move faster, operate with confidence, 
               and convert governance and risk management into a source of strategic advantage.
             </p>
@@ -1593,10 +1610,10 @@ function Home() {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div className="text-center mb-12">
-      <h2 className="text-[#ef7f25] font-bold uppercase tracking-[0.2em] text-xs mb-3">
+      <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-3">
         Tailored Pathways
       </h2>
-      <h3 className="text-2xl md:text-3xl font-bold text-[#2d2a2a]">
+      <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">
         Explore Baarez based on your priorities
       </h3>
     </div>
@@ -1682,10 +1699,10 @@ function Home() {
 
               {/* Text Content */}
               <div className="relative z-10 text-center md:text-left">
-                <h2 className="text-3xl font-bold text-[#2d2a2a] mb-2 tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-2 tracking-tight">
                   {BAAREZ_CONFIG.cta.headline}
                 </h2>
-                <p className="text-gray-500 text-lg font-light max-w-lg leading-relaxed">
+                <p className="text-sm text-gray-500 font-light max-w-lg leading-relaxed">
                   {BAAREZ_CONFIG.cta.subheadline}
                 </p>
               </div>
@@ -1719,8 +1736,8 @@ function Home() {
                   
                   {/* Left: Text Context */}
                   <div className="text-center md:text-left md:w-1/3">
-                     <h2 className="text-2xl md:text-3xl font-bold text-[#2d2a2a] mb-2">Customer Reviews</h2>
-                     <p className="text-gray-500 text-base leading-relaxed">
+                     <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-2">Customer Reviews</h2>
+                     <p className="text-sm text-gray-500 leading-relaxed">
                         Trusted by government entities and global enterprises. Our partners don't just use Baarez; they rely on it.
                      </p>
                      <div className="mt-4 flex items-center justify-center md:justify-start gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
@@ -1735,24 +1752,24 @@ function Home() {
                      {/* Big Aggregate Score */}
                      <div className="text-center border-r-0 sm:border-r border-gray-200 sm:pr-12 w-full sm:w-auto">
                         <div className="text-xs text-gray-400 mb-1 uppercase tracking-wide font-bold">Average Rating</div>
-                        <div className="text-5xl font-bold text-[#760015] mb-1 tracking-tighter">4.9</div>
+                        <div className="text-3xl md:text-4xl font-bold text-[#760015] mb-1 tracking-tighter">4.9</div>
                         <div className="flex justify-center gap-1 text-[#ef7f25] mb-1">
                            {[...Array(5)].map((_, i) => (
                               <svg key={i} xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                            ))}
                         </div>
-                        <div className="text-[10px] font-bold text-gray-400">out of 5.0</div>
+                        <div className="text-xs font-bold text-gray-400">out of 5.0</div>
                      </div>
 
                      {/* Review Count & Breakdown */}
                      <div className="flex flex-col gap-4 w-full sm:w-auto">
                         <div className="flex items-center justify-center sm:justify-start gap-4">
-                           <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm text-lg font-bold text-gray-900">
+                           <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm text-xl font-bold text-gray-900">
                               31
                            </div>
                            <div className="text-left">
                               <div className="font-bold text-gray-900 text-sm">Total Reviews</div>
-                              <div className="text-[10px] text-gray-500">Across all platforms</div>
+                              <div className="text-xs text-gray-500">Across all platforms</div>
                            </div>
                         </div>
 

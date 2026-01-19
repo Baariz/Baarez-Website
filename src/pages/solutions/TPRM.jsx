@@ -150,7 +150,7 @@ const PerimeterVisual = () => {
           <div className="w-8 h-8 mx-auto mb-1 text-[#760015]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/></svg>
           </div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Host</div>
+          <div className="text-xs font-bold uppercase tracking-widest text-gray-400">Host</div>
           <div className="text-xs font-bold text-[#2d2a2a]">Enterprise</div>
         </div>
       </div>
@@ -168,7 +168,7 @@ const PerimeterVisual = () => {
             </div>
             <div>
               <div className="text-xs font-bold text-[#2d2a2a]">Acme Cloud</div>
-              <div className="text-[10px] text-gray-500">Infrastructure</div>
+              <div className="text-xs text-gray-500">Infrastructure</div>
             </div>
           </div>
           <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
@@ -176,7 +176,7 @@ const PerimeterVisual = () => {
         <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden mb-2">
           <div className="h-full w-[92%] bg-green-500"></div>
         </div>
-        <div className="flex justify-between text-[10px]">
+        <div className="flex justify-between text-xs">
           <span className="text-gray-400">Compliance</span>
           <span className="font-bold text-[#2d2a2a]">98%</span>
         </div>
@@ -195,14 +195,14 @@ const PerimeterVisual = () => {
             </div>
             <div>
               <div className="text-xs font-bold text-[#2d2a2a]">Global Pay</div>
-              <div className="text-[10px] text-gray-500">Financial Services</div>
+              <div className="text-xs text-gray-500">Financial Services</div>
             </div>
           </div>
-          <div className="px-2 py-0.5 bg-[#760015]/10 text-[#760015] text-[10px] font-bold rounded uppercase">
+          <div className="px-2 py-0.5 bg-[#760015]/10 text-[#760015] text-xs font-bold rounded uppercase">
             Alert
           </div>
         </div>
-        <div className="text-[10px] bg-gray-50 p-2 rounded border border-gray-100 text-gray-600">
+        <div className="text-xs bg-gray-50 p-2 rounded border border-gray-100 text-gray-600">
           ⚠️ New CVE Vulnerability detected in payment gateway API.
         </div>
       </motion.div>
@@ -220,18 +220,18 @@ const PerimeterVisual = () => {
             </div>
             <div>
               <div className="text-xs font-bold text-[#2d2a2a]">FastShip Logistics</div>
-              <div className="text-[10px] text-gray-500">Supply Chain</div>
+              <div className="text-xs text-gray-500">Supply Chain</div>
             </div>
           </div>
           <span className="inline-block w-2 h-2 rounded-full bg-[#ef7f25]"></span>
         </div>
         <div className="grid grid-cols-2 gap-2 mt-3">
           <div className="text-center bg-gray-50 p-1 rounded">
-            <div className="text-[10px] text-gray-400 uppercase">Risk</div>
+            <div className="text-xs text-gray-400 uppercase">Risk</div>
             <div className="text-xs font-bold text-[#ef7f25]">Medium</div>
           </div>
           <div className="text-center bg-gray-50 p-1 rounded">
-            <div className="text-[10px] text-gray-400 uppercase">Audit</div>
+            <div className="text-xs text-gray-400 uppercase">Audit</div>
             <div className="text-xs font-bold text-[#2d2a2a]">Due</div>
           </div>
         </div>
@@ -259,12 +259,12 @@ const TPRM = () => {
               AI Third-Party Risk Management
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-[#2d2a2a] leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-[#2d2a2a] leading-tight">
               See risk beyond <br/>
               <span className="text-[#760015]">your walls.</span>
             </h1>
-            
-            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-lg mb-10">
+
+            <p className="text-sm text-gray-600 font-light leading-relaxed max-w-lg mb-10">
               Your vendors are your new perimeter. Baarez helps you assess, monitor, and manage third-party risk in a single, automated platform.
             </p>
 
@@ -290,8 +290,8 @@ const TPRM = () => {
       <section className="py-32 px-8 lg:px-20 bg-white relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-[#2d2a2a] mb-4">The "Visibility Gap"</h2>
-            <p className="text-gray-500 text-lg">Why traditional vendor management feels like flying blind.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">The "Visibility Gap"</h2>
+            <p className="text-gray-500 text-sm">Why traditional vendor management feels like flying blind.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -319,7 +319,7 @@ const TPRM = () => {
 
             {/* The Explanation */}
             <div>
-              <h3 className="text-2xl font-bold text-[#2d2a2a] mb-6">Static files hide dynamic risks.</h3>
+              <h3 className="text-xl font-bold text-[#2d2a2a] mb-6">Static files hide dynamic risks.</h3>
               <div className="space-y-8">
                 {[
                   { title: "The Snapshot Problem", desc: "A questionnaire is obsolete the moment it's submitted. Risks evolve daily." },
@@ -331,7 +331,7 @@ const TPRM = () => {
                       <div className="w-2 h-2 bg-[#ef7f25] rounded-full"></div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#2d2a2a] text-lg">{item.title}</h4>
+                      <h4 className="font-bold text-[#2d2a2a] text-xl">{item.title}</h4>
                       <p className="text-gray-500 leading-relaxed text-sm">{item.desc}</p>
                     </div>
                   </div>
@@ -348,7 +348,7 @@ const TPRM = () => {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-20">
           <div className="mb-20 max-w-2xl">
             <span className="text-[#760015] font-bold uppercase tracking-widest text-xs mb-2 block">Platform Capabilities</span>
-            <h2 className="text-4xl font-bold text-[#2d2a2a]">Automated Vendor Intelligence.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">Automated Vendor Intelligence.</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -425,7 +425,7 @@ const TPRM = () => {
               Visibility That Never Pauses.
             </h2>
 
-            <p className="text-gray-600 text-base mb-6 leading-relaxed">
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
               Modern enterprises cannot rely on periodic reviews to manage risk, compliance,
               and operational exposure. Continuous visibility enables faster decisions and
               earlier intervention—before issues escalate.
@@ -536,7 +536,7 @@ const TPRM = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4 md:mb-6 leading-tight">
           Designed for Regulated Industries.
         </h2>
-        <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+        <p className="text-sm text-gray-600 mb-6 md:mb-8 leading-relaxed">
           Baarez isn't a generic tool. It’s pre-configured for the specific vendor pressures of high-compliance sectors.
         </p>
         <Link to="/contact" className="inline-block text-[#760015] font-bold border-b-2 border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors">
@@ -574,10 +574,10 @@ const TPRM = () => {
         ].map((item, i) => (
           <div key={i} className="p-6 md:p-8 border border-gray-200 rounded-sm hover:border-l-4 hover:border-l-[#760015] transition-all bg-white hover:shadow-lg group">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
-              <h3 className="text-lg md:text-xl font-bold text-[#2d2a2a]">{item.industry}</h3>
-              <span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wide">{item.context}</span>
+              <h3 className="text-xl font-bold text-[#2d2a2a]">{item.industry}</h3>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">{item.context}</span>
             </div>
-            <div className="text-[10px] md:text-xs font-bold text-[#ef7f25] uppercase mb-3">{item.risk}</div>
+            <div className="text-xs font-bold text-[#ef7f25] uppercase mb-3">{item.risk}</div>
             <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
@@ -592,7 +592,7 @@ const TPRM = () => {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-20">
           <div className="grid md:grid-cols-4 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
             <div className="pr-8">
-              <h3 className="text-2xl font-bold mb-4">Why Leaders Choose Baarez</h3>
+              <h3 className="text-xl font-bold mb-4">Why Leaders Choose Baarez</h3>
               <p className="text-white/70 text-sm leading-relaxed">
                 We turn third-party risk from a liability into a strategic advantage.
               </p>
@@ -614,11 +614,11 @@ const TPRM = () => {
       {/* --- 6. CTA: The Close --- */}
       <section className="py-32 px-8 lg:px-20 bg-white text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2d2a2a] mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-8 leading-tight">
             Stop chasing vendors.<br/>
             Start governing risk.
           </h2>
-          <p className="text-lg text-gray-500 mb-12 max-w-lg mx-auto">
+          <p className="text-sm text-gray-500 mb-12 max-w-lg mx-auto">
             Get a clear view of your extended enterprise with the Baarez TPRM platform.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">

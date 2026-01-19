@@ -104,17 +104,17 @@ const HumanResource = () => {
           <div className="lg:col-span-7 p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 bg-white flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#ef7f25] mb-6 w-fit">
               <span className="w-1.5 h-1.5 bg-[#ef7f25]"></span>
-              <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest">
+              <span className="text-[#ef7f25] text-xs font-bold uppercase tracking-widest">
                 Human Resource
               </span>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
               Manage Your <br/>
               Most Valuable <span className="text-[#760015]">Asset.</span>
             </h1>
             
-            <p className="text-lg text-gray-500 max-w-lg leading-relaxed mb-8">
+            <p className="text-sm text-gray-500 max-w-lg leading-relaxed mb-8">
               Modernize your HR operations with Business Central. Centralize employee records, streamline onboarding, and gain visibility into your workforce—all from one secure platform.
             </p>
 
@@ -146,8 +146,8 @@ const HumanResource = () => {
             
             {/* Overlay Card */}
             <div className="absolute bottom-0 left-0 bg-white p-6 border-t border-r border-gray-200">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Focus</p>
-              <p className="text-lg font-bold text-[#2d2a2a]">Employee Lifecycle</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Focus</p>
+              <p className="text-sm font-bold text-[#2d2a2a]">Employee Lifecycle</p>
             </div>
           </div>
 
@@ -165,13 +165,13 @@ const HumanResource = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
                 What is <span className="text-[#ef7f25]">HR Management?</span>
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-4">
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Human Resource Management is more than just hiring and payroll. It is the strategic administration of the employee lifecycle—from recruitment and onboarding to performance tracking and development.
               </p>
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Modern HR teams need tools that reduce administrative burden so they can focus on culture, talent retention, and business growth.
               </p>
             </motion.div>
@@ -228,7 +228,7 @@ const HumanResource = () => {
                 <div className="w-8 h-8 bg-white border border-gray-200 group-hover:border-[#ef7f25] transition-colors mb-4 flex items-center justify-center text-[#760015] font-bold text-xs rounded-none">
                   !
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -276,7 +276,7 @@ const HumanResource = () => {
                 <div className="w-10 h-10 mb-4 text-gray-400 group-hover:text-[#760015] transition-colors">
                   <card.icon className="w-full h-full" />
                 </div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -295,10 +295,10 @@ const HumanResource = () => {
             variants={fadeInUp}
             className="order-2 lg:order-1"
           >
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
               One Profile. <br/> Total Clarity.
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Stop hunting through filing cabinets. Business Central gives you a single, digital view of every employee. From their first contract to their latest training certification, everything is one click away.
             </p>
             <div className="space-y-4">
@@ -340,10 +340,10 @@ const HumanResource = () => {
           <div className="w-16 h-16 mx-auto mb-6 text-[#2d2a2a] bg-gray-50 flex items-center justify-center">
              <Icons.Microsoft className="w-8 h-8" />
           </div>
-          <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
             Work in the Ecosystem You Know
           </h2>
-          <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-2xl mx-auto">
             Your HR data doesn't live in a bubble. Export employee lists to <strong>Excel</strong> for analysis, schedule interviews via <strong>Outlook</strong>, and collaborate on policy documents in <strong>Teams</strong>—all connected to your core HR system.
           </p>
           
@@ -396,7 +396,7 @@ const HumanResource = () => {
           <h2 className="text-4xl font-bold mb-6">
             Modernize Your Workforce Management.
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Let's discuss how Business Central can simplify your HR operations.
           </p>
           <Link 

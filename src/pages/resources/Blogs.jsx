@@ -30,30 +30,38 @@ const Blogs = () => {
       {/* HEADER: Clean Corporate Minimalist */}
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <div className="border-l-4 border-[#760015] pl-8 py-2">
-          <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">
+          <span className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.4em] mb-4 block">
             Intelligence & Strategy
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-[#2d2a2a] tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] tracking-tight">
             Baarez <span className="text-[#760015]">Insights.</span>
           </h1>
+          <p className="text-gray-600 text-sm mt-6 max-w-3xl font-light">
+            Insights for CROs, CISOs, compliance and audit leaders navigating the intersection of AI, governance, risk management, and regulatory change.
+          </p>
         </div>
 
         {/* Professional Filter Bar */}
-        <div className="flex flex-wrap gap-8 mt-12 border-b border-gray-100 pb-6">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`text-[11px] font-bold uppercase tracking-widest transition-all relative pb-6 -mb-[25px] ${
-                selectedCategory === cat ? "text-[#760015]" : "text-gray-400 hover:text-gray-600"
-              }`}
-            >
-              {cat}
-              {selectedCategory === cat && (
-                <motion.div layoutId="activeCat" className="absolute bottom-0 left-0 right-0 h-1 bg-[#760015]" />
-              )}
-            </button>
-          ))}
+        <div className="mt-12 border-b border-gray-100 pb-6">
+          <p className="text-xs text-gray-500 mb-4 font-medium">
+            Filter by topic to explore content relevant to your role and industry
+          </p>
+          <div className="flex flex-wrap gap-8">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`text-xs font-bold uppercase tracking-widest transition-all relative pb-6 -mb-[25px] ${
+                  selectedCategory === cat ? "text-[#760015]" : "text-gray-400 hover:text-gray-600"
+                }`}
+              >
+                {cat}
+                {selectedCategory === cat && (
+                  <motion.div layoutId="activeCat" className="absolute bottom-0 left-0 right-0 h-1 bg-[#760015]" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -73,7 +81,7 @@ const Blogs = () => {
                 
                 {/* Large Featured Image (Spans 7 columns) */}
                 <div className="lg:col-span-7 relative aspect-[16/9] lg:aspect-[3/2] overflow-hidden bg-gray-100 rounded-sm shadow-sm">
-                  <div className="absolute top-6 left-6 z-10 bg-[#ef7f25] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                  <div className="absolute top-6 left-6 z-10 bg-[#ef7f25] text-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-lg">
                     Latest Analysis
                   </div>
                   <img 
@@ -88,19 +96,19 @@ const Blogs = () => {
                 {/* Featured Content (Spans 5 columns) */}
                 <div className="lg:col-span-5 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-[#760015] text-[10px] font-bold uppercase tracking-widest border-b border-[#760015] pb-1">
+                    <span className="text-xs text-[#760015] font-bold uppercase tracking-widest border-b border-[#760015] pb-1">
                       {featuredPost.category}
                     </span>
-                    <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                    <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">
                       {new Date(featuredPost.publishedDate).toLocaleDateString()}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-6 text-[#2d2a2a] group-hover:text-[#760015] transition-colors">
+                  <h2 className="text-3xl md:text-4xl font-bold leading-[1.1] mb-6 text-[#2d2a2a] group-hover:text-[#760015] transition-colors">
                     {featuredPost.title}
                   </h2>
 
-                  <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 border-l-2 border-gray-100 pl-6">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-8 border-l-2 border-gray-100 pl-6">
                     {featuredPost.excerpt}
                   </p>
 
@@ -141,11 +149,11 @@ const Blogs = () => {
                   {/* Clean Content Wrapper */}
                   <div className="flex flex-col flex-1">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-[#ef7f25] text-[9px] font-bold uppercase tracking-widest">
+                      <span className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest">
                         {post.category}
                       </span>
                       <span className="w-1 h-1 rounded-full bg-gray-300" />
-                      <span className="text-gray-400 text-[9px] font-bold uppercase tracking-widest">
+                      <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">
                         {new Date(post.publishedDate).toLocaleDateString()}
                       </span>
                     </div>
@@ -159,7 +167,7 @@ const Blogs = () => {
                     </p>
 
                     <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#760015] group-hover:text-[#ef7f25] transition-colors">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#760015] group-hover:text-[#ef7f25] transition-colors">
                         View Analysis &rarr;
                       </span>
                     </div>

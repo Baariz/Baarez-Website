@@ -84,16 +84,16 @@ const RobotAsAService = () => {
           
           {/* A. Text Area (Col 7) */}
           <div className="lg:col-span-7 p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 bg-white relative flex flex-col justify-center">
-            <div className="inline-block px-3 py-1 border border-[#ef7f25] text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest mb-6 w-fit">
+            <div className="inline-block px-3 py-1 border border-[#ef7f25] text-[#ef7f25] text-xs font-bold uppercase tracking-widest mb-6 w-fit">
               RaaS Model
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-6 text-[#2d2a2a]">
               Automation <br/>
               Without the <span className="text-[#760015]">Overhead.</span>
             </h1>
             
-            <p className="text-lg text-gray-500 max-w-md leading-relaxed mb-8">
+            <p className="text-sm text-gray-500 max-w-md leading-relaxed mb-8">
               Hire digital workers on demand. We provide the infrastructure, licenses, and maintenance. You simply get the results.
             </p>
 
@@ -125,7 +125,7 @@ const RobotAsAService = () => {
             
             {/* Floating Stat */}
             <div className="absolute bottom-0 left-0 bg-white p-6 border-t border-r border-gray-200">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">ROI Speed</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">ROI Speed</p>
               <p className="text-2xl font-bold text-[#760015]">3 Months</p>
             </div>
           </div>
@@ -145,13 +145,13 @@ const RobotAsAService = () => {
           >
             
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
                 What is <span className="text-[#ef7f25]">RaaS?</span>
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-4">
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Robot-as-a-Service (RaaS) is a cloud-based delivery model for automation. Instead of buying software licenses and setting up servers, you lease the capabilities of a digital workforce.
               </p>
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Think of it like hiring a contractor. You don't buy their tools or pay for their training. You pay for the job to be done.
               </p>
             </motion.div>
@@ -241,11 +241,11 @@ const RobotAsAService = () => {
               <Icons.Microsoft className="w-5 h-5 text-[#2d2a2a]" />
               <span className="font-bold text-[#2d2a2a] text-sm uppercase tracking-wide">Power Automate</span>
             </div>
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
               Enterprise Power. <br/>
               Zero Friction.
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
               We build our RaaS solutions on Microsoft Power Automate. This ensures your bots are secure, compliant, and integrate natively with the tools you already use—Office 365, Teams, SharePoint, and Dynamics.
             </p>
             <ul className="space-y-3">
@@ -315,7 +315,7 @@ const RobotAsAService = () => {
                 className="p-8 border border-gray-100 bg-[#fdfbf9] hover:bg-white hover:shadow-lg hover:border-[#ef7f25]/30 transition-all duration-300"
               >
                 <div className="text-[#760015] font-bold text-sm mb-3">0{i+1}</div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-2">{card.title}</h4>
                 <p className="text-gray-500 leading-relaxed text-sm">{card.desc}</p>
               </motion.div>
             ))}
@@ -351,7 +351,7 @@ const RobotAsAService = () => {
             Stop Paying for Infrastructure. <br/>
             Start Paying for <span className="text-[#760015]">Results.</span>
           </h2>
-          <p className="text-lg text-gray-500 mb-8">
+          <p className="text-sm text-gray-500 mb-8">
             Schedule a 30-minute discovery call to identify your first RaaS candidate process.
           </p>
           <Link 

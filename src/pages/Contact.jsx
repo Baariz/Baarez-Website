@@ -40,12 +40,12 @@ const Contact = () => {
               className="flex items-center gap-3 mb-6"
             >
               <span className="w-8 h-[1px] bg-[#ef7f25]"></span>
-              <span className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-[0.3em]">Engagement Hub</span>
+              <span className="text-xs text-[#ef7f25] font-bold uppercase tracking-[0.3em]">Engagement Hub</span>
             </motion.div>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#760015] leading-tight mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#760015] leading-tight mb-8">
               Reach us for Comprehensive <br /> IT Services.
             </h1>
-            <p className="text-gray-500 text-lg font-light leading-relaxed">
+            <p className="text-gray-500 text-sm font-light leading-relaxed">
               We’re happy to answer any questions you may have and help you determine 
               which of our services best fit your needs.
             </p>
@@ -62,8 +62,8 @@ const Contact = () => {
             <div className="lg:col-span-5 space-y-12">
               
               <div className="bg-[#760015] p-10 text-white shadow-2xl relative">
-                <p className="text-[#ef7f25] text-[10px] font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
-                <h3 className="text-2xl font-bold mb-2">Call us at:</h3>
+                <p className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
+                <h3 className="text-xl font-bold mb-2">Call us at:</h3>
                 <p className="text-3xl font-light tracking-tighter text-[#ef7f25]">971 501371105</p>
               </div>
 
@@ -84,7 +84,7 @@ const Contact = () => {
 
               {/* Thinking Visible Process */}
               <div className="bg-white p-10 border-l-4 border-[#760015] shadow-sm">
-                <h4 className="text-[#760015] font-bold text-xs uppercase tracking-widest mb-10">What happens next?</h4>
+                <h4 className="text-xs text-[#760015] font-bold uppercase tracking-widest mb-10">What happens next?</h4>
                 <div className="space-y-10">
                   {[
                     { s: "1", t: "Coordination", d: "We schedule a call at your convenience." },
@@ -109,7 +109,7 @@ const Contact = () => {
             <div className="lg:col-span-7">
               <div className="bg-white p-8 lg:p-14 border border-gray-100 shadow-xl">
                 <div className="mb-12">
-                  <h3 className="text-2xl font-bold text-[#760015] mb-2">Schedule a Free Consultation</h3>
+                  <h3 className="text-xl font-bold text-[#760015] mb-2">Schedule a Free Consultation</h3>
                   <div className="h-[2px] w-12 bg-[#ef7f25]"></div>
                 </div>
 
@@ -153,7 +153,7 @@ const Contact = () => {
                   <button 
                     disabled={isSubmitting}
                     type="submit" 
-                    className="w-full bg-[#760015] text-white py-5 font-bold uppercase tracking-widest text-[11px] hover:bg-[#ef7f25] transition-all duration-500 shadow-lg disabled:bg-gray-400"
+                    className="w-full bg-[#760015] text-white py-5 font-bold uppercase tracking-widest text-xs hover:bg-[#ef7f25] transition-all duration-500 shadow-lg disabled:bg-gray-400"
                   >
                     {isSubmitting ? 'Transmitting...' : 'Submit Inquiry'}
                   </button>
@@ -177,7 +177,7 @@ const Contact = () => {
 
       {/* 4. FOOTER IDENTIFIER */}
       <footer className="py-12 bg-white border-t border-gray-50 text-center">
-         <p className="text-gray-300 text-[10px] uppercase tracking-[0.5em] font-bold">
+         <p className="text-gray-300 text-xs uppercase tracking-[0.5em] font-bold">
            Doha • Technology • Ownership
          </p>
       </footer>

@@ -102,7 +102,7 @@ const BusinessProcessConsulting = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
+              className="text-3xl md:text-4xl font-bold text-[#2d2a2a] leading-[1.05] tracking-tight mb-8"
             >
               Efficiency is <br/>
               <span className="text-[#760015]">Engineered.</span>
@@ -199,13 +199,13 @@ const BusinessProcessConsulting = () => {
             className="grid lg:grid-cols-2 gap-12 items-start"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
                 Why Modernize Now?
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
                 Enterprises today are drowning in complexity. Rigid legacy processes, siloed data, and manual workarounds are not just operational annoyances—they are active barriers to growth and compliance.
               </p>
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 To scale effectively, organizations must shift from static workflows to dynamic, intelligence-driven operations.
               </p>
             </motion.div>
@@ -253,7 +253,7 @@ const BusinessProcessConsulting = () => {
                 className="bg-white p-8 group transition-all duration-300"
               >
                 <div className="h-1 w-8 bg-gray-200 group-hover:bg-[#760015] mb-6 transition-colors"></div>
-                <h4 className="text-lg font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
+                <h4 className="text-xl font-bold text-[#2d2a2a] mb-3">{item.title}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -361,10 +361,10 @@ const BusinessProcessConsulting = () => {
         <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           
           <div className="order-2 lg:order-1">
-            <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
               Consulting That <br/> Delivers Numbers.
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8">
               We don't just deliver slide decks. We deliver measurable operational improvements. Our clients see tangible shifts in speed, cost, and agility.
             </p>
             
@@ -406,7 +406,7 @@ const BusinessProcessConsulting = () => {
           <h3 className="text-3xl font-bold text-[#2d2a2a] mb-8">
             Why Leaders Choose Us.
           </h3>
-          <p className="text-gray-600 text-lg leading-relaxed mb-10">
+          <p className="text-gray-600 text-sm leading-relaxed mb-10">
             We bridge the gap between business strategy and technology implementation. We don't just recommend solutions; we architect the transformation and stay to ensure it delivers value.
           </p>
           <div className="flex justify-center gap-4">
@@ -423,7 +423,7 @@ const BusinessProcessConsulting = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Transform Your Operations?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-sm text-white/80 mb-8">
             Let's assess your current processes and build a roadmap for the future.
           </p>
           <Link 

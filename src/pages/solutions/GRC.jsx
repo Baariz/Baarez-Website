@@ -249,12 +249,12 @@ const GRC = () => {
                 <span className="text-xs font-bold text-[#760015] uppercase tracking-[0.2em]">Enterprise-Ready AI GRC</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2d2a2a] mb-8 leading-[1.1]">
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#2d2a2a] mb-8 leading-[1.1]">
                 Elevate Governance, <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#760015] to-[#ef7f25]">Risk & Compliance.</span>
               </h1>
-              
-              <p className="text-lg text-gray-600 leading-relaxed mb-10 font-normal">
+
+              <p className="text-sm text-gray-600 leading-relaxed mb-10 font-normal">
                 Baarez’s AI-enabled platform helps organizations centralize governance, identify risks proactively, and continuously monitor compliance—ensuring operational resilience in a dynamic landscape.
               </p>
 
@@ -281,8 +281,8 @@ const GRC = () => {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-4">
-              <h2 className="text-3xl font-bold text-[#2d2a2a] mb-6">Managing an increasingly complex GRC landscape?</h2>
-              <p className="text-gray-500 text-lg leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">Managing an increasingly complex GRC landscape?</h2>
+              <p className="text-gray-500 text-sm leading-relaxed">
                 Simplify governance, risk, and compliance with Baarez’s enterprise-ready, easy-to-manage GRC platform. Traditional methods can't keep up with today's velocity.
               </p>
             </div>
@@ -294,8 +294,8 @@ const GRC = () => {
               ].map((item, i) => (
                 <div key={i} className="border-t-2 border-gray-100 pt-6">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-bold text-[#2d2a2a]">{item.title}</h3>
-                    <span className="text-[10px] uppercase font-bold text-[#ef7f25] bg-[#ef7f25]/5 px-2 py-1 rounded">{item.status}</span>
+                    <h3 className="text-xl font-bold text-[#2d2a2a]">{item.title}</h3>
+                    <span className="text-xs uppercase font-bold text-[#ef7f25] bg-[#ef7f25]/5 px-2 py-1 rounded">{item.status}</span>
                   </div>
                   <p className="text-sm text-gray-500">{item.desc}</p>
                 </div>
@@ -310,8 +310,8 @@ const GRC = () => {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20">
             <div>
-              <h2 className="text-4xl font-bold text-[#2d2a2a] mb-2">Key Capabilities</h2>
-              <p className="text-gray-500 text-lg">A unified system for enterprise oversight.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-2">Key Capabilities</h2>
+              <p className="text-gray-500 text-sm">A unified system for enterprise oversight.</p>
             </div>
             <div className="hidden md:block w-32 h-[2px] bg-[#760015]"></div>
           </div>
@@ -348,7 +348,7 @@ const GRC = () => {
                   <div className="w-12 h-12 bg-[#760015]/5 rounded-lg flex items-center justify-center text-[#760015]">
                     <layer.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase text-gray-400 tracking-wider group-hover:text-[#ef7f25] transition-colors">{layer.tag}</span>
+                  <span className="text-xs font-bold uppercase text-gray-400 tracking-wider group-hover:text-[#ef7f25] transition-colors">{layer.tag}</span>
                 </div>
                 
                 <h3 className="text-xl font-bold text-[#2d2a2a] mb-4">{layer.title}</h3>
@@ -368,6 +368,68 @@ const GRC = () => {
       </section>
 
 
+      {/* --- NEW SECTION: AI DIFFERENTIATION --- */}
+      <section className="py-24 bg-white border-y border-gray-200">
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+
+            {/* Left: Heading */}
+            <div className="lg:col-span-4">
+              <span className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest mb-4 block">Active AI</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">AI That Works for You, Not Just About You.</h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Baarez AI GRC is built on Active AI—intelligent automation that doesn't just flag issues but actively helps you resolve them with explainable, auditable recommendations.
+              </p>
+              <div className="w-12 h-[2px] bg-[#ef7f25]"></div>
+            </div>
+
+            {/* Right: Concrete AI Use Cases */}
+            <div className="lg:col-span-8 space-y-6">
+              {[
+                {
+                  capability: "Regulatory Parsing & Classification",
+                  description: "AI continuously scans regulatory updates from central banks, financial authorities, and industry bodies, automatically classifying obligations by department, business unit, and control framework.",
+                  auditTrail: "Every classification is logged with confidence scores and human review flags for low-confidence items."
+                },
+                {
+                  capability: "Control Mapping & Gap Analysis",
+                  description: "Machine learning models map existing controls to new regulatory requirements, identify gaps, and propose new control designs based on industry best practices and your organization's risk appetite.",
+                  auditTrail: "All AI-suggested controls include rationale, linked source regulations, and approval workflows."
+                },
+                {
+                  capability: "Anomaly Detection & Risk Scoring",
+                  description: "AI monitors control execution data, transaction patterns, and audit findings to detect anomalies and recalculate risk scores in real-time, alerting risk owners to emerging threats.",
+                  auditTrail: "Anomaly alerts include historical baselines, deviation thresholds, and detailed event logs for audit review."
+                },
+                {
+                  capability: "AI Lifecycle Governance",
+                  description: "All AI models used in Baarez GRC are versioned, tested, and subject to the same governance as your other enterprise systems. Model training data, accuracy metrics, and decision explainability are available for audit.",
+                  auditTrail: "Full AI governance dashboard showing model performance, bias testing, and human override rates."
+                }
+              ].map((item, i) => (
+                <div key={i} className="bg-[#fafafa] p-8 rounded-lg border border-gray-100 hover:border-[#760015]/30 transition-all">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-xl font-bold text-[#760015]">{item.capability}</h3>
+                    <span className="text-xs uppercase font-bold text-gray-400 bg-white px-2 py-1 rounded">AI-Powered</span>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
+                  <div className="bg-white p-4 rounded border-l-4 border-[#ef7f25]">
+                    <div className="flex items-start gap-2">
+                      <Icons.Lock className="w-4 h-4 text-[#ef7f25] mt-0.5 shrink-0" />
+                      <div>
+                        <span className="text-xs font-bold text-[#2d2a2a] block mb-1">Audit Trail</span>
+                        <span className="text-xs text-gray-500">{item.auditTrail}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* --- NEW SECTION 1: THE NEURAL GRID (COMPACT BENTO BOX) --- */}
 <div className="py-20 bg-gray-50 relative overflow-hidden">
   <Section>
@@ -379,7 +441,7 @@ const GRC = () => {
         <h3 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
           Built for How Large Organizations Actually Work.
         </h3>
-        <p className="text-lg text-gray-500">
+        <p className="text-sm text-gray-500">
           Modern enterprises operate across systems, teams, and regulations.  
           Sustainable platforms are designed to absorb complexity—not fight it.
         </p>
@@ -399,10 +461,10 @@ const GRC = () => {
             <div className="w-12 h-12 bg-[#760015] rounded-lg flex items-center justify-center text-white mb-5 shadow-lg shadow-[#760015]/20 group-hover:scale-110 transition-transform">
               <Icons.Chip className="w-6 h-6" />
             </div>
-            <h4 className="text-2xl font-bold text-gray-900 mb-3">
+            <h4 className="text-xl font-bold text-gray-900 mb-3">
               Decision Intelligence
             </h4>
-            <p className="text-gray-500 text-base leading-relaxed max-w-md">
+            <p className="text-gray-500 text-sm leading-relaxed max-w-md">
               Enterprises generate vast amounts of operational signals every day.
               The challenge is not data availability, but making timely, defensible decisions from it.
             </p>
@@ -437,7 +499,7 @@ const GRC = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="p-6 relative z-10">
           <Icons.Lock className="w-6 h-6 text-[#ef7f25] mb-3" />
-          <h4 className="text-lg font-bold mb-1">
+          <h4 className="text-xl font-bold mb-1">
             Governance as a Constant
           </h4>
           <p className="text-white/70 text-xs leading-relaxed">
@@ -459,11 +521,11 @@ const GRC = () => {
             <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
               <Icons.TrendingUp className="w-4 h-4" />
             </div>
-            <div className="text-3xl font-bold text-gray-900">
+            <div className="text-xl font-bold text-gray-900">
               Continuous
             </div>
           </div>
-          <h4 className="text-base font-bold text-gray-900">
+          <h4 className="text-xl font-bold text-gray-900">
             Operational Continuity
           </h4>
           <p className="text-gray-500 text-xs mt-1">
@@ -475,16 +537,89 @@ const GRC = () => {
   </Section>
 </div>
 
+      {/* --- NEW SECTION: ROLE-BASED USE CASES --- */}
+      <section className="py-24 bg-[#fafafa] border-y border-gray-200">
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
+          <div className="text-center mb-16">
+            <span className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest mb-4 block">For Decision Makers</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">Built for How You Work</h2>
+            <p className="text-gray-500 text-sm max-w-3xl mx-auto">
+              Every role in governance, risk, and compliance has unique workflows. Baarez GRC is designed around how CROs, CISOs, compliance leaders, and audit executives actually operate.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                role: "CRO / Risk Head",
+                persona: "Enterprise risk oversight across operational, financial, and strategic domains",
+                useCases: [
+                  "Enterprise risk dashboards with real-time exposure metrics",
+                  "Scenario analysis and stress testing for portfolio risks",
+                  "Consolidated view of regulatory, operational, and cyber risks",
+                  "Risk appetite monitoring and breach alerts"
+                ]
+              },
+              {
+                role: "Head of Compliance",
+                persona: "Regulatory change management and obligation tracking",
+                useCases: [
+                  "Automated regulatory change impact analysis",
+                  "Obligation tracking linked to controls and policies",
+                  "Policy lifecycle management with attestation workflows",
+                  "Compliance reporting for board and regulators"
+                ]
+              },
+              {
+                role: "Head of Internal Audit",
+                persona: "Risk-based audit planning and execution",
+                useCases: [
+                  "Risk-based audit universe with dynamic prioritization",
+                  "Centralized evidence repository shared with GRC and TPRM",
+                  "Issue follow-up and remediation tracking",
+                  "Audit trail across financial and operational audits"
+                ]
+              },
+              {
+                role: "CIO / CISO",
+                persona: "Technology and cybersecurity risk integration",
+                useCases: [
+                  "Link IT and cyber risks from SOC into enterprise risk register",
+                  "Technology control libraries mapped to ISO 27001 and NIST",
+                  "Incident-to-risk linkage for cyber events",
+                  "Cloud security posture and compliance monitoring"
+                ]
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#760015] hover:shadow-lg transition-all">
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-[#760015] mb-2">{item.role}</h3>
+                  <p className="text-xs text-gray-500 italic">{item.persona}</p>
+                </div>
+                <ul className="space-y-3">
+                  {item.useCases.map((useCase, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                      <BrandIcons.ShieldCheck className="w-4 h-4 text-[#ef7f25] mt-0.5 shrink-0" />
+                      <span>{useCase}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* --- 4. INDUSTRY MATRIX: "Sector Grid" --- */}
       <section className="py-32 bg-white">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-100 pb-8">
             <div>
-              <span className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest mb-2 block">Use Cases</span>
-              <h2 className="text-4xl font-bold text-[#2d2a2a]">Applied Intelligence</h2>
+              <span className="text-[#ef7f25] font-bold text-xs uppercase tracking-widest mb-2 block">Industries</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a]">Tailored for Regulated Sectors</h2>
             </div>
             <p className="text-gray-500 text-sm font-medium mt-4 md:mt-0">
-              Tailored solutions for regulated industries.
+              Concrete regulations and scenarios by industry.
             </p>
           </div>
 
@@ -498,9 +633,9 @@ const GRC = () => {
               >
                 <div className="flex justify-between items-start mb-8">
                   <ind.icon className={`w-8 h-8 transition-colors ${hoveredIndustry === i ? 'text-[#ef7f25]' : 'text-gray-300'}`} />
-                  <span className="text-[10px] font-bold text-gray-300 group-hover:text-[#760015]">0{i+1}</span>
+                  <span className="text-xs font-bold text-gray-300 group-hover:text-[#760015]">0{i+1}</span>
                 </div>
-                <h3 className="text-lg font-bold text-[#2d2a2a] mb-3">{ind.name}</h3>
+                <h3 className="text-xl font-bold text-[#2d2a2a] mb-3">{ind.name}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed font-medium">{ind.desc}</p>
                 
                 {/* Hover Reveal Line */}
@@ -520,8 +655,8 @@ const GRC = () => {
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             
             <div className="lg:col-span-3">
-              <h2 className="text-3xl font-bold mb-6">Business Benefits</h2>
-              <p className="text-white/80 leading-relaxed text-lg font-light">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Business Benefits</h2>
+              <p className="text-white/80 leading-relaxed text-sm font-light">
                 Baarez does not just protect value; we create it.
               </p>
             </div>
@@ -535,7 +670,7 @@ const GRC = () => {
                   { title: "Regulatory Confidence", desc: "Continuous monitoring helps stay aligned with evolving mandates." }
                 ].map((stat, i) => (
                   <div key={i} className="border-l-2 border-[#ef7f25] pl-6">
-                    <div className="text-lg font-bold mb-3 text-white">{stat.title}</div>
+                    <div className="text-xl font-bold mb-3 text-white">{stat.title}</div>
                     <div className="text-xs text-white/70 leading-relaxed">{stat.desc}</div>
                   </div>
                 ))}
@@ -549,7 +684,7 @@ const GRC = () => {
       {/* --- 6. FAQs: "Critical Questions" --- */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-8 lg:px-16">
-          <h2 className="text-3xl font-bold text-center mb-16 text-[#2d2a2a]">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#2d2a2a]">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: "What is GRC?", a: "GRC stands for Governance, Risk, and Compliance. It is a strategic framework designed to ensure that an organization effectively manages risks, complies with relevant laws and regulations, and establishes strong governance policies for decision-making and performance monitoring." },
@@ -564,15 +699,15 @@ const GRC = () => {
                   onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
                   className="w-full flex justify-between items-center py-6 text-left focus:outline-none group"
                 >
-                  <span className={`text-lg font-bold transition-colors ${openFaq === i ? 'text-[#760015]' : 'text-[#2d2a2a] group-hover:text-[#760015]'}`}>
+                  <span className={`text-xl font-bold transition-colors ${openFaq === i ? 'text-[#760015]' : 'text-[#2d2a2a] group-hover:text-[#760015]'}`}>
                     {faq.q}
                   </span>
                   <BrandIcons.ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-[#760015]' : ''}`} />
                 </button>
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === i ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <p className="pb-6 text-gray-500 leading-relaxed text-base max-w-2xl">
+                  <p className="pb-6 text-gray-500 leading-relaxed text-sm max-w-2xl">
                     {faq.a}
                   </p>
                 </div>
@@ -588,10 +723,10 @@ const GRC = () => {
           <div className="inline-block p-4 rounded-full bg-white border border-gray-100 shadow-sm mb-8">
             <BrandIcons.Scale className="w-8 h-8 text-[#760015]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2d2a2a] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-6">
             Struggling with GRC requirements?
           </h2>
-          <p className="text-lg text-gray-500 mb-10 max-w-lg mx-auto">
+          <p className="text-sm text-gray-500 mb-10 max-w-lg mx-auto">
             Our solution architects can help assess your current infrastructure and recommend the right configuration for your specific needs.
           </p>
           <Link 
