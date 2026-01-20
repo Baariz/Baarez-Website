@@ -264,6 +264,7 @@ services: {
         "Process Redesign & Optimization",
         "Operational Efficiency Improvement"
       ],
+      platformTie: "Integrates with GRC Platform for control-aligned process design",
       link: "/services/business-process-consulting",
       image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
     },
@@ -278,6 +279,7 @@ services: {
         "Process Automation Enablement",
         "Enterprise Technology Modernization"
       ],
+      platformTie: "Leverages ScanVista for document digitization & workflow automation",
       link: "/services/digital-transformation",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop"
     },
@@ -292,6 +294,7 @@ services: {
         "Predictive & Prescriptive Insights",
         "AI & Machine Learning Enablement"
       ],
+      platformTie: "Powers AI models within GRC risk scoring & Internal Audit analytics",
       link: "/services/data-analytics-ai",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
     },
@@ -306,6 +309,7 @@ services: {
         "Process & Control Alignment",
         "ERP Governance & Support"
       ],
+      platformTie: "Connects ERP data flows to GRC controls & TPRM vendor assessments",
       link: "/services/erp-consulting",
       image: "https://i.postimg.cc/ryB6z7Nv/image.png"
     },
@@ -320,6 +324,7 @@ services: {
         "Security Operations & Monitoring",
         "Incident Response & Compliance Support"
       ],
+      platformTie: "Feeds security incidents into GRC risk register & audit evidence",
       link: "/services/cybersecurity-soc",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop"
     },
@@ -334,6 +339,7 @@ services: {
         "Infrastructure Automation",
         "Cloud Governance & Optimization"
       ],
+      platformTie: "Deploys Baarez platforms on sovereign cloud with compliance controls",
       link: "/services/cloud-automation",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2070&auto=format&fit=crop"
     }
@@ -343,24 +349,24 @@ services: {
 ,
   methodology: {
   title: "How Baarez Operates",
-  subtitle: "A structured approach to bringing clarity, control, and continuity across enterprise operations.",
+  subtitle: "Before: 120+ spreadsheets, manual updates, no single source of truth. After: One connected platform with automated workflows.",
   steps: [
     {
       num: "01",
       title: "Connect",
-      desc: "Integrate enterprise systems, third-party platforms, and documents to establish a consistent and reliable operational data foundation.",
+      desc: "Integrate enterprise systems (SAP, Oracle, ServiceNow), third-party data, and documents into a single control library linked to every obligation.",
       icon: Icons.Server
     },
     {
       num: "02",
       title: "Interpret",
-      desc: "Apply intelligent analysis to identify risk signals, compliance gaps, and operational patterns across interconnected processes.",
+      desc: "AI-powered analysis identifies risk signals, flags compliance gaps, and surfaces operational patterns—before they become audit findings.",
       icon: Icons.Search
     },
     {
       num: "03",
       title: "Operationalize",
-      desc: "Enable structured actions through workflows, reporting, and controls—ensuring decisions translate into measurable outcomes.",
+      desc: "Automated workflows route tasks, generate reports, and enforce controls—converting decisions into documented, auditable outcomes.",
       icon: Icons.CheckCircle
     }
   ]
@@ -373,24 +379,28 @@ services: {
     {
       title: "Banking & Financial Services",
       regulations: "Basel III, AML, central bank guidelines (SAMA, CBI), IFRS 9/17",
+      accelerators: ["Pre-built Basel III risk taxonomy", "AML control library", "Central bank reporting templates"],
       icon: Icons.Briefcase,
       image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Healthcare & Life Sciences",
       regulations: "HIPAA, FDA 21 CFR Part 11, GDPR, data privacy & interoperability standards",
+      accelerators: ["HIPAA evidence library", "FDA compliance workflows", "Patient data governance controls"],
       icon: Icons.ShieldCheck,
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Government & Public Sector",
       regulations: "National data localization, NIST, GDPR, public procurement & audit standards",
+      accelerators: ["NIST control mapping", "Public procurement audit trails", "Data sovereignty workflows"],
       icon: Icons.Server,
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Energy & Utilities",
       regulations: "NERC CIP, HSE incident tracking, operational resilience, ISO 55000",
+      accelerators: ["NERC CIP incident runbooks", "HSE risk registers", "Asset management workflows"],
       icon: Icons.Lightning,
       image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop"
     }
@@ -433,9 +443,9 @@ services: {
   },
   // --- NEW CONFIG DATA END ---
   cta: {
-    headline: "The Future is Visible.",
-    subheadline: "Join the enterprises replacing manual oversight with intelligent automation.",
-    button: "Initiate Transformation"
+    headline: "Ready to unify your GRC operations?",
+    subheadline: "See how organizations reduce audit prep time by 40% and cut compliance overhead by 60% with Baarez platforms.",
+    button: "Request Platform Demo"
   }
 }
 
@@ -777,6 +787,67 @@ function Home() {
     to { transform: rotate(360deg); }
   }
 `}</style>
+
+{/* --- WHY AI-NATIVE VS AI-ENABLED GRC --- */}
+<section className="w-full bg-white py-16 border-b border-slate-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+      {/* Left: Heading & Context */}
+      <div>
+        <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-[0.2em] mb-3 block">AI Differentiation</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
+          Why AI-Native Matters vs Traditional GRC
+        </h2>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Legacy GRC tools bolt AI onto aging architectures. Baarez was built from the ground up with AI at its core—meaning faster insights, lower configuration debt, and workflows designed around intelligence, not retrofitted with it.
+        </p>
+        <Link to="/solutions/grc" className="inline-flex items-center gap-2 text-xs text-[#760015] font-bold uppercase tracking-widest border-b border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors">
+          Explore AI GRC Platform <Icons.ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+
+      {/* Right: Comparison Bullets */}
+      <div className="space-y-4">
+        {[
+          {
+            traditional: "AI features added as afterthought modules",
+            baarez: "AI embedded in every workflow from day one"
+          },
+          {
+            traditional: "Separate tools for document processing",
+            baarez: "ScanVista natively feeds regulatory data into GRC & Audit"
+          },
+          {
+            traditional: "Months of configuration and customization",
+            baarez: "Weeks to value with pre-built industry libraries"
+          },
+          {
+            traditional: "Manual rule updates for regulatory changes",
+            baarez: "AI-assisted regulatory change detection & mapping"
+          }
+        ].map((item, i) => (
+          <div key={i} className="grid grid-cols-2 gap-4">
+            <div className="bg-red-50 p-4 rounded-lg border border-red-100">
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <span className="text-xs text-gray-600">{item.traditional}</span>
+              </div>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span className="text-xs text-gray-700 font-medium">{item.baarez}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
       {/* --- TRUST TICKER --- */}
       {/* --- TRUST LOGO GRID --- */}
       {/* --- TRUST LOGO SLIDER (MARQUEE) --- */}
@@ -1091,6 +1162,77 @@ function Home() {
   </Section>
 </div>
 
+{/* --- VERTICAL AI MODULES --- */}
+<section className="py-16 bg-white border-b border-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-12 gap-12 items-center">
+
+      {/* Left: Context */}
+      <div className="lg:col-span-5">
+        <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-[0.2em] mb-3 block">Vertical AI Modules</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
+          Purpose-Built AI for Specific Industries
+        </h2>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Unlike one-size-fits-all GRC tools, Baarez architecture supports vertical micro-modules and specialized AI applications. Glimmora is our first example—a dedicated hospitality intelligence module that demonstrates how our platform extends into industry-specific workflows.
+        </p>
+
+        <div className="p-4 bg-gray-50 rounded-lg border border-gray-100">
+          <p className="text-xs text-gray-500 italic">
+            "Baarez isn't a generic GRC tool repurposed for different industries—it's an AI-native operating system that hosts purpose-built modules for each vertical."
+          </p>
+        </div>
+      </div>
+
+      {/* Right: Glimmora Card + Future Modules */}
+      <div className="lg:col-span-7 space-y-4">
+
+        {/* Glimmora Spotlight */}
+        <Link to="/solutions/glimmora" className="group block bg-gradient-to-br from-[#760015] to-[#5a0010] p-6 rounded-xl text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#ef7f25]/20 rounded-full blur-2xl -mr-16 -mt-16"></div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                  <Icons.Chip className="w-5 h-5 text-[#ef7f25]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Glimmora</h3>
+                  <span className="text-xs text-white/60 uppercase tracking-wide">Hospitality Intelligence</span>
+                </div>
+              </div>
+              <span className="px-3 py-1 bg-[#ef7f25] text-white text-xs font-bold rounded-full">Live</span>
+            </div>
+            <p className="text-sm text-white/80 leading-relaxed mb-4">
+              AGI-native module for hospitality groups—unifying guest data, dynamic pricing intelligence, and operational optimization in real-time.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-bold text-[#ef7f25] uppercase tracking-wide group-hover:gap-3 transition-all">
+              Explore Glimmora <Icons.ArrowRight className="w-4 h-4" />
+            </div>
+          </div>
+        </Link>
+
+        {/* Future Modules Teaser */}
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { name: "Financial Services Module", status: "Coming Soon", desc: "Pre-configured for Basel, AML, IFRS" },
+            { name: "Healthcare Module", status: "Roadmap", desc: "HIPAA, FDA 21 CFR workflows" }
+          ].map((module, i) => (
+            <div key={i} className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-[#760015]/20 transition-colors">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-sm font-bold text-gray-700">{module.name}</h4>
+                <span className="text-xs text-gray-400 font-medium bg-gray-100 px-2 py-0.5 rounded">{module.status}</span>
+              </div>
+              <p className="text-xs text-gray-500">{module.desc}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* --- SERVICES SECTION: "THE EXECUTIVE DOSSIER" (RESPONSIVE) --- */}
 <div className="py-16 md:py-24 bg-white relative overflow-hidden" id="services">
   <Section>
@@ -1205,9 +1347,9 @@ function Home() {
                   {BAAREZ_CONFIG.services.tabs[activeService].desc}
                 </p>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6">
                   {BAAREZ_CONFIG.services.tabs[activeService].features.map((feat, i) => (
-                    <motion.li 
+                    <motion.li
                       key={i}
                       initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -1220,7 +1362,19 @@ function Home() {
                   ))}
                 </ul>
 
-                <Link 
+                {/* Platform Integration Tie */}
+                {BAAREZ_CONFIG.services.tabs[activeService].platformTie && (
+                  <div className="mb-6 p-3 bg-[#760015]/5 border-l-4 border-[#760015] rounded-r-lg">
+                    <div className="flex items-start gap-2">
+                      <Icons.Layers className="w-4 h-4 text-[#760015] mt-0.5 shrink-0" />
+                      <span className="text-xs text-[#760015] font-medium">
+                        {BAAREZ_CONFIG.services.tabs[activeService].platformTie}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <Link
                   to={BAAREZ_CONFIG.services.tabs[activeService].link}
                   className="inline-flex items-center gap-2 text-xs text-[#760015] font-bold uppercase tracking-widest border-b border-[#760015] pb-1 hover:text-[#ef7f25] hover:border-[#ef7f25] transition-colors"
                 >
@@ -1383,6 +1537,96 @@ function Home() {
 </div>
 
 
+{/* --- BUILT FOR MENA & SOVEREIGN MARKETS --- */}
+<section className="py-20 bg-[#fafafa] border-y border-gray-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-12 gap-12 items-start">
+
+      {/* Left: Header */}
+      <div className="lg:col-span-4">
+        <span className="text-xs font-bold text-[#ef7f25] uppercase tracking-[0.2em] mb-3 block">Regional Specialization</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d2a2a] mb-4">
+          Built for MENA & Sovereign Markets
+        </h2>
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+          Global GRC vendors often under-serve local regulatory nuance and data residency expectations. Baarez is designed as the regulation-native and sovereign-by-default platform for MENA and similar high-regulation markets.
+        </p>
+        <div className="w-12 h-[2px] bg-[#ef7f25]"></div>
+      </div>
+
+      {/* Right: Content Grid */}
+      <div className="lg:col-span-8 space-y-6">
+
+        {/* Central Bank Regimes */}
+        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+          <h3 className="text-sm font-bold text-[#760015] uppercase tracking-widest mb-4 flex items-center gap-2">
+            <Icons.ShieldCheck className="w-4 h-4" />
+            Central Bank Compliance Support
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {['SAMA (Saudi Arabia)', 'CBUAE (UAE)', 'CBB (Bahrain)', 'QCB (Qatar)', 'CBI (Iraq)', 'CBK (Kuwait)'].map((reg, i) => (
+              <span key={i} className="px-3 py-1.5 bg-[#760015]/5 text-[#760015] text-xs font-bold rounded-full border border-[#760015]/10">
+                {reg}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Data Residency */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <h3 className="text-sm font-bold text-[#2d2a2a] mb-3 flex items-center gap-2">
+              <Icons.Database className="w-4 h-4 text-[#ef7f25]" />
+              Data Residency Options
+            </h3>
+            <ul className="space-y-2">
+              {['UAE sovereign cloud', 'KSA region-locked hosting', 'India data localization', 'EU GDPR-compliant zones'].map((item, i) => (
+                <li key={i} className="flex items-center gap-2 text-xs text-gray-600">
+                  <Icons.CheckCircle className="w-3 h-3 text-green-500 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <h3 className="text-sm font-bold text-[#2d2a2a] mb-3 flex items-center gap-2">
+              <Icons.Lock className="w-4 h-4 text-[#ef7f25]" />
+              Government & Defense Ready
+            </h3>
+            <ul className="space-y-2">
+              {['Air-gapped deployment options', 'On-premise installation', 'Zero-trust architecture', 'Military-grade encryption'].map((item, i) => (
+                <li key={i} className="flex items-center gap-2 text-xs text-gray-600">
+                  <Icons.CheckCircle className="w-3 h-3 text-green-500 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Regulatory Mappings Preview */}
+        <div className="bg-[#760015] p-6 rounded-xl text-white">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-1">Pre-built Regulatory Mappings</h3>
+              <p className="text-xs text-white/70">Ready-to-deploy frameworks for regional compliance requirements</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['NCA ECC', 'PDPL', 'NESA', 'ADHICS'].map((framework, i) => (
+                <span key={i} className="px-3 py-1 bg-white/10 text-white text-xs font-bold rounded border border-white/20">
+                  {framework}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* --- INDUSTRIES CARDS --- */}
       <div className="py-32 bg-gray-50">
         <Section>
@@ -1397,26 +1641,43 @@ function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {BAAREZ_CONFIG.industries.cards.map((card, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="group relative h-[450px] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500 rounded-lg">
+                <div className="group relative h-[500px] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500 rounded-lg">
                   <div className="absolute inset-0 bg-gray-900">
-                    <img 
-                      src={card.image} 
-                      alt={card.title} 
+                    <img
+                      src={card.image}
+                      alt={card.title}
                       className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#760015] via-transparent to-transparent opacity-90"></div>
-                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#760015] via-[#760015]/50 to-transparent opacity-90"></div>
+
                   <div className="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div className="w-14 h-14 bg-[#ef7f25] text-white flex items-center justify-center mb-6 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
                       <card.icon className="w-7 h-7" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
-                    <div className="h-0.5 w-0 bg-white group-hover:w-full transition-all duration-700"></div>
+                    <div className="h-0.5 w-0 bg-white group-hover:w-full transition-all duration-700 mb-4"></div>
+
+                    {/* Key Regulations */}
                     {card.regulations && (
-                      <p className="text-white/80 text-xs mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed">
+                      <p className="text-white/70 text-xs mb-4 leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                         <span className="font-bold text-white">Key Regulations: </span>{card.regulations}
                       </p>
+                    )}
+
+                    {/* What you get on day 1 - Accelerators */}
+                    {card.accelerators && (
+                      <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                        <p className="text-xs font-bold text-[#ef7f25] uppercase tracking-wide mb-2">Out-of-the-box content:</p>
+                        <ul className="space-y-1">
+                          {card.accelerators.map((acc, j) => (
+                            <li key={j} className="flex items-center gap-2 text-xs text-white/80">
+                              <Icons.CheckCircle className="w-3 h-3 text-[#ef7f25] shrink-0" />
+                              {acc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -1547,12 +1808,11 @@ function Home() {
           NEW CREATIVE SECTION 2: HIGH CONTRAST IMPACT (ROI)
           Dark section focusing purely on numbers and results.
          ========================================================== */}
-     {/* --- IMPACT SECTION (COMPACT & LIGHT) --- */}
-      {/* --- IMPACT SECTION (COMPACT & LIGHT) --- */}
+     {/* --- IMPACT SECTION WITH CASE ABSTRACTS --- */}
 <div className="py-16 bg-[#fdfbf9] border-y border-gray-100">
   <Section>
-    <div className="grid lg:grid-cols-12 gap-8 items-center">
-        
+    <div className="grid lg:grid-cols-12 gap-8 items-start">
+
         {/* Left: Text Content */}
         <div className="lg:col-span-4">
           <FadeIn>
@@ -1564,15 +1824,23 @@ function Home() {
               Measurable Enterprise Impact
             </h2>
 
-            <p className="text-sm text-gray-500 leading-relaxed">
-              Organizations partner with Baarez to move faster, operate with confidence, 
+            <p className="text-sm text-gray-500 leading-relaxed mb-6">
+              Organizations partner with Baarez to move faster, operate with confidence,
               and convert governance and risk management into a source of strategic advantage.
             </p>
+
+            {/* Field Results Label */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 rounded-full border border-green-100">
+              <Icons.CheckCircle className="w-3 h-3 text-green-600" />
+              <span className="text-xs font-bold text-green-700 uppercase tracking-wide">Field Results from Deployed Programs</span>
+            </div>
           </FadeIn>
         </div>
 
-        {/* Right: Stat Cards Grid */}
-        <div className="lg:col-span-8">
+        {/* Right: Stats + Case Abstracts */}
+        <div className="lg:col-span-8 space-y-6">
+
+          {/* Stat Cards Grid */}
           <div className="grid sm:grid-cols-2 gap-5">
             {[
               { val: "60%", desc: "Reduction in manual compliance effort" },
@@ -1582,10 +1850,10 @@ function Home() {
             ].map((stat, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="p-6 rounded-xl bg-white border border-gray-100 shadow-md hover:shadow-xl hover:border-[#ef7f25]/30 transition-all duration-300 group relative overflow-hidden">
-                  
+
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-12 h-12 bg-[#760015]/5 rounded-bl-full -mr-6 -mt-6 group-hover:bg-[#ef7f25]/10 transition-colors"></div>
-                  
+
                   <div className="text-4xl font-bold text-[#760015] mb-2 relative z-10 font-mono tracking-tighter">
                     {stat.val}
                   </div>
@@ -1599,6 +1867,36 @@ function Home() {
               </FadeIn>
             ))}
           </div>
+
+          {/* Mini Case Abstracts */}
+          <FadeIn delay={0.3}>
+            <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+              <div className="p-4 bg-gray-50 border-b border-gray-100">
+                <h4 className="text-xs font-bold text-[#760015] uppercase tracking-widest">Outcome Snapshots</h4>
+              </div>
+              <div className="divide-y divide-gray-50">
+                {[
+                  { sector: "Tier-1 GCC Bank", metric: "62%", outcome: "reduction in manual control testing", platform: "GRC Platform" },
+                  { sector: "Government Entity", metric: "4 weeks", outcome: "to full compliance visibility (vs 6 months industry avg)", platform: "Internal Audit" },
+                  { sector: "Healthcare Provider", metric: "85%", outcome: "faster vendor risk assessments", platform: "TPRM" }
+                ].map((caseItem, i) => (
+                  <div key={i} className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#ef7f25]"></div>
+                      <div>
+                        <span className="text-xs font-bold text-gray-700">{caseItem.sector}</span>
+                        <span className="text-xs text-gray-400 mx-2">—</span>
+                        <span className="text-xs text-[#760015] font-bold">{caseItem.metric}</span>
+                        <span className="text-xs text-gray-500 ml-1">{caseItem.outcome}</span>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">{caseItem.platform}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
         </div>
 
     </div>
@@ -1608,7 +1906,7 @@ function Home() {
     
 <section className="w-full bg-slate-50 border-t border-slate-200 py-20">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div className="text-center mb-12">
       <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef7f25] mb-3">
         Tailored Pathways
@@ -1623,17 +1921,30 @@ function Home() {
       {/* 1. Executive / Strategic Focus -> Linked to GRC (Core Governance) */}
       <a href="/solutions/grc" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#760015] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#760015] to-[#ef7f25] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        <div className="w-16 h-16 bg-[#fdfbf9] text-[#760015] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#760015] group-hover:text-white transition-colors duration-300">
+
+        {/* Persona Labels */}
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          {['Boards', 'CROs', 'Regulators'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-[#760015]/5 text-[#760015] text-xs font-bold rounded-full">
+              {persona}
+            </span>
+          ))}
+        </div>
+
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#760015] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#760015] group-hover:text-white transition-colors duration-300">
           {/* Chart/Insight Icon */}
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
         </div>
-        
-        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Strategic Oversight</h4>
+
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-2">Strategic Oversight</h4>
+
+        {/* Primary Question */}
+        <p className="text-xs text-[#ef7f25] font-medium italic mb-3">"What risks matter most to the business?"</p>
+
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
           Drive decision-making with centralized governance. View risk heatmaps, compliance ROI, and executive dashboards.
         </p>
-        
+
         <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
           View Governance Impact <Icons.ArrowRight className="w-4 h-4" />
         </span>
@@ -1642,17 +1953,30 @@ function Home() {
       {/* 2. Practitioner / Workflow Focus -> Linked to Internal Audit (Workflow heavy) */}
       <a href="/solutions/internal-audit" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#ef7f25] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ef7f25] to-[#fdba74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        <div className="w-16 h-16 bg-[#fdfbf9] text-[#ef7f25] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ef7f25] group-hover:text-white transition-colors duration-300">
+
+        {/* Persona Labels */}
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          {['Internal Audit Heads', 'Compliance Ops'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-[#ef7f25]/10 text-[#ef7f25] text-xs font-bold rounded-full">
+              {persona}
+            </span>
+          ))}
+        </div>
+
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#ef7f25] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#ef7f25] group-hover:text-white transition-colors duration-300">
           {/* Workflow/List Icon */}
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
         </div>
 
-        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Operational Efficiency</h4>
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-2">Operational Efficiency</h4>
+
+        {/* Primary Question */}
+        <p className="text-xs text-[#ef7f25] font-medium italic mb-3">"How do we reduce manual effort?"</p>
+
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
           Streamline daily controls. Automate assessments, audit trails, and reporting workflows to reduce manual effort.
         </p>
-        
+
         <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
           Explore Workflows <Icons.ArrowRight className="w-4 h-4" />
         </span>
@@ -1661,17 +1985,30 @@ function Home() {
       {/* 3. Technical / IT Focus -> Linked to ScanVista (Tech/AI heavy) */}
       <a href="/solutions/scanvista" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2d2a2a] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2d2a2a] to-[#555] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        <div className="w-16 h-16 bg-[#fdfbf9] text-[#2d2a2a] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2d2a2a] group-hover:text-white transition-colors duration-300">
+
+        {/* Persona Labels */}
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          {['CIO', 'CISO', 'Enterprise Architect'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-bold rounded-full">
+              {persona}
+            </span>
+          ))}
+        </div>
+
+        <div className="w-16 h-16 bg-[#fdfbf9] text-[#2d2a2a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#2d2a2a] group-hover:text-white transition-colors duration-300">
           {/* Tech/Chip Icon */}
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
         </div>
 
-        <h4 className="font-bold text-xl text-[#2d2a2a] mb-3">Technical Integration</h4>
+        <h4 className="font-bold text-xl text-[#2d2a2a] mb-2">Technical Integration</h4>
+
+        {/* Primary Question */}
+        <p className="text-xs text-[#ef7f25] font-medium italic mb-3">"How does this fit our architecture?"</p>
+
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
           Assess enterprise compatibility. Review API capabilities, AI models, and secure deployment specifications.
         </p>
-        
+
         <span className="mt-auto text-[#ef7f25] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
           View Technical Specs <Icons.ArrowRight className="w-4 h-4" />
         </span>
