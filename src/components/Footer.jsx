@@ -27,6 +27,7 @@ function Footer() {
     { name: 'AI TPRM Platform', path: '/solutions/tprm' },
     { name: 'AI Internal Audit', path: '/solutions/internal-audit' },
     { name: 'AI OCR ScanVista', path: '/solutions/scanvista' },
+    { name: 'Glimmora Hospitality', path: '/solutions/glimmora' },
   ]
 
   const services = [
@@ -48,7 +49,7 @@ function Footer() {
   ]
 
   const locations = [
-    'India', 'US', 'Qatar', 'Dubai', 'Singapore'
+    'India', 'US', 'Qatar', 'Dubai', 'Singapore', 'Latvia'
   ]
 
   return (

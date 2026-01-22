@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, ChevronRight, ShieldCheck, Sparkles, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, ChevronRight, ShieldCheck, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // --- CONFIGURATION START ---
@@ -11,7 +11,8 @@ const BRAND = {
   colors: {
     primary: "#760015",   // Baarez Maroon
     accent: "#ef7f25",    // Baarez Orange
-    bg: "#F8FAFC"
+    bg: "#F8FAFC",
+    error: "#EF4444"      // Red for errors
   }
 };
 
@@ -20,19 +21,40 @@ const EMAIL_CONFIG = {
   TEMPLATE_ID: "template_kj44vfa", 
   PUBLIC_KEY: "hbSmjgNJuGIGzSLrq"   
 };
+
+// COMPREHENSIVE COUNTRY LIST
+const COUNTRIES = [
+  { name: "United States", code: "+1" },
+  { name: "United Kingdom", code: "+44" },
+  { name: "United Arab Emirates", code: "+971" },
+  { name: "Saudi Arabia", code: "+966" },
+  { name: "Qatar", code: "+974" },
+  { name: "India", code: "+91" },
+  { name: "Singapore", code: "+65" },
+  { name: "Canada", code: "+1" },
+  { name: "Australia", code: "+61" },
+  { name: "Germany", code: "+49" },
+  { name: "France", code: "+33" },
+  { name: "Bahrain", code: "+973" },
+  { name: "Kuwait", code: "+965" },
+  { name: "Oman", code: "+968" },
+  { name: "China", code: "+86" },
+  { name: "Japan", code: "+81" },
+  { name: "Other", code: "+" } 
+];
 // --- CONFIGURATION END ---
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState('');
   
   // Logic State
-  // 0:Name, 1:Interest, 2:Context, 3:Email, 4:Phone, 5:Company, 6:Country, 7:End
   const [step, setStep] = useState(0); 
   const [inputValue, setInputValue] = useState('');
+  const [selectedPhoneCode, setSelectedPhoneCode] = useState('+971'); // Default UAE
   
-  // Expanded Data State
   const [formData, setFormData] = useState({ 
     name: '', 
     interest: '', 
@@ -53,11 +75,21 @@ const ChatBot = () => {
 
   const messagesEndRef = useRef(null);
 
+  // Validation Patterns
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const numberOnlyRegex = /^[0-9]*$/;
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isTyping, isOpen]);
+  }, [messages, isTyping, isOpen, error]);
 
-  // Updated Catalog with "AI" Prefixes
+  // Handle Input Change
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+    if (error) setError('');
+  };
+
+  // Catalog Data
   const catalog = {
     solutions: [
       { id: 'ai-grc', label: 'AI GRC Platform', desc: 'AI GRC helps enterprises manage governance, risk, and compliance through a unified, AI-driven platform.' },
@@ -90,8 +122,11 @@ const ChatBot = () => {
   // Step 0: Name
   const handleNameSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
     const name = inputValue.trim();
+    if (name.length < 2) {
+        setError("Please enter a valid name.");
+        return;
+    }
     setFormData(prev => ({ ...prev, name }));
     setMessages(prev => [...prev, { id: Date.now(), text: name, sender: 'user' }]);
     setInputValue('');
@@ -116,7 +151,7 @@ const ChatBot = () => {
     }, 600);
   };
 
-  // Step 2: Context (Yes/No)
+  // Step 2: Context
   const handleContextResponse = (response) => {
     setMessages(prev => [...prev, { id: Date.now(), text: response, sender: 'user' }]);
     if (response === 'Yes, talk to an expert') {
@@ -128,58 +163,70 @@ const ChatBot = () => {
     }
   };
 
-  // Step 3: Email -> Move to Phone
+  // Step 3: Email
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim() || !inputValue.includes('@')) return;
     const email = inputValue.trim();
+    if (!emailRegex.test(email)) {
+        setError("Please enter a valid work email.");
+        return;
+    }
     setFormData(prev => ({ ...prev, email }));
     setMessages(prev => [...prev, { id: Date.now(), text: email, sender: 'user' }]);
     setInputValue('');
-    
-    addMessage("Thanks. Could you please share your phone number (with country code)?", 'bot', 800);
+    addMessage("Thanks. Please select your country code and enter your phone number.", 'bot', 800);
     setStep(4);
   };
 
-  // Step 4: Phone -> Move to Company
+  // Step 4: Phone (Split Logic)
   const handlePhoneSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
-    const phone = inputValue.trim();
-    setFormData(prev => ({ ...prev, phone }));
-    setMessages(prev => [...prev, { id: Date.now(), text: phone, sender: 'user' }]);
-    setInputValue('');
+    const number = inputValue.trim();
 
+    if (!numberOnlyRegex.test(number) || number.length < 5) {
+        setError("Please enter a valid numeric phone number.");
+        return;
+    }
+
+    const fullPhone = `${selectedPhoneCode} ${number}`;
+    setFormData(prev => ({ ...prev, phone: fullPhone }));
+    setMessages(prev => [...prev, { id: Date.now(), text: fullPhone, sender: 'user' }]);
+    setInputValue('');
     addMessage("Got it. What is your Company Name?", 'bot', 800);
     setStep(5);
   };
 
-  // Step 5: Company -> Move to Country
+  // Step 5: Company
   const handleCompanySubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
     const company = inputValue.trim();
+    if (company.length < 2) {
+        setError("Please enter your company name.");
+        return;
+    }
     setFormData(prev => ({ ...prev, company }));
     setMessages(prev => [...prev, { id: Date.now(), text: company, sender: 'user' }]);
     setInputValue('');
-
-    addMessage("Almost done. Which Country are you located in?", 'bot', 800);
+    addMessage("Almost done. Please select your Country.", 'bot', 800);
     setStep(6);
   };
 
-  // Step 6: Country -> SEND EMAIL -> End
+  // Step 6: Country (Dropdown Logic)
   const handleCountrySubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
+    const country = inputValue; // Is value from select
+
+    if (!country || country === "Select Country") {
+        setError("Please select a country from the list.");
+        return;
+    }
     
-    const country = inputValue.trim();
     const finalData = { ...formData, country };
-    setFormData(finalData); // Save final state
+    setFormData(finalData); 
     setMessages(prev => [...prev, { id: Date.now(), text: country, sender: 'user' }]);
     setInputValue('');
     setIsSending(true);
 
-    // EMAIL SENDING LOGIC
     const templateParams = {
       from_name: finalData.name,
       reply_to: finalData.email,
@@ -187,7 +234,7 @@ const ChatBot = () => {
       company_name: finalData.company,
       country_location: country,
       interest: finalData.interest,
-      message: `New Lead: ${finalData.name} from ${finalData.company} (${country}) is interested in ${finalData.interest}.`
+      message: `LEAD DETAILS:\n- Name: ${finalData.name}\n- Email: ${finalData.email}\n- Phone: ${finalData.phone}\n- Company: ${finalData.company}\n- Country: ${country}\n- Interest: ${finalData.interest}`
     };
 
     emailjs.send(
@@ -196,14 +243,13 @@ const ChatBot = () => {
       templateParams,
       EMAIL_CONFIG.PUBLIC_KEY
     )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
+    .then(() => {
       setIsSending(false);
       addMessage(`Thank you, ${finalData.name}. Our team has received your details and will reach out shortly.`, 'bot', 800);
       setStep(7); // End
     })
     .catch((err) => {
-      console.log('FAILED...', err);
+      console.error('EmailJS Failed', err);
       setIsSending(false);
       addMessage("Thanks! We've noted your details. Our team will contact you soon.", 'bot', 800);
       setStep(7); // End
@@ -211,24 +257,38 @@ const ChatBot = () => {
   };
 
   const renderInputArea = () => {
+    const commonStyle = `flex-1 bg-gray-50 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all ${error ? 'border-red-400 focus:ring-red-400' : 'border-gray-200'}`;
+    const btnStyle = { backgroundColor: error ? BRAND.colors.error : BRAND.colors.accent };
+
+    // Added shrink-0 to prevent button squashing
+    const submitBtn = (disabled) => (
+        <button 
+            type="submit" 
+            disabled={disabled} 
+            className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm flex items-center justify-center min-w-[40px] shrink-0" 
+            style={btnStyle}
+        >
+            {isSending ? <Loader2 size={18} className="animate-spin"/> : <ChevronRight size={20} />}
+        </button>
+    );
+
     switch (step) {
       case 0: // Name
         return (
           <form onSubmit={handleNameSubmit} className="flex gap-2">
-            <input autoFocus type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Type your name..." className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all" style={{ '--tw-ring-color': BRAND.colors.primary }} />
-            <button type="submit" disabled={!inputValue.trim()} className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm" style={{ backgroundColor: BRAND.colors.accent }}><ChevronRight size={20} /></button>
+            <input type="text" placeholder="Type your name..." autoFocus value={inputValue} onChange={handleInputChange} className={commonStyle} style={!error ? { '--tw-ring-color': BRAND.colors.primary } : {}} />
+            {submitBtn(!inputValue.trim())}
           </form>
         );
 
-      case 1: // Intent Options
+      case 1: // Intent
         return (
           <div className="flex flex-col gap-3 h-[220px] overflow-y-auto pr-1 custom-scrollbar">
             <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider mb-1 sticky top-0 bg-white z-10 py-1">Solutions</p>
             <div className="grid grid-cols-1 gap-2">
               {catalog.solutions.map(item => (
                 <button key={item.id} onClick={() => handleOptionSelect(item)} className="text-left px-4 py-2 bg-white border border-gray-100 rounded-lg text-sm text-gray-700 hover:bg-orange-50 transition-all flex justify-between items-center group shadow-sm hover:border-orange-200">
-                  {item.label}
-                  <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: BRAND.colors.accent }}/>
+                  {item.label} <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: BRAND.colors.accent }}/>
                 </button>
               ))}
             </div>
@@ -236,8 +296,7 @@ const ChatBot = () => {
             <div className="grid grid-cols-1 gap-2">
               {catalog.services.map(item => (
                 <button key={item.id} onClick={() => handleOptionSelect(item)} className="text-left px-4 py-2 bg-white border border-gray-100 rounded-lg text-sm text-gray-700 hover:bg-orange-50 transition-all flex justify-between items-center group shadow-sm hover:border-orange-200">
-                  {item.label}
-                  <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: BRAND.colors.accent }}/>
+                  {item.label} <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: BRAND.colors.accent }}/>
                 </button>
               ))}
             </div>
@@ -255,32 +314,59 @@ const ChatBot = () => {
       case 3: // Email
         return (
           <form onSubmit={handleEmailSubmit} className="flex gap-2">
-            <input autoFocus type="email" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="name@company.com" className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all" style={{ '--tw-ring-color': BRAND.colors.primary }} />
-            <button type="submit" disabled={!inputValue.includes('@')} className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm" style={{ backgroundColor: BRAND.colors.accent }}><ChevronRight size={20} /></button>
+            <input type="email" placeholder="name@company.com" autoFocus value={inputValue} onChange={handleInputChange} className={commonStyle} style={!error ? { '--tw-ring-color': BRAND.colors.primary } : {}} />
+            {submitBtn(!inputValue.trim())}
           </form>
         );
 
-      case 4: // Phone
+      case 4: // Phone (Split Dropdown + Input)
         return (
-          <form onSubmit={handlePhoneSubmit} className="flex gap-2">
-            <input autoFocus type="tel" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="e.g. +1 555-0199" className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all" style={{ '--tw-ring-color': BRAND.colors.primary }} />
-            <button type="submit" disabled={!inputValue.trim()} className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm" style={{ backgroundColor: BRAND.colors.accent }}><ChevronRight size={20} /></button>
+          <form onSubmit={handlePhoneSubmit} className="flex gap-2 w-full">
+            <select 
+              value={selectedPhoneCode} 
+              onChange={(e) => setSelectedPhoneCode(e.target.value)} 
+              className="bg-gray-50 border border-gray-200 rounded-lg px-2 py-2 text-xs focus:outline-none focus:ring-1 max-w-[90px] truncate shrink-0"
+              style={{ '--tw-ring-color': BRAND.colors.primary }}
+            >
+                {COUNTRIES.map(c => <option key={c.name} value={c.code}>{c.code} ({c.name.substring(0, 10)}..)</option>)}
+            </select>
+            <input 
+              type="tel" 
+              placeholder="Phone Number" 
+              autoFocus 
+              value={inputValue} 
+              onChange={(e) => {
+                  // Only allow numbers
+                  if (numberOnlyRegex.test(e.target.value)) handleInputChange(e);
+              }} 
+              className={`${commonStyle} min-w-0`} 
+              style={!error ? { '--tw-ring-color': BRAND.colors.primary } : {}} 
+            />
+            {submitBtn(!inputValue.trim())}
           </form>
         );
 
       case 5: // Company
         return (
           <form onSubmit={handleCompanySubmit} className="flex gap-2">
-            <input autoFocus type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Company Name" className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all" style={{ '--tw-ring-color': BRAND.colors.primary }} />
-            <button type="submit" disabled={!inputValue.trim()} className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm" style={{ backgroundColor: BRAND.colors.accent }}><ChevronRight size={20} /></button>
+            <input type="text" placeholder="Company Name" autoFocus value={inputValue} onChange={handleInputChange} className={commonStyle} style={!error ? { '--tw-ring-color': BRAND.colors.primary } : {}} />
+            {submitBtn(!inputValue.trim())}
           </form>
         );
 
-      case 6: // Country
+      case 6: // Country (Dropdown)
         return (
-          <form onSubmit={handleCountrySubmit} className="flex gap-2">
-            <input autoFocus type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Country" className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 transition-all" style={{ '--tw-ring-color': BRAND.colors.primary }} />
-            <button type="submit" disabled={!inputValue.trim() || isSending} className="text-white p-2 rounded-lg transition-colors disabled:opacity-50 hover:opacity-90 shadow-sm flex items-center justify-center" style={{ backgroundColor: BRAND.colors.accent }}>{isSending ? <Loader2 size={18} className="animate-spin"/> : <Send size={18} />}</button>
+          <form onSubmit={handleCountrySubmit} className="flex gap-2 w-full">
+            <select 
+              value={inputValue} 
+              onChange={handleInputChange} 
+              className={`${commonStyle} appearance-none cursor-pointer`} 
+              style={!error ? { '--tw-ring-color': BRAND.colors.primary } : {}}
+            >
+                <option value="">Select Country</option>
+                {COUNTRIES.map(c => <option key={c.name} value={c.name}>{c.name}</option>)}
+            </select>
+            {submitBtn(!inputValue || inputValue === "Select Country" || isSending)}
           </form>
         );
 
@@ -296,7 +382,7 @@ const ChatBot = () => {
     }
   };
 
- return (
+  return (
     <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans antialiased">
       <AnimatePresence>
         {isOpen && (
@@ -305,7 +391,8 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="w-[360px] h-[550px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-gray-100 ring-1 ring-black/5"
+            /* INCREASED WIDTH HERE: w-[400px] */
+            className="w-[90vw] sm:w-[400px] h-[550px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-gray-100 ring-1 ring-black/5"
             style={{ maxHeight: 'calc(100vh - 100px)' }}
           >
             {/* Header */}
@@ -346,6 +433,14 @@ const ChatBot = () => {
 
             {/* Input Area */}
             <div className="p-4 bg-white border-t border-gray-100 shrink-0">
+              
+              {/* Error Notification */}
+              {error && (
+                <motion.div initial={{opacity:0, y:5}} animate={{opacity:1, y:0}} className="flex items-center gap-2 text-xs text-red-500 mb-2 font-semibold">
+                    <AlertCircle size={12} /> {error}
+                </motion.div>
+              )}
+
               {renderInputArea()}
               <div className="text-center mt-3">
                 <p className="text-[10px] text-gray-300">Powered by Baarez Technology Solutions</p>
@@ -360,7 +455,6 @@ const ChatBot = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        /* Removed layoutId="launcher" to fix blinking */
         animate={{
           boxShadow: [
             "0 0 0 0 rgba(118, 0, 21, 0.7)",

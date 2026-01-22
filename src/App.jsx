@@ -38,6 +38,7 @@ import TermsOfService from './pages/TermsOfService'
 import Services from './pages/Services'
 import Glimmora from './pages/solutions/Glimmora'
 import WhitePaper from './pages/WhitePaper'
+import Careers from './pages/Careers'
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
           <Route path="partner-on-board" element={<PartnerOnboard/>} />
           <Route path="privacy" element={<Privacy/>} />
           <Route path="terms" element={<TermsOfService/>} />
+          <Route path="careers" element={<Careers/>} />
           <Route path="grc-whitepaper" element={<WhitePaper/>} />
           
           {/* FIX: Removed 'resources/' prefix so '/blogs/...' URLs work */}
