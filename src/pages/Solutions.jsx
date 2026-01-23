@@ -55,6 +55,17 @@ const solutionCategories = [
     description: "Foundational platforms for governance, third-party oversight, and audit readiness.",
     items: [
       {
+        id: 'glimmora',
+        name: 'Glimmora Hospitality',
+        target: "Hospitality COOs",
+        outcome: "Boost RevPAR by up to 15%",
+        synergy: "Standalone Intelligence OS",
+        desc: 'AI-native hospitality intelligence for predictive operations and revenue.',
+        path: '/solutions/glimmora',
+        icon: Icons.Sparkles,
+        badge: "Industry Solution"
+      },
+      {
         id: 'grc',
         name: 'AI GRC Platform',
         target: "Chief Risk Officers",
@@ -115,34 +126,24 @@ const solutionCategories = [
         icon: Icons.Chart,
         badge: "Add-on Module"
       },
-      {
-        id: 'glimmora',
-        name: 'Glimmora',
-        target: "Hospitality COOs",
-        outcome: "Boost RevPAR by up to 15%",
-        synergy: "Standalone Intelligence OS",
-        desc: 'AI-native hospitality intelligence for predictive operations and revenue.',
-        path: '/solutions/glimmora',
-        icon: Icons.Sparkles,
-        badge: "Industry Solution"
-      }
+      
     ]
   },
   {
     title: "Enterprise Enablement",
     description: "Scalable technology solutions to power your daily operations.",
     items: [
-      {
-        id: 'raas',
-        name: 'Robot as a Service',
-        target: "IT & Ops Directors",
-        outcome: "Reduce operational costs by 30%",
-        synergy: "Automates legacy tasks",
-        desc: 'Deploy software robots to handle repetitive, high-volume tasks.',
-        path: '/solutions/robot-as-a-service',
-        icon: Icons.Robot,
-        badge: "Service Module"
-      },
+      // {
+      //   id: 'raas',
+      //   name: 'Robot as a Service',
+      //   target: "IT & Ops Directors",
+      //   outcome: "Reduce operational costs by 30%",
+      //   synergy: "Automates legacy tasks",
+      //   desc: 'Deploy software robots to handle repetitive, high-volume tasks.',
+      //   path: '/solutions/robot-as-a-service',
+      //   icon: Icons.Robot,
+      //   badge: "Service Module"
+      // },
       {
         id: 'dynamics',
         name: 'Dynamics 365',

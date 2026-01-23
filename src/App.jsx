@@ -15,7 +15,7 @@ import TPRM from './pages/solutions/TPRM'
 import InternalAudit from './pages/solutions/InternalAudit'
 import ScanVista from './pages/solutions/ScanVista'
 import TaxAutomation from './pages/solutions/TaxAutomation'
-import RobotAsAService from './pages/solutions/RobotAsAService'
+// import RobotAsAService from './pages/solutions/RobotAsAService'
 import Dynamics365 from './pages/solutions/Dynamics365'
 
 // Service Pages
@@ -62,7 +62,7 @@ function App() {
           <Route path="solutions/internal-audit" element={<InternalAudit />} />
           <Route path="solutions/scanvista" element={<ScanVista />} />
           <Route path="solutions/tax-automation" element={<TaxAutomation />} />
-          <Route path="solutions/robot-as-a-service" element={<RobotAsAService />} />
+          {/* <Route path="solutions/robot-as-a-service" element={<RobotAsAService />} /> */}
           <Route path="solutions/dynamics-365" element={<Dynamics365 />} />
           <Route path="solutions/human-resource" element={<HumanResource/>} />
           <Route path="solutions/glimmora" element={<Glimmora/>} />
@@ -80,7 +80,7 @@ function App() {
           <Route path="partner-on-board" element={<PartnerOnboard/>} />
           <Route path="privacy" element={<Privacy/>} />
           <Route path="terms" element={<TermsOfService/>} />
-          <Route path="careers" element={<Careers/>} />
+          <Route path="careers" element={<Careers/> } />
           <Route path="grc-whitepaper" element={<WhitePaper/>} />
           
           {/* FIX: Removed 'resources/' prefix so '/blogs/...' URLs work */}

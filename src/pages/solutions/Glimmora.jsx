@@ -34,7 +34,7 @@ const Glimmora = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl md:text-4xl font-bold text-[#760015] leading-[0.9] tracking-tighter mb-8"
             >
-              Glimmora.
+              Glimmora Hospitality.
             </motion.h1>
             
             <motion.p 

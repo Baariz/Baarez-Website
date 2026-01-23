@@ -57,6 +57,8 @@ function Navbar() {
     {
       title: "Core Platforms",
       items: [
+        { name: 'Glimmora Hospitality', path: '/solutions/glimmora', desc: 'AGI-native hospitality intelligence.', icon: Icons.Sparkles },
+
         { name: 'AI GRC Platform', path: '/solutions/grc', desc: 'Unified governance, risk & compliance.', icon: Icons.Shield },
         { name: 'AI TPRM Platform', path: '/solutions/tprm', desc: 'Third-party risk management lifecycle.', icon: Icons.Shield },
         { name: 'AI Internal Audit Platform', path: '/solutions/internal-audit', desc: 'Streamline audit workflows.', icon: Icons.Doc },
@@ -67,7 +69,6 @@ function Navbar() {
       items: [
         { name: 'AI OCR ScanVista', path: '/solutions/scanvista', desc: 'AI-powered document processing.', icon: Icons.Doc },
         { name: 'Tax Automation', path: '/solutions/tax-automation', desc: 'Automated tax reporting engine.', icon: Icons.Chart },
-        { name: 'Glimmora', path: '/solutions/glimmora', desc: 'AGI-native hospitality intelligence.', icon: Icons.Sparkles },
       ]
     },
     {
@@ -75,7 +76,6 @@ function Navbar() {
       items: [
         { name: 'Dynamics 365', path: '/solutions/dynamics-365', desc: 'ERP & CRM implementation.', icon: Icons.Cloud },
         { name: 'Human Resources (HR)', path: '/solutions/human-resource', desc: 'Business Central HR solution.', icon: Icons.Users },
-        { name: 'Robot as a Service', path: '/solutions/robot-as-a-service', desc: 'Scalable RPA solutions.', icon: Icons.Cog },
       ]
     }
   ]

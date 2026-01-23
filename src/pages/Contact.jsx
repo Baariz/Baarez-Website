@@ -338,6 +338,7 @@ const Contact = () => {
                 <p className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
                 <h3 className="text-xl font-bold mb-2">Call us at:</h3>
                 <p className="text-3xl font-light tracking-tighter text-[#ef7f25]">+971 501371105</p>
+                <p className="text-xl font-light tracking-tighter text-[#ef7f25]">info@baarez.com</p>
               </div>
 
               {/* Benefit Pillars */}
@@ -382,7 +383,7 @@ const Contact = () => {
             <div className="lg:col-span-7">
               <div className="bg-white p-8 lg:p-14 border border-gray-100 shadow-xl">
                 <div className="mb-12">
-                  <h3 className="text-xl font-bold text-[#760015] mb-2">Schedule a Free Consultation</h3>
+                  <h3 className="text-xl font-bold text-[#760015] mb-2">Schedule a Demo</h3>
                   <div className="h-[2px] w-12 bg-[#ef7f25]"></div>
                 </div>
 
@@ -438,10 +439,10 @@ const Contact = () => {
                   <div className="relative">
                     <select name="service" value={formData.service} onChange={handleChange} className={`w-full px-5 py-4 bg-[#fcfcfc] border ${errors.service ? 'border-red-500' : 'border-gray-100'} focus:border-[#ef7f25] outline-none text-sm appearance-none cursor-pointer`}>
                       <option value="">How Can We Help You?</option>
+                      <option value="Glimmora Hospitality">Glimmora Hospitality</option>
                       <option value="AI GRC Platform">AI GRC Platform</option>
                       <option value="AI TPRM Platform">AI TPRM Platform</option>
                       <option value="Al Internal Audit Platform">Al Internal Audit Platform</option>
-                      <option value="Glimmora Hospitality">Glimmora Hospitality</option>
                       <option value="AI OCR ScanVista">AI OCR ScanVista</option>
                       <option value="Automation Services">Automation Services</option>
                       <option value="Remote Consulting Services">Remote Consulting Services</option>
