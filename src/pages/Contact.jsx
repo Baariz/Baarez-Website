@@ -333,7 +333,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-20">
             
             {/* LEFT SIDE: THINKING VISIBLE & BENEFITS */}
-            <div className="lg:col-span-5 space-y-12">
+            <div className="lg:col-span-4 space-y-12">
               <div className="bg-[#760015] p-10 text-white shadow-2xl relative">
                 <p className="text-xs text-[#ef7f25] font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
                 <h3 className="text-xl font-bold mb-2">Call us at:</h3>
@@ -380,7 +380,7 @@ const Contact = () => {
             </div>
 
             {/* RIGHT SIDE: CONSULTATION FORM */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-8">
               <div className="bg-white p-8 lg:p-14 border border-gray-100 shadow-xl">
                 <div className="mb-12">
                   <h3 className="text-xl font-bold text-[#760015] mb-2">Schedule a Demo</h3>
