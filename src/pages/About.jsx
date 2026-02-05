@@ -139,7 +139,7 @@ const About = () => {
 
               <div className="mt-12 flex items-center gap-6">
                  <div className="w-16 h-[1px] bg-[#760015]"></div>
-                 <p className="text-xs font-bold text-[#760015] uppercase tracking-widest">CEO & Co-Founder</p>
+                 <p className="text-xs font-bold text-[#760015] uppercase tracking-widest">CEO & Managing Director</p>
               </div>
             </div>
           </div>
