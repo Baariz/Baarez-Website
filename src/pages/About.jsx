@@ -147,7 +147,7 @@ const About = () => {
       </section>
 
       {/* 4. CHAIRMAN LEADERSHIP (Mr. Hamad Suwaid) */}
-      <section className="py-32 bg-white">
+      {/* <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row-reverse gap-24 items-center">
             <div className="w-full lg:w-5/12">
@@ -174,7 +174,7 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Profile Highlights */}
+              
               <div className="mt-8 p-6 bg-[#fafafa] border-l-4 border-[#ef7f25] rounded">
                 <h4 className="text-xs font-bold text-[#760015] uppercase tracking-widest mb-4">Profile Highlights</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -200,7 +200,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 5. VISIBLE THINKING: THE VALUE SYSTEM */}
       <section className="py-32 bg-[#760015] relative overflow-hidden">
